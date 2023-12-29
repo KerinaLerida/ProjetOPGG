@@ -15,6 +15,8 @@ with open('./Test/output.json', 'r', encoding='utf-8') as json_file:
 
 info_joueur=data.get("props", {}).get("pageProps", {}).get("data",{})
 
+# ************** Nettoyage des Données **************
+
 rank = info_joueur["ladder_rank"].get("rank")
 total = info_joueur["ladder_rank"].get("total")
 
@@ -22,7 +24,9 @@ if rank is not None and total is not None:
     pourcentage_rank_total = (rank / total) * 100
 else: pourcentage_rank_total=None
 
-# Nettoyage des Données
+if info_joueur.get("team_info") is not None:
+    team_id=info_joueur["team_info"].get("team_id")
+else: team_id=None
 
 data_joueur = {
     "summoner_id": info_joueur.get("summoner_id"),
@@ -30,8 +34,19 @@ data_joueur = {
     "tagline": info_joueur.get("tagline"),
     "level": info_joueur.get("level"),
     "ladder_rank": pourcentage_rank_total,
-    "profile_image_url": info_joueur.get("profile_image_url")
+    "profile_image_url": info_joueur.get("profile_image_url"),
+    "team_id":team_id
 }
+
+data_ranked_activities=info_joueur.get("lp_histories",[])
+
+champ_played_most=info_joueur.get("most_champions",{})
+if champ_played_most is not None:
+    data_champ_played_most=champ_played_most.get("champion_stats")
+else: data_champ_played_most=None
+
+data_champions=info_joueur.get("champions")
+# ****************************************************
 
 # TESTS :
 
