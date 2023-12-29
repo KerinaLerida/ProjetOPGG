@@ -1,0 +1,83 @@
+[
+    {
+        "code": "na",
+        "name": "North America",
+        "countries": ["Canada", "United States of America"]
+    },
+    {
+        "code": "euw",
+        "name": "Europe West",
+        "countries": ["France", "United Kingdom of Great Britain and Northern Ireland", "Ireland", "Spain", "Portugal", "Monaco", "Andorra", "Belgium", "Luxembourg", "Netherlands", "Switzerland", "Italy", "Saint Martin", "Vatican", "Malta", "Austria", "Germany"]
+    },
+    {
+        "code": "eune",
+        "name": "Europe Nordic & East",
+        "countries": ["Norway", "Sweden", "Finland", "Estonia", "Latvia", "Lithuania", "Belarus", "Ukraine", "Crimea", "Moldova", "Romania", "Bulgaria", "Greece", "Albania", "Macedonia", "Kosovo", "Montenegro", "Serbia", "Bosnia and Herzegovina", "Croatia", "Hungary", "Slovakia", "Slovenia", "Czech Republic", "Poland"]
+    },
+    {
+        "code": "oce",
+        "name": "Oceania",
+        "countries": ["Australia", "New Zealand"]
+    },
+    {
+        "code": "kr",
+        "name": "Korea",
+        "countries": ["Korea"]
+    },
+    {
+        "code": "jp",
+        "name": "Japan",
+        "countries": ["Japan"]
+    },
+    {
+        "code": "br",
+        "name": "Brazil",
+        "countries": ["Brazil"]
+    },
+    {
+        "code": "las",
+        "name": "Latin America South",
+        "countries": ["Bolivia", "Paraguay", "Argentina", "Uruguay", "Chile"]
+    },
+    {
+        "code": "lan",
+        "name": "Latin America North",
+        "countries": ["Venezuela", "Colombia", "Ecuador", "Peru"]
+    },
+    {
+        "code": "ru",
+        "name": "Russia",
+        "countries": ["Russia"]
+    },
+    {
+        "code": "tr",
+        "name": "Türkiye",
+        "countries": ["Türkiye"]
+    },
+    {
+        "code": "sg",
+        "name": "Singapore",
+        "countries": ["Singapore"]
+    },
+    {
+        "code": "ph",
+        "name": "Philippines",
+        "countries": ["Philippines"]
+    },
+    {
+        "code": "tw",
+        "name": "Taiwan",
+        "countries": ["Taiwan"]
+    },
+    {
+        "code": "vn",
+        "name": "Vietnam",
+        "countries": ["Vietnam"]
+    },
+    {
+        "code": "th",
+        "name": "Thailand",
+        "countries": ["Thailand"]
+    }
+]
+

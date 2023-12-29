@@ -1,0 +1,2 @@
+scrapy runspider Spider_OPGG.py (-o output.json) ne pas mettre le truc () sinon ça marche pas
+python main.py
