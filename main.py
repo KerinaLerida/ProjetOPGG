@@ -56,31 +56,12 @@ else: data_champ_played_most=None
 data_champions=info_joueur.get("champions")
 # ****************************************************
 
-# TESTS :
+# Intéractions avec la bdd MongoDB
+# RAPPEL :
+# collection.insert_one(data {})
+# collection.insert_many(data [])
 
-print(info_joueur.get("game_name"),info_joueur.get("tagline"),info_joueur.get("level"))
-#profile_image_url
-#level
-#updated_at # JOUEURS
-#print(info_joueur.get("summoner_id"))
 
-lp=info_joueur.get("lp_histories",[])
-#print(lp[0])
-#print(lp) # LP HISTORY
 
-lp_stats=info_joueur.get("league_stats",[])
-print(lp_stats[0].get("queue_info")) # SOLORANKED nom
-#print(lp_stats)
-
-champ_played_most=info_joueur.get("most_champions",{})
-print(champ_played_most.keys())
-print(champ_played_most.get("season_id"))
-#print(champ_played_most.get("champion_stats")[0]) # les champions les plus joués par le joueur
-print(info_joueur.get("ladder_rank")) #JOUEURS
-
-#print(info_joueur.get("champions")[0]) # LISTE DES CHAMPIONS
-
-#games=data.get("props", {}).get("pageProps", {}).get("games",{}).get("data",[])
-#print(games[0].get("participants",[])[1])
 
 
