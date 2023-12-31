@@ -1,6 +1,6 @@
 import scrapy
 import json
-from data_fct import clean_data
+from data_fct import main
 
 class OpggSpider(scrapy.Spider):
     name = "opgg_scraper"
@@ -26,7 +26,7 @@ class OpggSpider(scrapy.Spider):
                 json_data = json.loads(data_content)
                 with open('output.json', 'w', encoding='utf-8') as json_file:
                     json.dump(json_data, json_file, ensure_ascii=False, indent=2)
-                clean_data()
+                main()
             except json.JSONDecodeError as e:
                 self.log(f"Failed to decode JSON: {e}")
 

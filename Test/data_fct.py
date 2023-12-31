@@ -1,6 +1,7 @@
 import json
 from pymongo import MongoClient,errors
 import pymongo
+import logging
 
 """# Connexion à la base de données MongoDB
 client = MongoClient('mongodb://localhost:27017/')
@@ -26,7 +27,7 @@ def connect_to_mongodb():
         MostChampPlayed = db['MostChampPlayed']
         Teams = db["Teams"]
 
-        return client, [Joueurs, Champions, Ranked, MostChampPlayed, Teams]
+        return client, [Joueurs, Teams, Ranked, MostChampPlayed, Champions]
     except errors.ConnectionFailure as e:
         print(f"Erreur de connexion à MongoDB : {e}")
         raise
@@ -58,24 +59,23 @@ def maj_data(collection, data_up, id_search): # optimiser
         maj_champions(collection, data_up,id_search)
         return
 
-    for data in data_up:
-        # Recherche du document existant dans la collection
-        existing_document = collection.find_one({id_search: data[id_search]})
+    #print(f"{id_search}, {collection.name}")
 
-        # Si le document existe, comparez les informations pour chaque clé
+    for key, value in data_up.items():
+        existing_document = collection.find_one({id_search: value})
+
         if existing_document:
-            for key, value in data.items():
+            for key, value in data_up.items():
                 if existing_document.get(key) != value:
                     existing_document[key] = value
 
-            # Mettez à jour le document dans la collection
-            collection.update_one({id_search: data[id_search]}, {"$set": existing_document})
-            print(f"Les informations pour {id_search} {data[id_search]} dans la collection {collection.name} ont été mises à jour.")
+            collection.update_one({id_search: value}, {"$set": existing_document})
+            print(
+                f"Les informations pour {id_search} {value} dans la collection {collection.name} ont été mises à jour.")
             return
 
-    # Si le document n'existe pas, insérez-le dans la collection
-    collection.insert_one(data)
-    print(f"Le document pour {id_search} {data[id_search]} a été ajouté à la collection {collection.name}.")
+    collection.insert_one(data_up)
+    print(f"Le document pour {id_search} {data_up[id_search]} a été ajouté à la collection {collection.name}.")
 
 def nettoie_donnees(info_joueur, collects):
     # ************** Nettoyage des Données **************
@@ -90,7 +90,8 @@ def nettoie_donnees(info_joueur, collects):
 
     if info_joueur.get("team_info") is not None:
         team_id = info_joueur["team_info"].get("team_id")
-        data_team = info_joueur.get("team_info")
+        authority=info_joueur["team_info"].get("authority")
+        data_team = info_joueur["team_info"].get("team")
     else:
         team_id = None
         data_team=None
@@ -102,7 +103,8 @@ def nettoie_donnees(info_joueur, collects):
         "level": info_joueur.get("level"),
         "ladder_rank": pourcentage_rank_total,
         "profile_image_url": info_joueur.get("profile_image_url"),
-        "team_id": team_id
+        "team_id": team_id,
+        "authority":authority
     }
 
     data_ranked_activities = {
@@ -149,14 +151,14 @@ def interactions_mongodb(data_all, collects):
     for collection, data in zip(collects, data_all):
         if data is not None:
             if collection.name == "Champions":
-                collection.bulk_write([pymongo.InsertOneModel(doc) for doc in data])
+                collection.bulk_write([pymongo.InsertOne(doc) for doc in data])
             else:
                 collection.insert_one(data)
 
 def main():
     #collects = db.list_collection_names()
     client, collects=connect_to_mongodb()
-    with open('./Test/output.json', 'r', encoding='utf-8') as json_file:
+    with open('output.json', 'r', encoding='utf-8') as json_file:
         data = json.load(json_file)
         info_joueur = data.get("props", {}).get("pageProps", {}).get("data", {})
 
