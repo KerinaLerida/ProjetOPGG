@@ -59,19 +59,16 @@ def maj_data(collection, data_up, id_search): # optimiser
         maj_champions(collection, data_up,id_search)
         return
 
-    #print(f"{id_search}, {collection.name}")
-
     for key, value in data_up.items():
         existing_document = collection.find_one({id_search: value})
 
         if existing_document:
             for key, value in data_up.items():
-                if existing_document.get(key) != value:
+                if key not in existing_document or existing_document.get(key) != value:
                     existing_document[key] = value
 
             collection.update_one({id_search: value}, {"$set": existing_document})
-            print(
-                f"Les informations pour {id_search} {value} dans la collection {collection.name} ont été mises à jour.")
+            print(f"Les informations pour {id_search} {value} dans la collection {collection.name} ont été mises à jour.")
             return
 
     collection.insert_one(data_up)
@@ -125,7 +122,7 @@ def nettoie_donnees(info_joueur, collects):
 
     #collects=[Joueurs, Teams, Ranked, MostChampPlayed, Champions]
     data_all = [data_joueur, data_team, data_ranked_activities, data_champ_played_most, data_champions]
-    ids=["summoner_id", "team_id", "summoner_id", "summoner_id","id"]
+    ids=["summoner_id", "id", "summoner_id", "summoner_id","id"]
 
     if summoner_id_exist(summoner_id,collects):
         print(f"Le summoner_id {summoner_id} existe déjà dans la base de données.")
