@@ -74,6 +74,12 @@ def maj_data(collection, data_up, id_search): # optimiser
     collection.insert_one(data_up)
     print(f"Le document pour {id_search} {data_up[id_search]} a été ajouté à la collection {collection.name}.")
 
+def rename_first_key(dictionary):
+    if dictionary:
+        old_key = next(iter(dictionary))
+        dictionary["_id"] = dictionary.pop(old_key)
+    return dictionary
+
 def nettoie_donnees(info_joueur, collects):
     # ************** Nettoyage des Données **************
     summoner_id = info_joueur.get("summoner_id")
@@ -89,12 +95,13 @@ def nettoie_donnees(info_joueur, collects):
         team_id = info_joueur["team_info"].get("team_id")
         authority=info_joueur["team_info"].get("authority")
         data_team = info_joueur["team_info"].get("team")
+        rename_first_key(data_team)
     else:
         team_id = None
         data_team=None
 
-    data_joueur = {
-        "summoner_id": summoner_id,
+    data_joueur = { # CF PHOTO rajouter la region !!! initialiser la table des regions et mettre d'id dans region_id exemple euw
+        "_id": summoner_id,
         "game_name": info_joueur.get("game_name"),
         "tagline": info_joueur.get("tagline"),
         "level": info_joueur.get("level"),
@@ -105,24 +112,28 @@ def nettoie_donnees(info_joueur, collects):
     }
 
     data_ranked_activities = {
-        "summoner_id": summoner_id,
+        "player_id": summoner_id,
         "lp_histories": info_joueur.get("lp_histories", [])
     }
 
     champ_played_most = info_joueur.get("most_champions", {})
     if champ_played_most is not None:
         data_champ_played_most = {
-            "summoner_id": summoner_id,
+            "player_id": summoner_id,
             "champ_stats": champ_played_most.get("champion_stats")
         }
     else:
         data_champ_played_most = None
 
     data_champions = info_joueur.get("champions")
+    if data_champions is not None:
+        for data_champ in data_champions:
+            rename_first_key(data_champ)
 
     #collects=[Joueurs, Teams, Ranked, MostChampPlayed, Champions]
     data_all = [data_joueur, data_team, data_ranked_activities, data_champ_played_most, data_champions]
-    ids=["summoner_id", "id", "summoner_id", "summoner_id","id"]
+    #ids=["_id", "id", "summoner_id", "summoner_id","id"]
+    ids = ["_id", "_id", "player_id", "player_id", "_id"]
 
     if summoner_id_exist(summoner_id,collects):
         print(f"Le summoner_id {summoner_id} existe déjà dans la base de données.")
@@ -133,23 +144,15 @@ def nettoie_donnees(info_joueur, collects):
     #return data_joueur,data_team, data_ranked_activities, data_champ_played_most, data_champions
     return data_all
 
-"""def interactions_mongodb(data_joueur, data_team, data_ranked_activities, data_champ_played_most, data_champions): # à comprendre
-    Joueurs.insert_one(data_joueur)
-    Ranked.insert_one(data_ranked_activities)
-
-    if data_champ_played_most is not None:
-        MostChampPlayed.insert_one(data_champ_played_most)
-
-    Champions.insert_many(data_champions)
-
-    if data_joueur.get("team_id") is not None:
-        Teams.insert_one(data_team)"""
 def interactions_mongodb(data_all, collects):
     for collection, data in zip(collects, data_all):
         if data is not None:
             if collection.name == "Champions":
+                #data = [update_document_id(doc) for doc in data]
                 collection.bulk_write([pymongo.InsertOne(doc) for doc in data])
             else:
+                #if collection.name == "Teams":
+                    #data = update_document_id(data)
                 collection.insert_one(data)
 
 def main():
