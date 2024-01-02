@@ -4,7 +4,15 @@ from data_fct import main
 
 class OpggSpider(scrapy.Spider):
     name = "opgg_scraper"
-    start_urls = []
+    #start_urls = []
+    start_urls=["https://www.op.gg/summoners/euw/NPC Kerina-Coach",
+"https://www.op.gg/summoners/euw/NPC Honthagr-01530",
+"https://www.op.gg/summoners/euw/NPC FoxSilver-NPC",
+"https://www.op.gg/summoners/euw/NPC Reintack-EUW",
+"https://www.op.gg/summoners/euw/NPC bebe-NPC",
+"https://www.op.gg/summoners/euw/NPC Azaba-EUW",
+"https://www.op.gg/summoners/euw/NPC Kog Mawtivé-EUW",
+"https://www.op.gg/summoners/euw/NPC Yato-EUW"]
 
     def set_start_url(self, url):
         # Ajoutez l'URL spécifiée à la liste des start_urls

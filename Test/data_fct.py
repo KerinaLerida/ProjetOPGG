@@ -1,18 +1,12 @@
 import json
 from pymongo import MongoClient,errors
 import pymongo
-import logging
 
-"""# Connexion à la base de données MongoDB
-client = MongoClient('mongodb://localhost:27017/')
-db = client['TestScraping']
-
-# Initialisation des collections
-Joueurs = db["Joueurs"]
-Champions = db["Champions"]
-Ranked = db["Ranked"]
-MostChampPlayed = db['MostChampPlayed']
-Teams = db["Teams"]"""
+def regions_management(Regions):
+    if Regions.count_documents({}) == 0:
+        with open('regions.json', 'r', encoding='utf-8') as json_file:
+            data = json.load(json_file)
+            Regions.bulk_write([pymongo.InsertOne(doc) for doc in data])
 
 def connect_to_mongodb():
     try:
@@ -26,6 +20,9 @@ def connect_to_mongodb():
         Ranked = db["Ranked"]
         MostChampPlayed = db['MostChampPlayed']
         Teams = db["Teams"]
+        Regions=db["Regions"]
+
+        regions_management(Regions)
 
         return client, [Joueurs, Teams, Ranked, MostChampPlayed, Champions]
     except errors.ConnectionFailure as e:
@@ -42,21 +39,26 @@ def disconnect_from_mongodb(client):
 
 def summoner_id_exist(summoner_id,collects):
     Joueurs=collects[0]
-    return Joueurs.find_one({"summoner_id": summoner_id}) is not None
+    return Joueurs.find_one({"_id": summoner_id}) is not None
 
-def add_new_doc(collection,data_up,id_search):
-    existant_ids = [document[id_search] for document in collection.find()]
-    new_docs = [item for item in data_up if item[id_search] not in existant_ids]
+def add_new_doc(collection, data_up, id_search):
+    for doc in data_up:
+        query = {id_search: doc[id_search]}
+        update = {"$set": doc}
+        result = collection.update_one(query, update, upsert=True)
 
-    if new_docs:
-        collection.insert_many(new_docs)
+        if result.matched_count > 0:
+            print(f"Le document pour {id_search} {doc[id_search]} a été mis à jour dans la collection {collection.name}.")
+        elif result.upserted_id is not None:
+            print(f"Le document pour {id_search} {doc[id_search]} a été ajouté dans la collection {collection.name}.")
+
 def maj_champions(collection,data_up,id_search):
     if collection.count_documents({}) != len(data_up):
         add_new_doc(collection, data_up,id_search)
         print(f"Les champions dans la collection {collection.name} a été mis à jour.")
+
 def maj_data(collection, data_up, id_search): # optimiser
     if collection.name == "Champions" :
-        maj_champions(collection, data_up,id_search)
         return
 
     for key, value in data_up.items():
@@ -68,11 +70,11 @@ def maj_data(collection, data_up, id_search): # optimiser
                     existing_document[key] = value
 
             collection.update_one({id_search: value}, {"$set": existing_document})
-            print(f"Les informations pour {id_search} {value} dans la collection {collection.name} ont été mises à jour.")
+            print(f"Les informations pour {id_search} dans la collection {collection.name} ont été mises à jour.")
             return
 
     collection.insert_one(data_up)
-    print(f"Le document pour {id_search} {data_up[id_search]} a été ajouté à la collection {collection.name}.")
+    print(f"Le document pour {id_search} a été ajouté à la collection {collection.name}.")
 
 def rename_first_key(dictionary):
     if dictionary:
@@ -80,8 +82,11 @@ def rename_first_key(dictionary):
         dictionary["_id"] = dictionary.pop(old_key)
     return dictionary
 
-def nettoie_donnees(info_joueur, collects):
+def nettoie_donnees(selected_data, collects):
+    info_joueur=selected_data.get("data", {})
+
     # ************** Nettoyage des Données **************
+    region_id=selected_data.get("region")
     summoner_id = info_joueur.get("summoner_id")
     rank = info_joueur["ladder_rank"].get("rank")
     total = info_joueur["ladder_rank"].get("total")
@@ -92,15 +97,19 @@ def nettoie_donnees(info_joueur, collects):
         pourcentage_rank_total = None
 
     if info_joueur.get("team_info") is not None:
-        team_id = info_joueur["team_info"].get("team_id")
-        authority=info_joueur["team_info"].get("authority")
-        data_team = info_joueur["team_info"].get("team")
+        info_team=info_joueur["team_info"]
+        team_id = info_team.get("team_id")
+        authority=info_team.get("authority")
+        nickname=info_team.get("nickname")
+        data_team =info_team.get("team")
         rename_first_key(data_team)
     else:
         team_id = None
         data_team=None
+        authority=None
+        nickname=None
 
-    data_joueur = { # CF PHOTO rajouter la region !!! initialiser la table des regions et mettre d'id dans region_id exemple euw
+    data_joueur = {
         "_id": summoner_id,
         "game_name": info_joueur.get("game_name"),
         "tagline": info_joueur.get("tagline"),
@@ -108,7 +117,9 @@ def nettoie_donnees(info_joueur, collects):
         "ladder_rank": pourcentage_rank_total,
         "profile_image_url": info_joueur.get("profile_image_url"),
         "team_id": team_id,
-        "authority":authority
+        "authority":authority,
+        "nickname":nickname,
+        "region_id":region_id
     }
 
     data_ranked_activities = {
@@ -129,47 +140,39 @@ def nettoie_donnees(info_joueur, collects):
     if data_champions is not None:
         for data_champ in data_champions:
             rename_first_key(data_champ)
+        maj_champions(collects[-1], data_champions, "_id")
 
-    #collects=[Joueurs, Teams, Ranked, MostChampPlayed, Champions]
     data_all = [data_joueur, data_team, data_ranked_activities, data_champ_played_most, data_champions]
-    #ids=["_id", "id", "summoner_id", "summoner_id","id"]
     ids = ["_id", "_id", "player_id", "player_id", "_id"]
 
     if summoner_id_exist(summoner_id,collects):
         print(f"Le summoner_id {summoner_id} existe déjà dans la base de données.")
         for collection, data, id_search in zip(collects,data_all,ids):
-            maj_data(collection, data, id_search)
+            if data is not None:
+                maj_data(collection, data, id_search)
         return None
 
-    #return data_joueur,data_team, data_ranked_activities, data_champ_played_most, data_champions
     return data_all
 
 def interactions_mongodb(data_all, collects):
     for collection, data in zip(collects, data_all):
         if data is not None:
             if collection.name == "Champions":
-                #data = [update_document_id(doc) for doc in data]
                 collection.bulk_write([pymongo.InsertOne(doc) for doc in data])
             else:
-                #if collection.name == "Teams":
-                    #data = update_document_id(data)
+                print(f"{collection}")
                 collection.insert_one(data)
 
 def main():
-    #collects = db.list_collection_names()
     client, collects=connect_to_mongodb()
     with open('output.json', 'r', encoding='utf-8') as json_file:
         data = json.load(json_file)
-        info_joueur = data.get("props", {}).get("pageProps", {}).get("data", {})
+        selected_data=data.get("props", {}).get("pageProps", {})
 
         # Nettoyage des données
-        result = nettoie_donnees(info_joueur,collects)
+        result = nettoie_donnees(selected_data, collects)
 
         if result is not None:
-            #data_joueur,data_team, data_ranked_activities, data_champ_played_most, data_champions=result
-
-            # Intéractions avec la BDD MongoDB
-            #interactions_mongodb(data_joueur, data_team, data_ranked_activities, data_champ_played_most, data_champions)
             interactions_mongodb(result, collects)
 
     disconnect_from_mongodb(client)
