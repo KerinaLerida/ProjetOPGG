@@ -111,11 +111,15 @@ first_page_content = html.Div(children=[
 
     html.Div(id='player-info', children=[], style={'margin-bottom': '20px','textAlign': 'left'}),
 
+    html.Div(html.I(id='output-message', children=[], style={'margin-bottom': '10px','textAlign': 'left'})),
+
+    dcc.Graph(id='ladder-rank-histogram'),
+
     html.Footer(children=[
         html.Div([
             html.Img(src=app.get_asset_url('faker.gif'), style={'width': '120px', 'height': '68px'}),
             html.P('"My personality is that I usually just say what needs to be said."'),
-        ], style={'display': 'flex', 'align-items': 'center', 'justify-content': 'center','margin-bottom': '10px'}),
+        ], style={'display': 'flex', 'align-items': 'center', 'justify-content': 'center','margin-bottom': '10px', 'margin-top': '20px'}),
         dcc.Link('Champions - A comprehensive roster of all champions', href='/dashboard/page2', style={'margin-bottom': '20px'}),
         html.P("© 2024 - All rights reserved. By Keren COUTON & Matthieu CONSTANTIN"),
     ])
@@ -132,7 +136,7 @@ second_page_content = html.Div([
         html.Div([
             html.Img(src=app.get_asset_url('faker.gif'), style={'width': '120px', 'height': '68px'}),
             html.P('"My personality is that I usually just say what needs to be said."'),
-        ], style={'display': 'flex', 'align-items': 'center', 'justify-content': 'center','margin-bottom': '10px'}),
+        ], style={'display': 'flex', 'align-items': 'center', 'justify-content': 'center','margin-bottom': '10px', 'margin-top': '20px'}),
         dcc.Link('Back - Return to dashboard', href='/dashboard/page1', style={'margin-bottom': '20px'}),
         html.P("© 2024 - All rights reserved. By Keren COUTON & Matthieu CONSTANTIN"),
     ]),
@@ -170,11 +174,58 @@ def update_output(n_clicks, value, region):
         if region is not None:
             gamename, tag = value.split('#')
             player_info_layout = get_player_info(gamename, tag)
-            output_text=f'Région sélectionnée: {region}, Gamename: {gamename}, Tag: {tag}'
+            output_text=f'Region selected: {region}, Gamename: {gamename}, Tag: {tag}'
             return output_text,player_info_layout
         else:
-            return 'Veuillez sélectionner une région.',None
+            return 'Please select a region.',None
     else: return None, None
+
+
+
+@app.callback(
+    [Output('ladder-rank-histogram', 'figure'),
+     Output('output-message', 'children')],
+    [Input('dropdown-region', 'value')]
+)
+def update_histogram(selected_region):
+    if selected_region is not None:
+        players_in_region = Joueurs.find({'region_id': selected_region})
+        df = pd.DataFrame(players_in_region)
+
+        if not df.empty:  # Vérifier si le DataFrame n'est pas vide
+            fig = px.histogram(df, x='ladder_rank', nbins=20, title='Ladder Rank Distribution',
+                               labels={'ladder_rank': 'Ladder Rank'},
+                               color_discrete_sequence=['#1E90FF'])
+            fig.update_layout(
+                annotations=[
+                    dict(
+                        text='This histogram displays the distribution of ladder ranks. The lower the ladder rank, the better the players it represents.',
+                        showarrow=False,
+                        xref='paper',
+                        yref='paper',
+                        x=0,
+                        y=1,
+                        align='left',
+                        font=dict(size=10)
+                    )
+                ]
+            )
+            return fig, ''  # Aucun message texte à afficher
+        else:
+            return None, "No players found for this region in the website's database at the moment."
+    else:
+        return None, 'Select a region.'
+
+@app.callback(
+    Output('ladder-rank-histogram', 'style'),
+    [Input('ladder-rank-histogram', 'figure')]
+)
+def hide_graph(figure):
+    # Masquer le graphique si la figure est None
+    if figure is None:
+        return {'display': 'none'}
+    else:
+        return {'display': 'block'}
 
 if __name__ == '__main__':
     app.run_server(debug=True)
