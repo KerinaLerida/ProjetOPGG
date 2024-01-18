@@ -41,7 +41,7 @@ def summoner_id_exist(summoner_id,collects):
     Joueurs=collects[0]
     return Joueurs.find_one({"_id": summoner_id}) is not None
 
-def add_new_doc(collection, data_up, id_search):
+"""def add_new_doc(collection, data_up, id_search):
     for doc in data_up:
         query = {id_search: doc[id_search]}
         update = {"$set": doc}
@@ -56,8 +56,23 @@ def maj_champions(collection,data_up,id_search):
     if collection.count_documents({}) != len(data_up):
         add_new_doc(collection, data_up,id_search)
         print(f"Les champions dans la collection {collection.name} a été mis à jour.")
+"""
+def maj_champions(collection, data_up, id_search):
+    # Récupère les id des champions actuels dans la collection
+    current_champion_ids = set(collection.distinct(id_search))
 
-def maj_data(collection, data_up, id_search): # optimiser
+    # Filtre les nouveaux champions qui ne sont pas encore dans la collection
+    new_champions = [doc for doc in data_up if doc[id_search] not in current_champion_ids]
+
+    if new_champions:
+        bulk_operations = [pymongo.UpdateOne({"_id": doc[id_search]}, {"$set": doc}, upsert=True) for doc in new_champions]
+        collection.bulk_write(bulk_operations)
+
+        print(f"Les champions dans la collection {collection.name} ont été mis à jour.")
+    else:
+        print(f"Aucun nouveau champion à mettre à jour dans la collection {collection.name}.")
+
+"""def maj_data(collection, data_up, id_search): # optimiser
     if collection.name == "Champions" :
         return
 
@@ -75,12 +90,29 @@ def maj_data(collection, data_up, id_search): # optimiser
 
     collection.insert_one(data_up)
     print(f"Le document pour {id_search} a été ajouté à la collection {collection.name}.")
+"""
+def maj_data(collection, data_up, id_search):
+    existing_document = collection.find_one({id_search: data_up[id_search]})
 
-def rename_first_key(dictionary):
-    if dictionary:
-        old_key = next(iter(dictionary))
-        dictionary["_id"] = dictionary.pop(old_key)
-    return dictionary
+    if existing_document:
+        # Le document existe déjà, mettez à jour les champs existants
+        for key, value in data_up.items():
+            if key not in existing_document or existing_document[key] != value:
+                existing_document[key] = value
+
+        collection.update_one({id_search: data_up[id_search]}, {"$set": existing_document})
+        print(f"Les informations pour {id_search} dans la collection {collection.name} ont été mises à jour.")
+    else:
+        # Le document n'existe pas, ajoutez-le
+        collection.insert_one(data_up)
+        print(f"Le document pour {id_search} a été ajouté à la collection {collection.name}.")
+
+def rename_first_key_list(dictionary_list):
+    for dictionary in dictionary_list:
+        if dictionary:
+            old_key = next(iter(dictionary))
+            dictionary["_id"] = dictionary.pop(old_key)
+    return dictionary_list
 
 def nettoie_donnees(selected_data, collects):
     info_joueur=selected_data.get("data", {})
@@ -88,13 +120,13 @@ def nettoie_donnees(selected_data, collects):
     # ************** Nettoyage des Données **************
     region_id=selected_data.get("region")
     summoner_id = info_joueur.get("summoner_id")
-    rank = info_joueur["ladder_rank"].get("rank")
-    total = info_joueur["ladder_rank"].get("total")
 
-    if rank is not None and total is not None:
+    if(info_joueur.get("ladder_rank") is not None):
+        rank = info_joueur["ladder_rank"].get("rank")
+        total = info_joueur["ladder_rank"].get("total")
         pourcentage_rank_total = (rank / total) * 100
     else:
-        pourcentage_rank_total = None
+        pourcentage_rank_total = "Unranked"
 
     if info_joueur.get("team_info") is not None:
         info_team=info_joueur["team_info"]
@@ -102,7 +134,7 @@ def nettoie_donnees(selected_data, collects):
         authority=info_team.get("authority")
         nickname=info_team.get("nickname")
         data_team =info_team.get("team")
-        rename_first_key(data_team)
+        rename_first_key_list([data_team])
     else:
         team_id = None
         data_team=None
@@ -138,15 +170,15 @@ def nettoie_donnees(selected_data, collects):
 
     data_champions = info_joueur.get("champions")
     if data_champions is not None:
-        for data_champ in data_champions:
-            rename_first_key(data_champ)
+        data_champions = rename_first_key_list(data_champions)
         maj_champions(collects[-1], data_champions, "_id")
 
-    data_all = [data_joueur, data_team, data_ranked_activities, data_champ_played_most, data_champions]
+    data_all = [data_joueur, data_team, data_ranked_activities, data_champ_played_most, None]
     ids = ["_id", "_id", "player_id", "player_id", "_id"]
 
     if summoner_id_exist(summoner_id,collects):
-        print(f"Le summoner_id {summoner_id} existe déjà dans la base de données.")
+        name=info_joueur.get("game_name")
+        print(f"Le summoner_id {name} existe déjà dans la base de données.")
         for collection, data, id_search in zip(collects,data_all,ids):
             if data is not None:
                 maj_data(collection, data, id_search)
@@ -156,12 +188,9 @@ def nettoie_donnees(selected_data, collects):
 
 def interactions_mongodb(data_all, collects):
     for collection, data in zip(collects, data_all):
-        if data is not None:
-            if collection.name == "Champions":
-                collection.bulk_write([pymongo.InsertOne(doc) for doc in data])
-            else:
-                print(f"{collection}")
-                collection.insert_one(data)
+        if data is not None and collection.name!="Champions":
+            print(f"{collection}")
+            collection.insert_one(data)
 
 def main():
     client, collects=connect_to_mongodb()

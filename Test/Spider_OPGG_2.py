@@ -12,7 +12,9 @@ class OpggSpider(scrapy.Spider):
 "https://www.op.gg/summoners/euw/NPC bebe-NPC",
 "https://www.op.gg/summoners/euw/NPC Azaba-EUW",
 "https://www.op.gg/summoners/euw/NPC Kog Mawtivé-EUW",
-"https://www.op.gg/summoners/euw/NPC Yato-EUW"]
+"https://www.op.gg/summoners/euw/NPC Yato-EUW",
+"https://www.op.gg/summoners/euw/Caps-45555",
+"https://www.op.gg/summoners/kr/Hide on bush-KR1"]
 
     def set_start_url(self, url):
         # Ajoutez l'URL spécifiée à la liste des start_urls
