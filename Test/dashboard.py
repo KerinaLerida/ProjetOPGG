@@ -84,20 +84,36 @@ def generate_esport_map():
     df_regions = pd.DataFrame(list(Regions.find({"_id": {"$in": distinct_regions}}, {"_id": 1, "countries": 1, "name": 1})))
 
     # Agrégation par région des valeurs de ladder_rank
-    df_aggregated = df_players.groupby('region_id', as_index=False).agg({'ladder_rank': 'mean'})
+    df_aggregated = df_players.groupby('region_id', as_index=False).agg({'ladder_rank': 'mean', 'nickname': lambda x: ', '.join(x)})
 
     # Fusionner df_aggregated avec df_regions pour obtenir les pays associés à chaque région
     df_merged = pd.merge(df_aggregated, df_regions, left_on='region_id', right_on='_id', how='left')
 
+    c=[]
+    v=[]
+    t=[]
+    n=[]
+    for _,ligne in df_merged.iterrows():
+        if ligne['countries'] is not None:
+            for country in ligne['countries']:
+                c.append(country)
+                v.append(ligne['ladder_rank'])
+                t.append(ligne['name'])
+                n.append(ligne['nickname'])
+
+    df_map = pd.DataFrame({'country': c, 'value': v, 'region_name': t, 'nicknames': n})
+    df_map = df_map.dropna(subset=['value'])
+
     # Création de la carte choropleth
     fig = px.choropleth(
-        df_merged,
-        geojson=df_merged['countries'],
-        locations=df_merged['region_id'],
-        featureidkey="properties.NAME",  # Assurez-vous que la clé correspond à la propriété du pays dans le GeoJSON
-        color='ladder_rank',
+        df_map,
+        locations='country',
+        locationmode='country names',
+        color='value',
+        title="Moyenne des Ladder Rank par serveur qu'en fonction des Joueurs PRO",
         color_continuous_scale="Plasma",
-        range_color=[df_merged['ladder_rank'].min(), df_merged['ladder_rank'].max()],
+        hover_data={'country': True, 'value': True, 'region_name': True, 'nicknames': True},
+        range_color=[df_map['value'].min(), df_map['value'].max()],
         labels={'ladder_rank': 'Moyenne Ladder Rank'},
         template='plotly_dark',
     )
@@ -118,12 +134,13 @@ def generate_esport_map():
         geo=dict(
             showland=True,
             showcoastlines=True,
-            landcolor='rgb(217, 217, 217)',
+            landcolor='rgb(56, 111, 72)',
             center=dict(lon=-0, lat=0),
             projection_scale=1,
         ),
         height=500
     )
+    fig.update_geos(fitbounds="locations", visible=False)
 
     return fig
 
@@ -297,10 +314,11 @@ def hide_graph(figure):
     else:
         return {'display': 'block'}
 
+
 @app.callback([Output('esport-map', 'figure'),
                Output('update-info', 'children')],
-              [Input('update-button', 'n_clicks')],
-              [State('update-button', 'ts')]
+              [Input('esport-map-button', 'n_clicks')],
+              [State('esport-map-button', 'ts')]
               )
 def update_esport_map(n_clicks, ts):
     global last_click_time
@@ -327,6 +345,8 @@ def update_esport_map(n_clicks, ts):
     # Si le bouton n'est pas encore cliqué, affichez la carte initiale
     else:
         return generate_esport_map(), ''
+
+    #return generate_esport_map(), ''
 
 if __name__ == '__main__':
     app.run_server(debug=True)
