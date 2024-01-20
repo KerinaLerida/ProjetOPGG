@@ -55,4 +55,3 @@ class OpggSpider(scrapy.Spider):
             except json.JSONDecodeError as e:
                 self.log(f"Failed to decode JSON: {e}")
 
-
