@@ -50,7 +50,7 @@ class OpggSpider(scrapy.Spider):
                 #self.log(json_data)
 
                 # Save the JSON data to a file (e.g., output.json)
-                with open('output.json', 'w', encoding='utf-8') as json_file:
+                with open('../opgg_project/output.json', 'w', encoding='utf-8') as json_file:
                     json.dump(json_data, json_file, ensure_ascii=False, indent=2)
             except json.JSONDecodeError as e:
                 self.log(f"Failed to decode JSON: {e}")
