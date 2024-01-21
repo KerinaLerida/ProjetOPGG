@@ -1,11 +1,16 @@
+import multiprocessing
+
 import dash_bootstrap_components as dbc
 from dash import html, dcc, Output, Input, dash, State
 import pandas as pd
 import plotly.express as px
 import time
 from pymongo import MongoClient
+from scrapy.crawler import CrawlerProcess
+from scrapy.utils.project import get_project_settings
+
 from Scrapy.crawler.crawler.spiders.opgg_project import OpggSpider
-import re
+
 
 last_click_time=0
 
@@ -25,6 +30,18 @@ Regions=db["Regions"]
 
 regions_data = Regions.find({}, {'_id': 1, 'name': 1})
 regions_options = [{'label': region['name'], 'value': region['_id']} for region in regions_data]
+
+def run_crawler(new_url):
+    # Configurer les paramètres du projet Scrapy
+    settings = get_project_settings()
+    process = CrawlerProcess(settings)
+
+    # Ajouter le Spider à la configuration du processus
+    process.crawl(OpggSpider, start_urls=[new_url])
+
+    # Démarrer le processus (bloquant jusqu'à ce que le Spider ait terminé)
+    process.start()
+    process.stop()
 
 def get_all_champions():
     champions_data = Champions.find({})
@@ -258,9 +275,14 @@ def update_output(n_clicks, value, region):
             gamename, tag = value.split('#')
             output_text=f'Region selected: {region} | Gamename: {gamename} | Tag: {tag}'
             new_url = f"https://www.op.gg/summoners/{region}/{gamename.replace(' ', '-')}-{tag}"
-            spider = OpggSpider()
-            request=next(spider.start_requests_for_new_url(new_url))
-            print(f'New URL: {new_url} | Request: {request.url}')
+
+            #spider = OpggSpider()
+            #request=next(spider.start_requests_for_new_url(new_url))
+
+            process=multiprocessing.Process(target=run_crawler, args=(new_url,))
+            process.start()
+            process.join()
+
             player_info_layout = get_player_info(gamename, tag)
             print(output_text, player_info_layout)
             return output_text,player_info_layout

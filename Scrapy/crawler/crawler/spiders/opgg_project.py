@@ -44,8 +44,10 @@ class OpggSpider(scrapy.Spider):
         yield self.system_request(new_url)
 
     def parse(self, response):
+
         data_content = response.css('#__NEXT_DATA__::text').get()
         self.log(f"parsing {response.url})")
+        """
         if data_content:
             try:
                 json_data = json.loads(data_content)
@@ -53,6 +55,16 @@ class OpggSpider(scrapy.Spider):
                     json.dump(json_data, json_file, ensure_ascii=False, indent=2)
                 main()
             except json.JSONDecodeError as e:
+                self.log(f"Failed to decode JSON: {e}")"""
+
+        if data_content:
+            try:
+                json_data = json.loads(data_content)
+                main(json_data)  # Passer json_data à la fonction main dans data_fct.py
+            except json.JSONDecodeError as e:
                 self.log(f"Failed to decode JSON: {e}")
+
+
+
 
 
