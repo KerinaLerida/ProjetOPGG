@@ -1,4 +1,10 @@
-FROM ubuntu:latest
-LABEL authors="keren"
+# Utiliser l'image officielle MongoDB
+FROM mongo:latest
 
-ENTRYPOINT ["top", "-b"]
+LABEL authors="keren couton & matthieu constantin"
+
+# Exposer le port par défaut de MongoDB
+EXPOSE 27017
+
+# Commande pour démarrer mongod avec bind_ip_all
+CMD ["mongod", "--bind_ip_all"]
