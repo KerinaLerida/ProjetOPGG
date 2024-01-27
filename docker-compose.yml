@@ -10,7 +10,6 @@ services:
       - ./mongodb_data:/data/db
     command: ["mongod", "--bind_ip_all"]
 
-#PAS SUR :
   scrapy:
     build:
       context: ./Scrapy
