@@ -4,7 +4,7 @@ import pymongo
 
 def regions_management(Regions):
     if Regions.count_documents({}) == 0:
-        with open('../../../../regions.json', 'r', encoding='utf-8') as json_file:
+        with open('regions.json', 'r', encoding='utf-8') as json_file:
             data = json.load(json_file)
             Regions.bulk_write([pymongo.InsertOne(doc) for doc in data])
 
