@@ -61,6 +61,24 @@ def get_all_champions():
 
     return champions_content
 
+def get_all_players_info():
+    players_data = Joueurs.find({})
+    players_content = []
+
+    for player in players_data:
+        player_id = str(player['_id'])
+        player_name = player['game_name']
+        profile_image_url = player['profile_image_url']
+
+        player_card = html.Div([
+            html.Img(src=profile_image_url, style={'width': '100px', 'height': '100px', 'margin-right': '10px'}),
+            html.H6(children=player_name, style={'display': 'inline-block', 'margin-bottom': '10px'}),
+        ], key=player_id, style={'margin-bottom': '20px', 'margin-right': '20px', 'textAlign': 'left'})
+
+        players_content.append(player_card)
+
+    return players_content
+
 def get_player_info(game_name, tagline):
     player_info = Joueurs.find_one({'game_name': game_name, 'tagline': tagline})
 
@@ -243,10 +261,21 @@ second_page_content = html.Div([
 
 ])
 
+third_page_content = html.Div([
+    html.H3(children='Joueur', style={'margin-bottom': '15px', 'textAlign': 'center'}),
+    html.Div(get_all_players_info(), style={'display': 'flex', 'flexWrap': 'wrap', 'justifyContent': 'flex-start'}),
+
+    html.Footer(children=[
+        # Ajoutez le pied de page pour la nouvelle page
+        # ...
+    ]),
+])
+
 app.layout = html.Div([
     dcc.Location(id='url', refresh=False),
     dbc.Button("Dashboard", id='btn-dashboard', href='/dashboard/page1', style={'margin-right': '10px'}),
-    dbc.Button("Champions", id='btn-champions', href='/dashboard/page2'),
+    dbc.Button("Champions", id='btn-champions', href='/dashboard/page2', style={'margin-right': '10px'}),  # Ajoutez une marge à droite
+    dbc.Button("Joueur", id='btn-joueur', href='/dashboard/page3', style={'margin-right': '10px'}),  # Ajoutez une marge à droite
     html.Div(id='content'),
     html.Div(id='output-container'),
     html.Div(id='player-info')
@@ -258,6 +287,8 @@ app.layout = html.Div([
 def display_page(pathname):
     if pathname == '/dashboard/page2':
         return second_page_content
+    elif pathname == '/dashboard/page3':  # Ajoutez la logique pour afficher la nouvelle page
+        return third_page_content
     else:
         return first_page_content
 
@@ -370,6 +401,28 @@ def update_esport_map(n_clicks, ts):
     # Si le bouton n'est pas encore cliqué, affichez la carte initiale
     else:
         return generate_esport_map(), ''
+
+@app.callback(
+    Output('player-info-container', 'children'),
+    [Input('button', 'n_clicks')],
+    [State('input-box', 'value'),
+     State('dropdown-region', 'value')]
+)
+def update_player_info_page(n_clicks, value, region):
+    if n_clicks > 0:
+        if region is not None and value is not None and '#' in value:
+            gamename, tag = value.split('#')
+            player_info_layout = get_player_info(gamename, tag)
+            return player_info_layout
+        else:
+            return [html.Div(html.I("Please select a region and enter a valid Game Name + #Tag."))]
+    else:
+        return []
+
+
+
+
+
 
 
 if __name__ == '__main__':
