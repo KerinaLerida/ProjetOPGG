@@ -47,15 +47,6 @@ class OpggSpider(scrapy.Spider):
 
         data_content = response.css('#__NEXT_DATA__::text').get()
         self.log(f"parsing {response.url})")
-        """
-        if data_content:
-            try:
-                json_data = json.loads(data_content)
-                with open('output.json', 'w', encoding='utf-8') as json_file:
-                    json.dump(json_data, json_file, ensure_ascii=False, indent=2)
-                main()
-            except json.JSONDecodeError as e:
-                self.log(f"Failed to decode JSON: {e}")"""
 
         if data_content:
             try:

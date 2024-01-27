@@ -195,18 +195,6 @@ def interactions_mongodb(data_all, collects):
 def main(jspn_data):
     client, collects=connect_to_mongodb()
 
-    """
-    with open("output.json", 'r', encoding='utf-8') as json_file:
-        data = json.load(json_file)
-        selected_data=data.get("props", {}).get("pageProps", {})
-
-        # Nettoyage des données
-        result = nettoie_donnees(selected_data, collects)
-
-        if result is not None:
-            interactions_mongodb(result, collects)
-    """
-
     selected_data=jspn_data.get("props", {}).get("pageProps", {})
     result = nettoie_donnees(selected_data, collects)
 
