@@ -1,0 +1,35 @@
+version: '3'
+
+networks:
+    opgg-network:
+        driver: bridge
+
+services:
+  mongodb-opgg-conteneur:
+    build:
+      context: ./MongoDB
+    ports:
+        - "27017:27017"
+    volumes:
+        - ./MongoDB/data:/data/db
+    networks:
+      - opgg-network
+
+  scrapy-opgg-conteneur:
+    build:
+      context: ./Scrapy
+    depends_on:
+      - mongodb-opgg-conteneur
+    networks:
+      - opgg-network
+
+  application-opgg-conteneur:
+    build:
+      context: ./Application
+    ports:
+        - "8050:8050"
+    depends_on:
+      - scrapy-opgg-conteneur
+    networks:
+      - opgg-network
+    #command: [ "bash", "-c", "sleep 30 && python dashboard.py" ]

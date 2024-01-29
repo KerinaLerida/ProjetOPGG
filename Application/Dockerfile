@@ -1,14 +1,16 @@
 FROM python:3.9
-LABEL authors="keren couton & matthieu constantin"
+LABEL authors="keren couton, matthieu constantin"
 
 WORKDIR /ApplicationDocker
 
-COPY ./Application/requirements.txt .
+#COPY ./Application/requirements.txt .
+COPY ./requirements.txt .
 
 RUN pip install --no-cache-dir -r requirements.txt
 
 EXPOSE 8050
 
-COPY ./Application/ .
+#COPY ./Application/ .
+COPY . .
 
 CMD ["python", "dashboard.py"]

@@ -1,14 +1,14 @@
 FROM python:3.9
-LABEL authors="keren couton & matthieu constantin"
+LABEL authors="keren couton, matthieu constantin"
 
 WORKDIR /ScrapyDocker
 
-COPY ./Scrapy/requirements.txt .
+#COPY ./Scrapy/requirements.txt .
+COPY ./requirements.txt .
 
 RUN pip install --no-cache-dir -r requirements.txt
 
-EXPOSE 8000
-
-COPY ./Scrapy/ .
+#COPY ./Scrapy/ .
+COPY . .
 
 CMD ["scrapy", "crawl", "opgg"]

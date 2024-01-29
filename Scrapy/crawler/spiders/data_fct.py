@@ -129,22 +129,6 @@ def summoner_id_exist(summoner_id,collects):
     Joueurs=collects[0]
     return Joueurs.find_one({"_id": summoner_id}) is not None
 
-"""def add_new_doc(collection, data_up, id_search):
-    for doc in data_up:
-        query = {id_search: doc[id_search]}
-        update = {"$set": doc}
-        result = collection.update_one(query, update, upsert=True)
-
-        if result.matched_count > 0:
-            print(f"Le document pour {id_search} {doc[id_search]} a été mis à jour dans la collection {collection.name}.")
-        elif result.upserted_id is not None:
-            print(f"Le document pour {id_search} {doc[id_search]} a été ajouté dans la collection {collection.name}.")
-
-def maj_champions(collection,data_up,id_search):
-    if collection.count_documents({}) != len(data_up):
-        add_new_doc(collection, data_up,id_search)
-        print(f"Les champions dans la collection {collection.name} a été mis à jour.")
-"""
 def maj_champions(collection, data_up, id_search):
     # Récupère les id des champions actuels dans la collection
     current_champion_ids = set(collection.distinct(id_search))
@@ -160,25 +144,6 @@ def maj_champions(collection, data_up, id_search):
     else:
         print(f"Aucun nouveau champion à mettre à jour dans la collection {collection.name}.")
 
-"""def maj_data(collection, data_up, id_search): # optimiser
-    if collection.name == "Champions" :
-        return
-
-    for key, value in data_up.items():
-        existing_document = collection.find_one({id_search: value})
-
-        if existing_document:
-            for key, value in data_up.items():
-                if key not in existing_document or existing_document.get(key) != value:
-                    existing_document[key] = value
-
-            collection.update_one({id_search: value}, {"$set": existing_document})
-            print(f"Les informations pour {id_search} dans la collection {collection.name} ont été mises à jour.")
-            return
-
-    collection.insert_one(data_up)
-    print(f"Le document pour {id_search} a été ajouté à la collection {collection.name}.")
-"""
 def maj_data(collection, data_up, id_search):
     existing_document = collection.find_one({id_search: data_up[id_search]})
 

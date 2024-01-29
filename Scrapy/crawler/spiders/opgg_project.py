@@ -4,10 +4,13 @@ import requests
 
 from .data_fct import main
 
+with open("joueurs.txt", "r") as f:
+    joueurs = f.read().splitlines()
+
 class OpggSpider(scrapy.Spider):
     name = "opgg"
     allowed_domains = ['op.gg']
-    start_urls=["https://www.op.gg/summoners/euw/NPC Kerina-Coach",
+    """start_urls=["https://www.op.gg/summoners/euw/NPC Kerina-Coach",
 "https://www.op.gg/summoners/euw/NPC Honthagr-01530",
 "https://www.op.gg/summoners/euw/NPC FoxSilver-NPC",
 "https://www.op.gg/summoners/euw/NPC Reintack-EUW",
@@ -17,11 +20,8 @@ class OpggSpider(scrapy.Spider):
 "https://www.op.gg/summoners/euw/NPC Yato-EUW",
 "https://www.op.gg/summoners/euw/Caps-45555",
 "https://www.op.gg/summoners/kr/Hide on bush-KR1",
-"https://www.op.gg/summoners/euw/GoldenRetriever-NPC"]
-
-    custom_settings = {
-        'LOG_FILE': 'spider_logs.txt',  # Specify the log file name
-    }
+"https://www.op.gg/summoners/euw/GoldenRetriever-NPC"]"""
+    start_urls=joueurs
 
     def system_request(self, url):
         headers = {
@@ -41,18 +41,6 @@ class OpggSpider(scrapy.Spider):
             request = self.system_request(url)
             if request:
                 yield request
-
-    def continue_scraping(self):
-        api_url = "http://scrapy:8000/get_new_url"
-        response = requests.get(api_url)
-
-        if response.status_code == 200:
-            new_url = response.json().get("url")
-            if new_url:
-                request = self.system_request(new_url)
-                if request:
-                    self.log(f"Continuing scraping with new URL: {new_url}")
-                    self.crawler.engine.crawl(request, spider=self)
 
     def parse(self, response):
 

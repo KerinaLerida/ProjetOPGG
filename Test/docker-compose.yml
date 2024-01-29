@@ -17,7 +17,6 @@ services:
     build:
       context: ../Application
     ports:
-        - "8050:8050"
     depends_on:
       - mongodb
       - scrapy
