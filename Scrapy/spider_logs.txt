@@ -1,0 +1,1504 @@
+2024-01-27 18:09:41 [scrapy.addons] INFO: Enabled addons:
+[]
+2024-01-27 18:09:41 [asyncio] DEBUG: Using selector: EpollSelector
+2024-01-27 18:09:41 [scrapy.utils.log] DEBUG: Using reactor: twisted.internet.asyncioreactor.AsyncioSelectorReactor
+2024-01-27 18:09:41 [scrapy.utils.log] DEBUG: Using asyncio event loop: asyncio.unix_events._UnixSelectorEventLoop
+2024-01-27 18:09:41 [scrapy.extensions.telnet] INFO: Telnet Password: ef05cb3fc5a47279
+2024-01-27 18:09:41 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.memusage.MemoryUsage',
+ 'scrapy.extensions.logstats.LogStats']
+2024-01-27 18:09:41 [scrapy.crawler] INFO: Overridden settings:
+{'BOT_NAME': 'crawler',
+ 'FEED_EXPORT_ENCODING': 'utf-8',
+ 'LOG_FILE': 'spider_logs.txt',
+ 'NEWSPIDER_MODULE': 'crawler.spiders',
+ 'REQUEST_FINGERPRINTER_IMPLEMENTATION': '2.7',
+ 'ROBOTSTXT_OBEY': True,
+ 'SPIDER_MODULES': ['crawler.spiders'],
+ 'TWISTED_REACTOR': 'twisted.internet.asyncioreactor.AsyncioSelectorReactor'}
+2024-01-27 18:09:41 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.robotstxt.RobotsTxtMiddleware',
+ 'scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2024-01-27 18:09:41 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2024-01-27 18:09:41 [scrapy.middleware] INFO: Enabled item pipelines:
+[]
+2024-01-27 18:09:41 [scrapy.core.engine] INFO: Spider opened
+2024-01-27 18:09:41 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2024-01-27 18:09:41 [scrapy.extensions.telnet] INFO: Telnet console listening on 127.0.0.1:6023
+2024-01-27 18:09:41 [urllib3.connectionpool] DEBUG: Starting new HTTPS connection (1): www.op.gg:443
+2024-01-27 18:09:42 [urllib3.connectionpool] DEBUG: https://www.op.gg:443 "GET /summoners/euw/NPC%20Kerina-Coach HTTP/1.1" 200 None
+2024-01-27 18:09:42 [urllib3.connectionpool] DEBUG: Starting new HTTPS connection (1): www.op.gg:443
+2024-01-27 18:09:43 [urllib3.connectionpool] DEBUG: https://www.op.gg:443 "GET /summoners/euw/NPC%20Honthagr-01530 HTTP/1.1" 200 None
+2024-01-27 18:09:43 [urllib3.connectionpool] DEBUG: Starting new HTTPS connection (1): www.op.gg:443
+2024-01-27 18:09:44 [urllib3.connectionpool] DEBUG: https://www.op.gg:443 "GET /summoners/euw/NPC%20FoxSilver-NPC HTTP/1.1" 200 None
+2024-01-27 18:09:44 [urllib3.connectionpool] DEBUG: Starting new HTTPS connection (1): www.op.gg:443
+2024-01-27 18:09:45 [urllib3.connectionpool] DEBUG: https://www.op.gg:443 "GET /summoners/euw/NPC%20Reintack-EUW HTTP/1.1" 200 None
+2024-01-27 18:09:45 [urllib3.connectionpool] DEBUG: Starting new HTTPS connection (1): www.op.gg:443
+2024-01-27 18:09:46 [urllib3.connectionpool] DEBUG: https://www.op.gg:443 "GET /summoners/euw/NPC%20bebe-NPC HTTP/1.1" 200 None
+2024-01-27 18:09:46 [urllib3.connectionpool] DEBUG: Starting new HTTPS connection (1): www.op.gg:443
+2024-01-27 18:09:47 [urllib3.connectionpool] DEBUG: https://www.op.gg:443 "GET /summoners/euw/NPC%20Azaba-EUW HTTP/1.1" 200 None
+2024-01-27 18:09:47 [urllib3.connectionpool] DEBUG: Starting new HTTPS connection (1): www.op.gg:443
+2024-01-27 18:09:48 [urllib3.connectionpool] DEBUG: https://www.op.gg:443 "GET /summoners/euw/NPC%20Kog%20Mawtiv%C3%A9-EUW HTTP/1.1" 200 None
+2024-01-27 18:09:48 [urllib3.connectionpool] DEBUG: Starting new HTTPS connection (1): www.op.gg:443
+2024-01-27 18:09:49 [urllib3.connectionpool] DEBUG: https://www.op.gg:443 "GET /summoners/euw/NPC%20Yato-EUW HTTP/1.1" 200 None
+2024-01-27 18:09:49 [urllib3.connectionpool] DEBUG: Starting new HTTPS connection (1): www.op.gg:443
+2024-01-27 18:09:50 [urllib3.connectionpool] DEBUG: https://www.op.gg:443 "GET /summoners/euw/Caps-45555 HTTP/1.1" 200 None
+2024-01-27 18:09:50 [scrapy.core.engine] DEBUG: Crawled (403) <GET https://www.op.gg/robots.txt> (referer: None)
+2024-01-27 18:09:50 [protego] DEBUG: Rule at line 1 without any user agent to enforce it on.
+2024-01-27 18:09:50 [protego] DEBUG: Rule at line 3 without any user agent to enforce it on.
+2024-01-27 18:09:50 [protego] DEBUG: Rule at line 16 without any user agent to enforce it on.
+2024-01-27 18:09:50 [urllib3.connectionpool] DEBUG: Starting new HTTPS connection (1): www.op.gg:443
+2024-01-27 18:09:51 [urllib3.connectionpool] DEBUG: https://www.op.gg:443 "GET /summoners/kr/Hide%20on%20bush-KR1 HTTP/1.1" 200 None
+2024-01-27 18:09:52 [urllib3.connectionpool] DEBUG: Starting new HTTPS connection (1): www.op.gg:443
+2024-01-27 18:09:53 [urllib3.connectionpool] DEBUG: https://www.op.gg:443 "GET /summoners/euw/GoldenRetriever-NPC HTTP/1.1" 200 None
+2024-01-27 18:09:54 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://www.op.gg/summoners/euw/NPC%20Kerina-Coach> (referer: None)
+2024-01-27 18:09:54 [opgg] DEBUG: parsing https://www.op.gg/summoners/euw/NPC%20Kerina-Coach)
+2024-01-27 18:09:56 [scrapy.crawler] INFO: Received SIGTERM, shutting down gracefully. Send again to force 
+2024-01-27 20:28:04 [scrapy.addons] INFO: Enabled addons:
+[]
+2024-01-27 20:28:04 [asyncio] DEBUG: Using selector: EpollSelector
+2024-01-27 20:28:04 [scrapy.utils.log] DEBUG: Using reactor: twisted.internet.asyncioreactor.AsyncioSelectorReactor
+2024-01-27 20:28:04 [scrapy.utils.log] DEBUG: Using asyncio event loop: asyncio.unix_events._UnixSelectorEventLoop
+2024-01-27 20:28:04 [scrapy.extensions.telnet] INFO: Telnet Password: e0dc481f5f2231ed
+2024-01-27 20:28:04 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.memusage.MemoryUsage',
+ 'scrapy.extensions.logstats.LogStats']
+2024-01-27 20:28:04 [scrapy.crawler] INFO: Overridden settings:
+{'BOT_NAME': 'crawler',
+ 'FEED_EXPORT_ENCODING': 'utf-8',
+ 'LOG_FILE': 'spider_logs.txt',
+ 'NEWSPIDER_MODULE': 'crawler.spiders',
+ 'REQUEST_FINGERPRINTER_IMPLEMENTATION': '2.7',
+ 'ROBOTSTXT_OBEY': True,
+ 'SPIDER_MODULES': ['crawler.spiders'],
+ 'TWISTED_REACTOR': 'twisted.internet.asyncioreactor.AsyncioSelectorReactor'}
+2024-01-27 20:28:04 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.robotstxt.RobotsTxtMiddleware',
+ 'scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2024-01-27 20:28:04 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2024-01-27 20:28:04 [scrapy.middleware] INFO: Enabled item pipelines:
+[]
+2024-01-27 20:28:04 [scrapy.core.engine] INFO: Spider opened
+2024-01-27 20:28:04 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2024-01-27 20:28:04 [scrapy.extensions.telnet] INFO: Telnet console listening on 127.0.0.1:6023
+2024-01-27 20:28:04 [urllib3.connectionpool] DEBUG: Starting new HTTPS connection (1): www.op.gg:443
+2024-01-27 20:28:05 [urllib3.connectionpool] DEBUG: https://www.op.gg:443 "GET /summoners/euw/NPC%20Kerina-Coach HTTP/1.1" 200 None
+2024-01-27 20:28:05 [urllib3.connectionpool] DEBUG: Starting new HTTPS connection (1): www.op.gg:443
+2024-01-27 20:28:07 [urllib3.connectionpool] DEBUG: https://www.op.gg:443 "GET /summoners/euw/NPC%20Honthagr-01530 HTTP/1.1" 200 None
+2024-01-27 20:28:07 [urllib3.connectionpool] DEBUG: Starting new HTTPS connection (1): www.op.gg:443
+2024-01-27 20:28:08 [urllib3.connectionpool] DEBUG: https://www.op.gg:443 "GET /summoners/euw/NPC%20FoxSilver-NPC HTTP/1.1" 200 None
+2024-01-27 20:28:08 [urllib3.connectionpool] DEBUG: Starting new HTTPS connection (1): www.op.gg:443
+2024-01-27 20:28:09 [urllib3.connectionpool] DEBUG: https://www.op.gg:443 "GET /summoners/euw/NPC%20Reintack-EUW HTTP/1.1" 200 None
+2024-01-27 20:28:09 [urllib3.connectionpool] DEBUG: Starting new HTTPS connection (1): www.op.gg:443
+2024-01-27 20:28:10 [urllib3.connectionpool] DEBUG: https://www.op.gg:443 "GET /summoners/euw/NPC%20bebe-NPC HTTP/1.1" 200 None
+2024-01-27 20:28:10 [urllib3.connectionpool] DEBUG: Starting new HTTPS connection (1): www.op.gg:443
+2024-01-27 20:28:11 [urllib3.connectionpool] DEBUG: https://www.op.gg:443 "GET /summoners/euw/NPC%20Azaba-EUW HTTP/1.1" 200 None
+2024-01-27 20:28:11 [urllib3.connectionpool] DEBUG: Starting new HTTPS connection (1): www.op.gg:443
+2024-01-27 20:28:12 [urllib3.connectionpool] DEBUG: https://www.op.gg:443 "GET /summoners/euw/NPC%20Kog%20Mawtiv%C3%A9-EUW HTTP/1.1" 200 None
+2024-01-27 20:28:12 [urllib3.connectionpool] DEBUG: Starting new HTTPS connection (1): www.op.gg:443
+2024-01-27 20:28:13 [urllib3.connectionpool] DEBUG: https://www.op.gg:443 "GET /summoners/euw/NPC%20Yato-EUW HTTP/1.1" 200 None
+2024-01-27 20:28:14 [urllib3.connectionpool] DEBUG: Starting new HTTPS connection (1): www.op.gg:443
+2024-01-27 20:28:15 [urllib3.connectionpool] DEBUG: https://www.op.gg:443 "GET /summoners/euw/Caps-45555 HTTP/1.1" 200 None
+2024-01-27 20:28:15 [scrapy.core.engine] DEBUG: Crawled (403) <GET https://www.op.gg/robots.txt> (referer: None)
+2024-01-27 20:28:15 [protego] DEBUG: Rule at line 1 without any user agent to enforce it on.
+2024-01-27 20:28:15 [protego] DEBUG: Rule at line 3 without any user agent to enforce it on.
+2024-01-27 20:28:15 [protego] DEBUG: Rule at line 16 without any user agent to enforce it on.
+2024-01-27 20:28:15 [urllib3.connectionpool] DEBUG: Starting new HTTPS connection (1): www.op.gg:443
+2024-01-27 20:28:16 [urllib3.connectionpool] DEBUG: https://www.op.gg:443 "GET /summoners/kr/Hide%20on%20bush-KR1 HTTP/1.1" 200 None
+2024-01-27 20:28:16 [urllib3.connectionpool] DEBUG: Starting new HTTPS connection (1): www.op.gg:443
+2024-01-27 20:28:17 [urllib3.connectionpool] DEBUG: https://www.op.gg:443 "GET /summoners/euw/GoldenRetriever-NPC HTTP/1.1" 200 None
+2024-01-27 20:28:17 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://www.op.gg/summoners/euw/NPC%20Kerina-Coach> (referer: None)
+2024-01-27 20:28:17 [opgg] DEBUG: parsing https://www.op.gg/summoners/euw/NPC%20Kerina-Coach)
+2024-01-27 20:28:45 [scrapy.crawler] INFO: Received SIGTERM, shutting down gracefully. Send again to force 
+2024-01-27 20:28:47 [scrapy.core.scraper] ERROR: Spider error processing <GET https://www.op.gg/summoners/euw/NPC%20Kerina-Coach> (referer: None)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/twisted/internet/defer.py", line 892, in _runCallbacks
+    current.result = callback(  # type: ignore[misc]
+  File "/app/crawler/spiders/opgg_project.py", line 54, in parse
+    main(json_data)  # Passer json_data à la fonction main dans data_fct.py
+  File "/app/crawler/spiders/data_fct.py", line 196, in main
+    client, collects=connect_to_mongodb()
+  File "/app/crawler/spiders/data_fct.py", line 25, in connect_to_mongodb
+    regions_management(Regions)
+  File "/app/crawler/spiders/data_fct.py", line 6, in regions_management
+    if Regions.count_documents({}) == 0:
+  File "/usr/local/lib/python3.9/site-packages/pymongo/collection.py", line 1826, in count_documents
+    return self.__database.client._retryable_read(
+  File "/usr/local/lib/python3.9/site-packages/pymongo/mongo_client.py", line 1514, in _retryable_read
+    server = self._select_server(
+  File "/usr/local/lib/python3.9/site-packages/pymongo/mongo_client.py", line 1346, in _select_server
+    server = topology.select_server(server_selector)
+  File "/usr/local/lib/python3.9/site-packages/pymongo/topology.py", line 244, in select_server
+    return random.choice(self.select_servers(selector,
+  File "/usr/local/lib/python3.9/site-packages/pymongo/topology.py", line 202, in select_servers
+    server_descriptions = self._select_servers_loop(
+  File "/usr/local/lib/python3.9/site-packages/pymongo/topology.py", line 218, in _select_servers_loop
+    raise ServerSelectionTimeoutError(
+pymongo.errors.ServerSelectionTimeoutError: localhost:27017: [Errno 111] Connection refused, Timeout: 30s, Topology Description: <TopologyDescription id: 65b5676118e187ebdf9ab46d, topology_type: Single, servers: [<ServerDescription ('localhost', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('localhost:27017: [Errno 111] Connection refused')>]>
+2024-01-27 20:28:47 [scrapy.core.engine] INFO: Closing spider (shutdown)
+2024-01-27 20:28:48 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://www.op.gg/summoners/euw/Caps-45555> (referer: None)
+2024-01-27 20:28:48 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://www.op.gg/summoners/euw/NPC%20Honthagr-01530> (referer: None)
+2024-01-27 20:28:48 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://www.op.gg/summoners/euw/NPC%20Reintack-EUW> (referer: None)
+2024-01-27 20:28:48 [opgg] DEBUG: parsing https://www.op.gg/summoners/euw/Caps-45555)
+2024-01-27 20:30:48 [scrapy.addons] INFO: Enabled addons:
+[]
+2024-01-27 20:30:48 [asyncio] DEBUG: Using selector: EpollSelector
+2024-01-27 20:30:48 [scrapy.utils.log] DEBUG: Using reactor: twisted.internet.asyncioreactor.AsyncioSelectorReactor
+2024-01-27 20:30:48 [scrapy.utils.log] DEBUG: Using asyncio event loop: asyncio.unix_events._UnixSelectorEventLoop
+2024-01-27 20:30:48 [scrapy.extensions.telnet] INFO: Telnet Password: fde2bddc727db801
+2024-01-27 20:30:48 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.memusage.MemoryUsage',
+ 'scrapy.extensions.logstats.LogStats']
+2024-01-27 20:30:48 [scrapy.crawler] INFO: Overridden settings:
+{'BOT_NAME': 'crawler',
+ 'FEED_EXPORT_ENCODING': 'utf-8',
+ 'LOG_FILE': 'spider_logs.txt',
+ 'NEWSPIDER_MODULE': 'crawler.spiders',
+ 'REQUEST_FINGERPRINTER_IMPLEMENTATION': '2.7',
+ 'ROBOTSTXT_OBEY': True,
+ 'SPIDER_MODULES': ['crawler.spiders'],
+ 'TWISTED_REACTOR': 'twisted.internet.asyncioreactor.AsyncioSelectorReactor'}
+2024-01-27 20:30:49 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.robotstxt.RobotsTxtMiddleware',
+ 'scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2024-01-27 20:30:49 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2024-01-27 20:30:49 [scrapy.middleware] INFO: Enabled item pipelines:
+[]
+2024-01-27 20:30:49 [scrapy.core.engine] INFO: Spider opened
+2024-01-27 20:30:49 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2024-01-27 20:30:49 [scrapy.extensions.telnet] INFO: Telnet console listening on 127.0.0.1:6023
+2024-01-27 20:30:49 [urllib3.connectionpool] DEBUG: Starting new HTTPS connection (1): www.op.gg:443
+2024-01-27 20:30:50 [urllib3.connectionpool] DEBUG: https://www.op.gg:443 "GET /summoners/euw/NPC%20Kerina-Coach HTTP/1.1" 200 None
+2024-01-27 20:30:50 [urllib3.connectionpool] DEBUG: Starting new HTTPS connection (1): www.op.gg:443
+2024-01-27 20:30:51 [urllib3.connectionpool] DEBUG: https://www.op.gg:443 "GET /summoners/euw/NPC%20Honthagr-01530 HTTP/1.1" 200 None
+2024-01-27 20:30:51 [urllib3.connectionpool] DEBUG: Starting new HTTPS connection (1): www.op.gg:443
+2024-01-27 20:30:52 [urllib3.connectionpool] DEBUG: https://www.op.gg:443 "GET /summoners/euw/NPC%20FoxSilver-NPC HTTP/1.1" 200 None
+2024-01-27 20:30:53 [urllib3.connectionpool] DEBUG: Starting new HTTPS connection (1): www.op.gg:443
+2024-01-27 20:30:53 [urllib3.connectionpool] DEBUG: https://www.op.gg:443 "GET /summoners/euw/NPC%20Reintack-EUW HTTP/1.1" 200 None
+2024-01-27 20:30:54 [urllib3.connectionpool] DEBUG: Starting new HTTPS connection (1): www.op.gg:443
+2024-01-27 20:30:54 [urllib3.connectionpool] DEBUG: https://www.op.gg:443 "GET /summoners/euw/NPC%20bebe-NPC HTTP/1.1" 200 None
+2024-01-27 20:30:55 [urllib3.connectionpool] DEBUG: Starting new HTTPS connection (1): www.op.gg:443
+2024-01-27 20:30:56 [urllib3.connectionpool] DEBUG: https://www.op.gg:443 "GET /summoners/euw/NPC%20Azaba-EUW HTTP/1.1" 200 None
+2024-01-27 20:31:00 [urllib3.connectionpool] DEBUG: Starting new HTTPS connection (1): www.op.gg:443
+2024-01-27 20:31:03 [urllib3.connectionpool] DEBUG: https://www.op.gg:443 "GET /summoners/euw/NPC%20Kog%20Mawtiv%C3%A9-EUW HTTP/1.1" 200 None
+2024-01-27 20:31:03 [urllib3.connectionpool] DEBUG: Starting new HTTPS connection (1): www.op.gg:443
+2024-01-27 20:31:04 [urllib3.connectionpool] DEBUG: https://www.op.gg:443 "GET /summoners/euw/NPC%20Yato-EUW HTTP/1.1" 200 None
+2024-01-27 20:31:04 [urllib3.connectionpool] DEBUG: Starting new HTTPS connection (1): www.op.gg:443
+2024-01-27 20:31:05 [urllib3.connectionpool] DEBUG: https://www.op.gg:443 "GET /summoners/euw/Caps-45555 HTTP/1.1" 200 None
+2024-01-27 20:31:06 [scrapy.core.engine] DEBUG: Crawled (403) <GET https://www.op.gg/robots.txt> (referer: None)
+2024-01-27 20:31:06 [protego] DEBUG: Rule at line 1 without any user agent to enforce it on.
+2024-01-27 20:31:06 [protego] DEBUG: Rule at line 3 without any user agent to enforce it on.
+2024-01-27 20:31:06 [protego] DEBUG: Rule at line 16 without any user agent to enforce it on.
+2024-01-27 20:31:06 [urllib3.connectionpool] DEBUG: Starting new HTTPS connection (1): www.op.gg:443
+2024-01-27 20:31:06 [urllib3.connectionpool] DEBUG: https://www.op.gg:443 "GET /summoners/kr/Hide%20on%20bush-KR1 HTTP/1.1" 200 None
+2024-01-27 20:31:07 [urllib3.connectionpool] DEBUG: Starting new HTTPS connection (1): www.op.gg:443
+2024-01-27 20:31:07 [urllib3.connectionpool] DEBUG: https://www.op.gg:443 "GET /summoners/euw/GoldenRetriever-NPC HTTP/1.1" 200 None
+2024-01-27 20:31:08 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://www.op.gg/summoners/euw/NPC%20Kerina-Coach> (referer: None)
+2024-01-27 20:31:08 [opgg] DEBUG: parsing https://www.op.gg/summoners/euw/NPC%20Kerina-Coach)
+2024-01-27 20:31:37 [scrapy.crawler] INFO: Received SIGTERM, shutting down gracefully. Send again to force 
+2024-01-27 20:31:38 [scrapy.core.scraper] ERROR: Spider error processing <GET https://www.op.gg/summoners/euw/NPC%20Kerina-Coach> (referer: None)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/twisted/internet/defer.py", line 892, in _runCallbacks
+    current.result = callback(  # type: ignore[misc]
+  File "/app/crawler/spiders/opgg_project.py", line 54, in parse
+    main(json_data)  # Passer json_data à la fonction main dans data_fct.py
+  File "/app/crawler/spiders/data_fct.py", line 196, in main
+    client, collects=connect_to_mongodb()
+  File "/app/crawler/spiders/data_fct.py", line 25, in connect_to_mongodb
+    regions_management(Regions)
+  File "/app/crawler/spiders/data_fct.py", line 6, in regions_management
+    if Regions.count_documents({}) == 0:
+  File "/usr/local/lib/python3.9/site-packages/pymongo/collection.py", line 1826, in count_documents
+    return self.__database.client._retryable_read(
+  File "/usr/local/lib/python3.9/site-packages/pymongo/mongo_client.py", line 1514, in _retryable_read
+    server = self._select_server(
+  File "/usr/local/lib/python3.9/site-packages/pymongo/mongo_client.py", line 1346, in _select_server
+    server = topology.select_server(server_selector)
+  File "/usr/local/lib/python3.9/site-packages/pymongo/topology.py", line 244, in select_server
+    return random.choice(self.select_servers(selector,
+  File "/usr/local/lib/python3.9/site-packages/pymongo/topology.py", line 202, in select_servers
+    server_descriptions = self._select_servers_loop(
+  File "/usr/local/lib/python3.9/site-packages/pymongo/topology.py", line 218, in _select_servers_loop
+    raise ServerSelectionTimeoutError(
+pymongo.errors.ServerSelectionTimeoutError: localhost:27017: [Errno 111] Connection refused, Timeout: 30s, Topology Description: <TopologyDescription id: 65b5680c195da088a7c3ac69, topology_type: Single, servers: [<ServerDescription ('localhost', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('localhost:27017: [Errno 111] Connection refused')>]>
+2024-01-27 20:31:38 [scrapy.core.engine] INFO: Closing spider (shutdown)
+2024-01-27 20:31:38 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://www.op.gg/summoners/euw/Caps-45555> (referer: None)
+2024-01-27 20:31:38 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://www.op.gg/summoners/euw/NPC%20Honthagr-01530> (referer: None)
+2024-01-27 20:31:38 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://www.op.gg/summoners/euw/NPC%20Reintack-EUW> (referer: None)
+2024-01-27 20:31:39 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://www.op.gg/summoners/euw/NPC%20Yato-EUW> (referer: None)
+2024-01-27 20:31:39 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://www.op.gg/summoners/euw/NPC%20bebe-NPC> (referer: None)
+2024-01-27 20:31:39 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://www.op.gg/summoners/euw/NPC%20Azaba-EUW> (referer: None)
+2024-01-27 20:31:39 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://www.op.gg/summoners/euw/NPC%20FoxSilver-NPC> (referer: None)
+2024-01-27 20:31:39 [opgg] DEBUG: parsing https://www.op.gg/summoners/euw/Caps-45555)
+2024-01-27 20:40:38 [scrapy.addons] INFO: Enabled addons:
+[]
+2024-01-27 20:40:38 [asyncio] DEBUG: Using selector: EpollSelector
+2024-01-27 20:40:38 [scrapy.utils.log] DEBUG: Using reactor: twisted.internet.asyncioreactor.AsyncioSelectorReactor
+2024-01-27 20:40:38 [scrapy.utils.log] DEBUG: Using asyncio event loop: asyncio.unix_events._UnixSelectorEventLoop
+2024-01-27 20:40:38 [scrapy.extensions.telnet] INFO: Telnet Password: 2a0f176c97bf4b0f
+2024-01-27 20:40:38 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.memusage.MemoryUsage',
+ 'scrapy.extensions.logstats.LogStats']
+2024-01-27 20:40:38 [scrapy.crawler] INFO: Overridden settings:
+{'BOT_NAME': 'crawler',
+ 'FEED_EXPORT_ENCODING': 'utf-8',
+ 'LOG_FILE': 'spider_logs.txt',
+ 'NEWSPIDER_MODULE': 'crawler.spiders',
+ 'REQUEST_FINGERPRINTER_IMPLEMENTATION': '2.7',
+ 'ROBOTSTXT_OBEY': True,
+ 'SPIDER_MODULES': ['crawler.spiders'],
+ 'TWISTED_REACTOR': 'twisted.internet.asyncioreactor.AsyncioSelectorReactor'}
+2024-01-27 20:40:38 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.robotstxt.RobotsTxtMiddleware',
+ 'scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2024-01-27 20:40:38 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2024-01-27 20:40:38 [scrapy.middleware] INFO: Enabled item pipelines:
+[]
+2024-01-27 20:40:38 [scrapy.core.engine] INFO: Spider opened
+2024-01-27 20:40:38 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2024-01-27 20:40:38 [scrapy.extensions.telnet] INFO: Telnet console listening on 127.0.0.1:6023
+2024-01-27 20:40:38 [urllib3.connectionpool] DEBUG: Starting new HTTPS connection (1): www.op.gg:443
+2024-01-27 20:40:39 [urllib3.connectionpool] DEBUG: https://www.op.gg:443 "GET /summoners/euw/NPC%20Kerina-Coach HTTP/1.1" 200 None
+2024-01-27 20:40:39 [urllib3.connectionpool] DEBUG: Starting new HTTPS connection (1): www.op.gg:443
+2024-01-27 20:40:40 [urllib3.connectionpool] DEBUG: https://www.op.gg:443 "GET /summoners/euw/NPC%20Honthagr-01530 HTTP/1.1" 200 None
+2024-01-27 20:40:40 [urllib3.connectionpool] DEBUG: Starting new HTTPS connection (1): www.op.gg:443
+2024-01-27 20:40:41 [urllib3.connectionpool] DEBUG: https://www.op.gg:443 "GET /summoners/euw/NPC%20FoxSilver-NPC HTTP/1.1" 200 None
+2024-01-27 20:40:42 [urllib3.connectionpool] DEBUG: Starting new HTTPS connection (1): www.op.gg:443
+2024-01-27 20:40:42 [urllib3.connectionpool] DEBUG: https://www.op.gg:443 "GET /summoners/euw/NPC%20Reintack-EUW HTTP/1.1" 200 None
+2024-01-27 20:40:42 [urllib3.connectionpool] DEBUG: Starting new HTTPS connection (1): www.op.gg:443
+2024-01-27 20:40:43 [urllib3.connectionpool] DEBUG: https://www.op.gg:443 "GET /summoners/euw/NPC%20bebe-NPC HTTP/1.1" 200 None
+2024-01-27 20:40:43 [urllib3.connectionpool] DEBUG: Starting new HTTPS connection (1): www.op.gg:443
+2024-01-27 20:40:44 [urllib3.connectionpool] DEBUG: https://www.op.gg:443 "GET /summoners/euw/NPC%20Azaba-EUW HTTP/1.1" 200 None
+2024-01-27 20:40:44 [urllib3.connectionpool] DEBUG: Starting new HTTPS connection (1): www.op.gg:443
+2024-01-27 20:40:45 [urllib3.connectionpool] DEBUG: https://www.op.gg:443 "GET /summoners/euw/NPC%20Kog%20Mawtiv%C3%A9-EUW HTTP/1.1" 200 None
+2024-01-27 20:40:46 [urllib3.connectionpool] DEBUG: Starting new HTTPS connection (1): www.op.gg:443
+2024-01-27 20:40:47 [urllib3.connectionpool] DEBUG: https://www.op.gg:443 "GET /summoners/euw/NPC%20Yato-EUW HTTP/1.1" 200 None
+2024-01-27 20:40:47 [urllib3.connectionpool] DEBUG: Starting new HTTPS connection (1): www.op.gg:443
+2024-01-27 20:40:48 [urllib3.connectionpool] DEBUG: https://www.op.gg:443 "GET /summoners/euw/Caps-45555 HTTP/1.1" 200 None
+2024-01-27 20:40:48 [scrapy.core.engine] DEBUG: Crawled (403) <GET https://www.op.gg/robots.txt> (referer: None)
+2024-01-27 20:40:48 [protego] DEBUG: Rule at line 1 without any user agent to enforce it on.
+2024-01-27 20:40:48 [protego] DEBUG: Rule at line 3 without any user agent to enforce it on.
+2024-01-27 20:40:48 [protego] DEBUG: Rule at line 16 without any user agent to enforce it on.
+2024-01-27 20:40:48 [urllib3.connectionpool] DEBUG: Starting new HTTPS connection (1): www.op.gg:443
+2024-01-27 20:40:49 [urllib3.connectionpool] DEBUG: https://www.op.gg:443 "GET /summoners/kr/Hide%20on%20bush-KR1 HTTP/1.1" 200 None
+2024-01-27 20:40:49 [urllib3.connectionpool] DEBUG: Starting new HTTPS connection (1): www.op.gg:443
+2024-01-27 20:40:50 [urllib3.connectionpool] DEBUG: https://www.op.gg:443 "GET /summoners/euw/GoldenRetriever-NPC HTTP/1.1" 200 None
+2024-01-27 20:40:51 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://www.op.gg/summoners/euw/NPC%20Kerina-Coach> (referer: None)
+2024-01-27 20:40:51 [opgg] DEBUG: parsing https://www.op.gg/summoners/euw/NPC%20Kerina-Coach)
+2024-01-27 20:41:22 [scrapy.core.scraper] ERROR: Spider error processing <GET https://www.op.gg/summoners/euw/NPC%20Kerina-Coach> (referer: None)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/twisted/internet/defer.py", line 892, in _runCallbacks
+    current.result = callback(  # type: ignore[misc]
+  File "/app/crawler/spiders/opgg_project.py", line 54, in parse
+    main(json_data)  # Passer json_data à la fonction main dans data_fct.py
+  File "/app/crawler/spiders/data_fct.py", line 196, in main
+    client, collects=connect_to_mongodb()
+  File "/app/crawler/spiders/data_fct.py", line 25, in connect_to_mongodb
+    regions_management(Regions)
+  File "/app/crawler/spiders/data_fct.py", line 6, in regions_management
+    if Regions.count_documents({}) == 0:
+  File "/usr/local/lib/python3.9/site-packages/pymongo/collection.py", line 1826, in count_documents
+    return self.__database.client._retryable_read(
+  File "/usr/local/lib/python3.9/site-packages/pymongo/mongo_client.py", line 1514, in _retryable_read
+    server = self._select_server(
+  File "/usr/local/lib/python3.9/site-packages/pymongo/mongo_client.py", line 1346, in _select_server
+    server = topology.select_server(server_selector)
+  File "/usr/local/lib/python3.9/site-packages/pymongo/topology.py", line 244, in select_server
+    return random.choice(self.select_servers(selector,
+  File "/usr/local/lib/python3.9/site-packages/pymongo/topology.py", line 202, in select_servers
+    server_descriptions = self._select_servers_loop(
+  File "/usr/local/lib/python3.9/site-packages/pymongo/topology.py", line 218, in _select_servers_loop
+    raise ServerSelectionTimeoutError(
+pymongo.errors.ServerSelectionTimeoutError: localhost:27017: [Errno 111] Connection refused, Timeout: 30s, Topology Description: <TopologyDescription id: 65b56a54ec30eadd08d9f018, topology_type: Single, servers: [<ServerDescription ('localhost', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('localhost:27017: [Errno 111] Connection refused')>]>
+2024-01-27 20:41:22 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://www.op.gg/summoners/euw/Caps-45555> (referer: None)
+2024-01-27 20:41:22 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://www.op.gg/summoners/euw/NPC%20Yato-EUW> (referer: None)
+2024-01-27 20:41:22 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://www.op.gg/summoners/euw/NPC%20Reintack-EUW> (referer: None)
+2024-01-27 20:41:22 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://www.op.gg/summoners/euw/NPC%20Azaba-EUW> (referer: None)
+2024-01-27 20:41:22 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://www.op.gg/summoners/euw/NPC%20Honthagr-01530> (referer: None)
+2024-01-27 20:41:22 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://www.op.gg/summoners/euw/NPC%20FoxSilver-NPC> (referer: None)
+2024-01-27 20:41:22 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://www.op.gg/summoners/euw/NPC%20Kog%20Mawtiv%C3%A9-EUW> (referer: None)
+2024-01-27 20:41:22 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://www.op.gg/summoners/euw/NPC%20bebe-NPC> (referer: None)
+2024-01-27 20:41:22 [opgg] DEBUG: parsing https://www.op.gg/summoners/euw/Caps-45555)
+2024-01-27 20:41:52 [scrapy.core.scraper] ERROR: Spider error processing <GET https://www.op.gg/summoners/euw/Caps-45555> (referer: None)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/twisted/internet/defer.py", line 892, in _runCallbacks
+    current.result = callback(  # type: ignore[misc]
+  File "/app/crawler/spiders/opgg_project.py", line 54, in parse
+    main(json_data)  # Passer json_data à la fonction main dans data_fct.py
+  File "/app/crawler/spiders/data_fct.py", line 196, in main
+    client, collects=connect_to_mongodb()
+  File "/app/crawler/spiders/data_fct.py", line 25, in connect_to_mongodb
+    regions_management(Regions)
+  File "/app/crawler/spiders/data_fct.py", line 6, in regions_management
+    if Regions.count_documents({}) == 0:
+  File "/usr/local/lib/python3.9/site-packages/pymongo/collection.py", line 1826, in count_documents
+    return self.__database.client._retryable_read(
+  File "/usr/local/lib/python3.9/site-packages/pymongo/mongo_client.py", line 1514, in _retryable_read
+    server = self._select_server(
+  File "/usr/local/lib/python3.9/site-packages/pymongo/mongo_client.py", line 1346, in _select_server
+    server = topology.select_server(server_selector)
+  File "/usr/local/lib/python3.9/site-packages/pymongo/topology.py", line 244, in select_server
+    return random.choice(self.select_servers(selector,
+  File "/usr/local/lib/python3.9/site-packages/pymongo/topology.py", line 202, in select_servers
+    server_descriptions = self._select_servers_loop(
+  File "/usr/local/lib/python3.9/site-packages/pymongo/topology.py", line 218, in _select_servers_loop
+    raise ServerSelectionTimeoutError(
+pymongo.errors.ServerSelectionTimeoutError: localhost:27017: [Errno 111] Connection refused, Timeout: 30s, Topology Description: <TopologyDescription id: 65b56a72ec30eadd08d9f019, topology_type: Single, servers: [<ServerDescription ('localhost', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('localhost:27017: [Errno 111] Connection refused')>]>
+2024-01-27 20:41:52 [opgg] DEBUG: parsing https://www.op.gg/summoners/euw/NPC%20Yato-EUW)
+2024-01-27 20:42:00 [scrapy.crawler] INFO: Received SIGTERM, shutting down gracefully. Send again to force 
+2024-01-27 20:42:51 [scrapy.addons] INFO: Enabled addons:
+[]
+2024-01-27 20:42:51 [asyncio] DEBUG: Using selector: EpollSelector
+2024-01-27 20:42:51 [scrapy.utils.log] DEBUG: Using reactor: twisted.internet.asyncioreactor.AsyncioSelectorReactor
+2024-01-27 20:42:51 [scrapy.utils.log] DEBUG: Using asyncio event loop: asyncio.unix_events._UnixSelectorEventLoop
+2024-01-27 20:42:51 [scrapy.extensions.telnet] INFO: Telnet Password: f186029f442dead6
+2024-01-27 20:42:52 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.memusage.MemoryUsage',
+ 'scrapy.extensions.logstats.LogStats']
+2024-01-27 20:42:52 [scrapy.crawler] INFO: Overridden settings:
+{'BOT_NAME': 'crawler',
+ 'FEED_EXPORT_ENCODING': 'utf-8',
+ 'LOG_FILE': 'spider_logs.txt',
+ 'NEWSPIDER_MODULE': 'crawler.spiders',
+ 'REQUEST_FINGERPRINTER_IMPLEMENTATION': '2.7',
+ 'ROBOTSTXT_OBEY': True,
+ 'SPIDER_MODULES': ['crawler.spiders'],
+ 'TWISTED_REACTOR': 'twisted.internet.asyncioreactor.AsyncioSelectorReactor'}
+2024-01-27 20:42:52 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.robotstxt.RobotsTxtMiddleware',
+ 'scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2024-01-27 20:42:52 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2024-01-27 20:42:52 [scrapy.middleware] INFO: Enabled item pipelines:
+[]
+2024-01-27 20:42:52 [scrapy.core.engine] INFO: Spider opened
+2024-01-27 20:42:52 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2024-01-27 20:42:52 [scrapy.extensions.telnet] INFO: Telnet console listening on 127.0.0.1:6023
+2024-01-27 20:42:52 [urllib3.connectionpool] DEBUG: Starting new HTTPS connection (1): www.op.gg:443
+2024-01-27 20:42:53 [urllib3.connectionpool] DEBUG: https://www.op.gg:443 "GET /summoners/euw/NPC%20Kerina-Coach HTTP/1.1" 200 None
+2024-01-27 20:42:53 [urllib3.connectionpool] DEBUG: Starting new HTTPS connection (1): www.op.gg:443
+2024-01-27 20:42:54 [urllib3.connectionpool] DEBUG: https://www.op.gg:443 "GET /summoners/euw/NPC%20Honthagr-01530 HTTP/1.1" 200 None
+2024-01-27 20:42:54 [urllib3.connectionpool] DEBUG: Starting new HTTPS connection (1): www.op.gg:443
+2024-01-27 20:42:55 [urllib3.connectionpool] DEBUG: https://www.op.gg:443 "GET /summoners/euw/NPC%20FoxSilver-NPC HTTP/1.1" 200 None
+2024-01-27 20:42:55 [urllib3.connectionpool] DEBUG: Starting new HTTPS connection (1): www.op.gg:443
+2024-01-27 20:42:56 [urllib3.connectionpool] DEBUG: https://www.op.gg:443 "GET /summoners/euw/NPC%20Reintack-EUW HTTP/1.1" 200 None
+2024-01-27 20:42:56 [urllib3.connectionpool] DEBUG: Starting new HTTPS connection (1): www.op.gg:443
+2024-01-27 20:42:57 [urllib3.connectionpool] DEBUG: https://www.op.gg:443 "GET /summoners/euw/NPC%20bebe-NPC HTTP/1.1" 200 None
+2024-01-27 20:42:57 [urllib3.connectionpool] DEBUG: Starting new HTTPS connection (1): www.op.gg:443
+2024-01-27 20:42:58 [urllib3.connectionpool] DEBUG: https://www.op.gg:443 "GET /summoners/euw/NPC%20Azaba-EUW HTTP/1.1" 200 None
+2024-01-27 20:42:58 [urllib3.connectionpool] DEBUG: Starting new HTTPS connection (1): www.op.gg:443
+2024-01-27 20:42:58 [urllib3.connectionpool] DEBUG: https://www.op.gg:443 "GET /summoners/euw/NPC%20Kog%20Mawtiv%C3%A9-EUW HTTP/1.1" 200 None
+2024-01-27 20:42:59 [urllib3.connectionpool] DEBUG: Starting new HTTPS connection (1): www.op.gg:443
+2024-01-27 20:42:59 [urllib3.connectionpool] DEBUG: https://www.op.gg:443 "GET /summoners/euw/NPC%20Yato-EUW HTTP/1.1" 200 None
+2024-01-27 20:42:59 [urllib3.connectionpool] DEBUG: Starting new HTTPS connection (1): www.op.gg:443
+2024-01-27 20:43:00 [urllib3.connectionpool] DEBUG: https://www.op.gg:443 "GET /summoners/euw/Caps-45555 HTTP/1.1" 200 None
+2024-01-27 20:43:01 [scrapy.core.engine] DEBUG: Crawled (403) <GET https://www.op.gg/robots.txt> (referer: None)
+2024-01-27 20:43:01 [protego] DEBUG: Rule at line 1 without any user agent to enforce it on.
+2024-01-27 20:43:01 [protego] DEBUG: Rule at line 3 without any user agent to enforce it on.
+2024-01-27 20:43:01 [protego] DEBUG: Rule at line 16 without any user agent to enforce it on.
+2024-01-27 20:43:01 [urllib3.connectionpool] DEBUG: Starting new HTTPS connection (1): www.op.gg:443
+2024-01-27 20:43:02 [urllib3.connectionpool] DEBUG: https://www.op.gg:443 "GET /summoners/kr/Hide%20on%20bush-KR1 HTTP/1.1" 200 None
+2024-01-27 20:43:02 [urllib3.connectionpool] DEBUG: Starting new HTTPS connection (1): www.op.gg:443
+2024-01-27 20:43:03 [urllib3.connectionpool] DEBUG: https://www.op.gg:443 "GET /summoners/euw/GoldenRetriever-NPC HTTP/1.1" 200 None
+2024-01-27 20:43:03 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://www.op.gg/summoners/euw/NPC%20Kerina-Coach> (referer: None)
+2024-01-27 20:43:03 [opgg] DEBUG: parsing https://www.op.gg/summoners/euw/NPC%20Kerina-Coach)
+2024-01-27 20:43:33 [scrapy.core.scraper] ERROR: Spider error processing <GET https://www.op.gg/summoners/euw/NPC%20Kerina-Coach> (referer: None)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/twisted/internet/defer.py", line 892, in _runCallbacks
+    current.result = callback(  # type: ignore[misc]
+  File "/app/crawler/spiders/opgg_project.py", line 54, in parse
+    main(json_data)  # Passer json_data à la fonction main dans data_fct.py
+  File "/app/crawler/spiders/data_fct.py", line 196, in main
+    client, collects=connect_to_mongodb()
+  File "/app/crawler/spiders/data_fct.py", line 25, in connect_to_mongodb
+    regions_management(Regions)
+  File "/app/crawler/spiders/data_fct.py", line 6, in regions_management
+    if Regions.count_documents({}) == 0:
+  File "/usr/local/lib/python3.9/site-packages/pymongo/collection.py", line 1826, in count_documents
+    return self.__database.client._retryable_read(
+  File "/usr/local/lib/python3.9/site-packages/pymongo/mongo_client.py", line 1514, in _retryable_read
+    server = self._select_server(
+  File "/usr/local/lib/python3.9/site-packages/pymongo/mongo_client.py", line 1346, in _select_server
+    server = topology.select_server(server_selector)
+  File "/usr/local/lib/python3.9/site-packages/pymongo/topology.py", line 244, in select_server
+    return random.choice(self.select_servers(selector,
+  File "/usr/local/lib/python3.9/site-packages/pymongo/topology.py", line 202, in select_servers
+    server_descriptions = self._select_servers_loop(
+  File "/usr/local/lib/python3.9/site-packages/pymongo/topology.py", line 218, in _select_servers_loop
+    raise ServerSelectionTimeoutError(
+pymongo.errors.ServerSelectionTimeoutError: localhost:27017: [Errno 111] Connection refused, Timeout: 30s, Topology Description: <TopologyDescription id: 65b56ad75727b245f1869aab, topology_type: Single, servers: [<ServerDescription ('localhost', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('localhost:27017: [Errno 111] Connection refused')>]>
+2024-01-27 20:43:34 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://www.op.gg/summoners/euw/Caps-45555> (referer: None)
+2024-01-27 20:43:34 [opgg] DEBUG: parsing https://www.op.gg/summoners/euw/Caps-45555)
+2024-01-27 20:44:07 [scrapy.core.scraper] ERROR: Spider error processing <GET https://www.op.gg/summoners/euw/Caps-45555> (referer: None)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/twisted/internet/defer.py", line 892, in _runCallbacks
+    current.result = callback(  # type: ignore[misc]
+  File "/app/crawler/spiders/opgg_project.py", line 54, in parse
+    main(json_data)  # Passer json_data à la fonction main dans data_fct.py
+  File "/app/crawler/spiders/data_fct.py", line 196, in main
+    client, collects=connect_to_mongodb()
+  File "/app/crawler/spiders/data_fct.py", line 25, in connect_to_mongodb
+    regions_management(Regions)
+  File "/app/crawler/spiders/data_fct.py", line 6, in regions_management
+    if Regions.count_documents({}) == 0:
+  File "/usr/local/lib/python3.9/site-packages/pymongo/collection.py", line 1826, in count_documents
+    return self.__database.client._retryable_read(
+  File "/usr/local/lib/python3.9/site-packages/pymongo/mongo_client.py", line 1514, in _retryable_read
+    server = self._select_server(
+  File "/usr/local/lib/python3.9/site-packages/pymongo/mongo_client.py", line 1346, in _select_server
+    server = topology.select_server(server_selector)
+  File "/usr/local/lib/python3.9/site-packages/pymongo/topology.py", line 244, in select_server
+    return random.choice(self.select_servers(selector,
+  File "/usr/local/lib/python3.9/site-packages/pymongo/topology.py", line 202, in select_servers
+    server_descriptions = self._select_servers_loop(
+  File "/usr/local/lib/python3.9/site-packages/pymongo/topology.py", line 218, in _select_servers_loop
+    raise ServerSelectionTimeoutError(
+pymongo.errors.ServerSelectionTimeoutError: localhost:27017: [Errno 111] Connection refused, Timeout: 30s, Topology Description: <TopologyDescription id: 65b56af65727b245f1869aac, topology_type: Single, servers: [<ServerDescription ('localhost', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('localhost:27017: [Errno 111] Connection refused')>]>
+2024-01-27 20:44:07 [scrapy.extensions.logstats] INFO: Crawled 3 pages (at 3 pages/min), scraped 0 items (at 0 items/min)
+2024-01-27 20:44:07 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://www.op.gg/summoners/euw/NPC%20FoxSilver-NPC> (referer: None)
+2024-01-27 20:44:07 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://www.op.gg/summoners/euw/NPC%20Azaba-EUW> (referer: None)
+2024-01-27 20:44:07 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://www.op.gg/summoners/euw/NPC%20Honthagr-01530> (referer: None)
+2024-01-27 20:44:07 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://www.op.gg/summoners/euw/NPC%20bebe-NPC> (referer: None)
+2024-01-27 20:44:07 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://www.op.gg/summoners/euw/NPC%20Reintack-EUW> (referer: None)
+2024-01-27 20:44:07 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://www.op.gg/summoners/euw/NPC%20Yato-EUW> (referer: None)
+2024-01-27 20:44:07 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://www.op.gg/summoners/euw/NPC%20Kog%20Mawtiv%C3%A9-EUW> (referer: None)
+2024-01-27 20:44:07 [opgg] DEBUG: parsing https://www.op.gg/summoners/euw/NPC%20FoxSilver-NPC)
+2024-01-27 20:44:38 [scrapy.core.scraper] ERROR: Spider error processing <GET https://www.op.gg/summoners/euw/NPC%20FoxSilver-NPC> (referer: None)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/twisted/internet/defer.py", line 892, in _runCallbacks
+    current.result = callback(  # type: ignore[misc]
+  File "/app/crawler/spiders/opgg_project.py", line 54, in parse
+    main(json_data)  # Passer json_data à la fonction main dans data_fct.py
+  File "/app/crawler/spiders/data_fct.py", line 196, in main
+    client, collects=connect_to_mongodb()
+  File "/app/crawler/spiders/data_fct.py", line 25, in connect_to_mongodb
+    regions_management(Regions)
+  File "/app/crawler/spiders/data_fct.py", line 6, in regions_management
+    if Regions.count_documents({}) == 0:
+  File "/usr/local/lib/python3.9/site-packages/pymongo/collection.py", line 1826, in count_documents
+    return self.__database.client._retryable_read(
+  File "/usr/local/lib/python3.9/site-packages/pymongo/mongo_client.py", line 1514, in _retryable_read
+    server = self._select_server(
+  File "/usr/local/lib/python3.9/site-packages/pymongo/mongo_client.py", line 1346, in _select_server
+    server = topology.select_server(server_selector)
+  File "/usr/local/lib/python3.9/site-packages/pymongo/topology.py", line 244, in select_server
+    return random.choice(self.select_servers(selector,
+  File "/usr/local/lib/python3.9/site-packages/pymongo/topology.py", line 202, in select_servers
+    server_descriptions = self._select_servers_loop(
+  File "/usr/local/lib/python3.9/site-packages/pymongo/topology.py", line 218, in _select_servers_loop
+    raise ServerSelectionTimeoutError(
+pymongo.errors.ServerSelectionTimeoutError: localhost:27017: [Errno 111] Connection refused, Timeout: 30s, Topology Description: <TopologyDescription id: 65b56b175727b245f1869aad, topology_type: Single, servers: [<ServerDescription ('localhost', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('localhost:27017: [Errno 111] Connection refused')>]>
+2024-01-27 20:44:38 [opgg] DEBUG: parsing https://www.op.gg/summoners/euw/NPC%20Azaba-EUW)
+2024-01-27 20:45:08 [scrapy.core.scraper] ERROR: Spider error processing <GET https://www.op.gg/summoners/euw/NPC%20Azaba-EUW> (referer: None)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/twisted/internet/defer.py", line 892, in _runCallbacks
+    current.result = callback(  # type: ignore[misc]
+  File "/app/crawler/spiders/opgg_project.py", line 54, in parse
+    main(json_data)  # Passer json_data à la fonction main dans data_fct.py
+  File "/app/crawler/spiders/data_fct.py", line 196, in main
+    client, collects=connect_to_mongodb()
+  File "/app/crawler/spiders/data_fct.py", line 25, in connect_to_mongodb
+    regions_management(Regions)
+  File "/app/crawler/spiders/data_fct.py", line 6, in regions_management
+    if Regions.count_documents({}) == 0:
+  File "/usr/local/lib/python3.9/site-packages/pymongo/collection.py", line 1826, in count_documents
+    return self.__database.client._retryable_read(
+  File "/usr/local/lib/python3.9/site-packages/pymongo/mongo_client.py", line 1514, in _retryable_read
+    server = self._select_server(
+  File "/usr/local/lib/python3.9/site-packages/pymongo/mongo_client.py", line 1346, in _select_server
+    server = topology.select_server(server_selector)
+  File "/usr/local/lib/python3.9/site-packages/pymongo/topology.py", line 244, in select_server
+    return random.choice(self.select_servers(selector,
+  File "/usr/local/lib/python3.9/site-packages/pymongo/topology.py", line 202, in select_servers
+    server_descriptions = self._select_servers_loop(
+  File "/usr/local/lib/python3.9/site-packages/pymongo/topology.py", line 218, in _select_servers_loop
+    raise ServerSelectionTimeoutError(
+pymongo.errors.ServerSelectionTimeoutError: localhost:27017: [Errno 111] Connection refused, Timeout: 30s, Topology Description: <TopologyDescription id: 65b56b365727b245f1869aae, topology_type: Single, servers: [<ServerDescription ('localhost', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('localhost:27017: [Errno 111] Connection refused')>]>
+2024-01-27 20:45:08 [opgg] DEBUG: parsing https://www.op.gg/summoners/euw/NPC%20Honthagr-01530)
+2024-01-27 20:45:38 [scrapy.core.scraper] ERROR: Spider error processing <GET https://www.op.gg/summoners/euw/NPC%20Honthagr-01530> (referer: None)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/twisted/internet/defer.py", line 892, in _runCallbacks
+    current.result = callback(  # type: ignore[misc]
+  File "/app/crawler/spiders/opgg_project.py", line 54, in parse
+    main(json_data)  # Passer json_data à la fonction main dans data_fct.py
+  File "/app/crawler/spiders/data_fct.py", line 196, in main
+    client, collects=connect_to_mongodb()
+  File "/app/crawler/spiders/data_fct.py", line 25, in connect_to_mongodb
+    regions_management(Regions)
+  File "/app/crawler/spiders/data_fct.py", line 6, in regions_management
+    if Regions.count_documents({}) == 0:
+  File "/usr/local/lib/python3.9/site-packages/pymongo/collection.py", line 1826, in count_documents
+    return self.__database.client._retryable_read(
+  File "/usr/local/lib/python3.9/site-packages/pymongo/mongo_client.py", line 1514, in _retryable_read
+    server = self._select_server(
+  File "/usr/local/lib/python3.9/site-packages/pymongo/mongo_client.py", line 1346, in _select_server
+    server = topology.select_server(server_selector)
+  File "/usr/local/lib/python3.9/site-packages/pymongo/topology.py", line 244, in select_server
+    return random.choice(self.select_servers(selector,
+  File "/usr/local/lib/python3.9/site-packages/pymongo/topology.py", line 202, in select_servers
+    server_descriptions = self._select_servers_loop(
+  File "/usr/local/lib/python3.9/site-packages/pymongo/topology.py", line 218, in _select_servers_loop
+    raise ServerSelectionTimeoutError(
+pymongo.errors.ServerSelectionTimeoutError: localhost:27017: [Errno 111] Connection refused, Timeout: 30s, Topology Description: <TopologyDescription id: 65b56b545727b245f1869aaf, topology_type: Single, servers: [<ServerDescription ('localhost', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('localhost:27017: [Errno 111] Connection refused')>]>
+2024-01-27 20:45:38 [opgg] DEBUG: parsing https://www.op.gg/summoners/euw/NPC%20bebe-NPC)
+2024-01-27 20:46:08 [scrapy.core.scraper] ERROR: Spider error processing <GET https://www.op.gg/summoners/euw/NPC%20bebe-NPC> (referer: None)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/twisted/internet/defer.py", line 892, in _runCallbacks
+    current.result = callback(  # type: ignore[misc]
+  File "/app/crawler/spiders/opgg_project.py", line 54, in parse
+    main(json_data)  # Passer json_data à la fonction main dans data_fct.py
+  File "/app/crawler/spiders/data_fct.py", line 196, in main
+    client, collects=connect_to_mongodb()
+  File "/app/crawler/spiders/data_fct.py", line 25, in connect_to_mongodb
+    regions_management(Regions)
+  File "/app/crawler/spiders/data_fct.py", line 6, in regions_management
+    if Regions.count_documents({}) == 0:
+  File "/usr/local/lib/python3.9/site-packages/pymongo/collection.py", line 1826, in count_documents
+    return self.__database.client._retryable_read(
+  File "/usr/local/lib/python3.9/site-packages/pymongo/mongo_client.py", line 1514, in _retryable_read
+    server = self._select_server(
+  File "/usr/local/lib/python3.9/site-packages/pymongo/mongo_client.py", line 1346, in _select_server
+    server = topology.select_server(server_selector)
+  File "/usr/local/lib/python3.9/site-packages/pymongo/topology.py", line 244, in select_server
+    return random.choice(self.select_servers(selector,
+  File "/usr/local/lib/python3.9/site-packages/pymongo/topology.py", line 202, in select_servers
+    server_descriptions = self._select_servers_loop(
+  File "/usr/local/lib/python3.9/site-packages/pymongo/topology.py", line 218, in _select_servers_loop
+    raise ServerSelectionTimeoutError(
+pymongo.errors.ServerSelectionTimeoutError: localhost:27017: [Errno 111] Connection refused, Timeout: 30s, Topology Description: <TopologyDescription id: 65b56b725727b245f1869ab0, topology_type: Single, servers: [<ServerDescription ('localhost', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('localhost:27017: [Errno 111] Connection refused')>]>
+2024-01-27 20:46:08 [opgg] DEBUG: parsing https://www.op.gg/summoners/euw/NPC%20Reintack-EUW)
+2024-01-27 20:46:38 [scrapy.core.scraper] ERROR: Spider error processing <GET https://www.op.gg/summoners/euw/NPC%20Reintack-EUW> (referer: None)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/twisted/internet/defer.py", line 892, in _runCallbacks
+    current.result = callback(  # type: ignore[misc]
+  File "/app/crawler/spiders/opgg_project.py", line 54, in parse
+    main(json_data)  # Passer json_data à la fonction main dans data_fct.py
+  File "/app/crawler/spiders/data_fct.py", line 196, in main
+    client, collects=connect_to_mongodb()
+  File "/app/crawler/spiders/data_fct.py", line 25, in connect_to_mongodb
+    regions_management(Regions)
+  File "/app/crawler/spiders/data_fct.py", line 6, in regions_management
+    if Regions.count_documents({}) == 0:
+  File "/usr/local/lib/python3.9/site-packages/pymongo/collection.py", line 1826, in count_documents
+    return self.__database.client._retryable_read(
+  File "/usr/local/lib/python3.9/site-packages/pymongo/mongo_client.py", line 1514, in _retryable_read
+    server = self._select_server(
+  File "/usr/local/lib/python3.9/site-packages/pymongo/mongo_client.py", line 1346, in _select_server
+    server = topology.select_server(server_selector)
+  File "/usr/local/lib/python3.9/site-packages/pymongo/topology.py", line 244, in select_server
+    return random.choice(self.select_servers(selector,
+  File "/usr/local/lib/python3.9/site-packages/pymongo/topology.py", line 202, in select_servers
+    server_descriptions = self._select_servers_loop(
+  File "/usr/local/lib/python3.9/site-packages/pymongo/topology.py", line 218, in _select_servers_loop
+    raise ServerSelectionTimeoutError(
+pymongo.errors.ServerSelectionTimeoutError: localhost:27017: [Errno 111] Connection refused, Timeout: 30s, Topology Description: <TopologyDescription id: 65b56b905727b245f1869ab1, topology_type: Single, servers: [<ServerDescription ('localhost', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('localhost:27017: [Errno 111] Connection refused')>]>
+2024-01-27 20:46:38 [opgg] DEBUG: parsing https://www.op.gg/summoners/euw/NPC%20Yato-EUW)
+2024-01-27 20:47:09 [scrapy.core.scraper] ERROR: Spider error processing <GET https://www.op.gg/summoners/euw/NPC%20Yato-EUW> (referer: None)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/twisted/internet/defer.py", line 892, in _runCallbacks
+    current.result = callback(  # type: ignore[misc]
+  File "/app/crawler/spiders/opgg_project.py", line 54, in parse
+    main(json_data)  # Passer json_data à la fonction main dans data_fct.py
+  File "/app/crawler/spiders/data_fct.py", line 196, in main
+    client, collects=connect_to_mongodb()
+  File "/app/crawler/spiders/data_fct.py", line 25, in connect_to_mongodb
+    regions_management(Regions)
+  File "/app/crawler/spiders/data_fct.py", line 6, in regions_management
+    if Regions.count_documents({}) == 0:
+  File "/usr/local/lib/python3.9/site-packages/pymongo/collection.py", line 1826, in count_documents
+    return self.__database.client._retryable_read(
+  File "/usr/local/lib/python3.9/site-packages/pymongo/mongo_client.py", line 1514, in _retryable_read
+    server = self._select_server(
+  File "/usr/local/lib/python3.9/site-packages/pymongo/mongo_client.py", line 1346, in _select_server
+    server = topology.select_server(server_selector)
+  File "/usr/local/lib/python3.9/site-packages/pymongo/topology.py", line 244, in select_server
+    return random.choice(self.select_servers(selector,
+  File "/usr/local/lib/python3.9/site-packages/pymongo/topology.py", line 202, in select_servers
+    server_descriptions = self._select_servers_loop(
+  File "/usr/local/lib/python3.9/site-packages/pymongo/topology.py", line 218, in _select_servers_loop
+    raise ServerSelectionTimeoutError(
+pymongo.errors.ServerSelectionTimeoutError: localhost:27017: [Errno 111] Connection refused, Timeout: 30s, Topology Description: <TopologyDescription id: 65b56bae5727b245f1869ab2, topology_type: Single, servers: [<ServerDescription ('localhost', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('localhost:27017: [Errno 111] Connection refused')>]>
+2024-01-27 20:47:09 [opgg] DEBUG: parsing https://www.op.gg/summoners/euw/NPC%20Kog%20Mawtiv%C3%A9-EUW)
+2024-01-27 20:47:39 [scrapy.core.scraper] ERROR: Spider error processing <GET https://www.op.gg/summoners/euw/NPC%20Kog%20Mawtiv%C3%A9-EUW> (referer: None)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/twisted/internet/defer.py", line 892, in _runCallbacks
+    current.result = callback(  # type: ignore[misc]
+  File "/app/crawler/spiders/opgg_project.py", line 54, in parse
+    main(json_data)  # Passer json_data à la fonction main dans data_fct.py
+  File "/app/crawler/spiders/data_fct.py", line 196, in main
+    client, collects=connect_to_mongodb()
+  File "/app/crawler/spiders/data_fct.py", line 25, in connect_to_mongodb
+    regions_management(Regions)
+  File "/app/crawler/spiders/data_fct.py", line 6, in regions_management
+    if Regions.count_documents({}) == 0:
+  File "/usr/local/lib/python3.9/site-packages/pymongo/collection.py", line 1826, in count_documents
+    return self.__database.client._retryable_read(
+  File "/usr/local/lib/python3.9/site-packages/pymongo/mongo_client.py", line 1514, in _retryable_read
+    server = self._select_server(
+  File "/usr/local/lib/python3.9/site-packages/pymongo/mongo_client.py", line 1346, in _select_server
+    server = topology.select_server(server_selector)
+  File "/usr/local/lib/python3.9/site-packages/pymongo/topology.py", line 244, in select_server
+    return random.choice(self.select_servers(selector,
+  File "/usr/local/lib/python3.9/site-packages/pymongo/topology.py", line 202, in select_servers
+    server_descriptions = self._select_servers_loop(
+  File "/usr/local/lib/python3.9/site-packages/pymongo/topology.py", line 218, in _select_servers_loop
+    raise ServerSelectionTimeoutError(
+pymongo.errors.ServerSelectionTimeoutError: localhost:27017: [Errno 111] Connection refused, Timeout: 30s, Topology Description: <TopologyDescription id: 65b56bcd5727b245f1869ab3, topology_type: Single, servers: [<ServerDescription ('localhost', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('localhost:27017: [Errno 111] Connection refused')>]>
+2024-01-27 20:47:39 [scrapy.extensions.logstats] INFO: Crawled 10 pages (at 7 pages/min), scraped 0 items (at 0 items/min)
+2024-01-27 20:47:39 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://www.op.gg/summoners/kr/Hide%20on%20bush-KR1> (referer: None)
+2024-01-27 20:47:39 [scrapy.downloadermiddlewares.retry] DEBUG: Retrying <GET https://www.op.gg/summoners/euw/GoldenRetriever-NPC> (failed 1 times): User timeout caused connection failure: Getting https://www.op.gg/summoners/euw/GoldenRetriever-NPC took longer than 180.0 seconds..
+2024-01-27 20:47:39 [opgg] DEBUG: parsing https://www.op.gg/summoners/kr/Hide%20on%20bush-KR1)
+2024-01-27 20:48:09 [scrapy.core.scraper] ERROR: Spider error processing <GET https://www.op.gg/summoners/kr/Hide%20on%20bush-KR1> (referer: None)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/twisted/internet/defer.py", line 892, in _runCallbacks
+    current.result = callback(  # type: ignore[misc]
+  File "/app/crawler/spiders/opgg_project.py", line 54, in parse
+    main(json_data)  # Passer json_data à la fonction main dans data_fct.py
+  File "/app/crawler/spiders/data_fct.py", line 196, in main
+    client, collects=connect_to_mongodb()
+  File "/app/crawler/spiders/data_fct.py", line 25, in connect_to_mongodb
+    regions_management(Regions)
+  File "/app/crawler/spiders/data_fct.py", line 6, in regions_management
+    if Regions.count_documents({}) == 0:
+  File "/usr/local/lib/python3.9/site-packages/pymongo/collection.py", line 1826, in count_documents
+    return self.__database.client._retryable_read(
+  File "/usr/local/lib/python3.9/site-packages/pymongo/mongo_client.py", line 1514, in _retryable_read
+    server = self._select_server(
+  File "/usr/local/lib/python3.9/site-packages/pymongo/mongo_client.py", line 1346, in _select_server
+    server = topology.select_server(server_selector)
+  File "/usr/local/lib/python3.9/site-packages/pymongo/topology.py", line 244, in select_server
+    return random.choice(self.select_servers(selector,
+  File "/usr/local/lib/python3.9/site-packages/pymongo/topology.py", line 202, in select_servers
+    server_descriptions = self._select_servers_loop(
+  File "/usr/local/lib/python3.9/site-packages/pymongo/topology.py", line 218, in _select_servers_loop
+    raise ServerSelectionTimeoutError(
+pymongo.errors.ServerSelectionTimeoutError: localhost:27017: [Errno 111] Connection refused, Timeout: 30s, Topology Description: <TopologyDescription id: 65b56beb5727b245f1869ab4, topology_type: Single, servers: [<ServerDescription ('localhost', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('localhost:27017: [Errno 111] Connection refused')>]>
+2024-01-27 20:48:09 [scrapy.extensions.logstats] INFO: Crawled 11 pages (at 1 pages/min), scraped 0 items (at 0 items/min)
+2024-01-27 20:48:09 [scrapy.downloadermiddlewares.retry] DEBUG: Retrying <GET https://www.op.gg/summoners/euw/GoldenRetriever-NPC> (failed 2 times): [<twisted.python.failure.Failure twisted.internet.error.ConnectionDone: Connection was closed cleanly.>]
+2024-01-27 20:48:10 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://www.op.gg/summoners/euw/GoldenRetriever-NPC> (referer: None)
+2024-01-27 20:48:10 [opgg] DEBUG: parsing https://www.op.gg/summoners/euw/GoldenRetriever-NPC)
+2024-01-27 20:48:40 [scrapy.core.scraper] ERROR: Spider error processing <GET https://www.op.gg/summoners/euw/GoldenRetriever-NPC> (referer: None)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/twisted/internet/defer.py", line 892, in _runCallbacks
+    current.result = callback(  # type: ignore[misc]
+  File "/app/crawler/spiders/opgg_project.py", line 54, in parse
+    main(json_data)  # Passer json_data à la fonction main dans data_fct.py
+  File "/app/crawler/spiders/data_fct.py", line 196, in main
+    client, collects=connect_to_mongodb()
+  File "/app/crawler/spiders/data_fct.py", line 25, in connect_to_mongodb
+    regions_management(Regions)
+  File "/app/crawler/spiders/data_fct.py", line 6, in regions_management
+    if Regions.count_documents({}) == 0:
+  File "/usr/local/lib/python3.9/site-packages/pymongo/collection.py", line 1826, in count_documents
+    return self.__database.client._retryable_read(
+  File "/usr/local/lib/python3.9/site-packages/pymongo/mongo_client.py", line 1514, in _retryable_read
+    server = self._select_server(
+  File "/usr/local/lib/python3.9/site-packages/pymongo/mongo_client.py", line 1346, in _select_server
+    server = topology.select_server(server_selector)
+  File "/usr/local/lib/python3.9/site-packages/pymongo/topology.py", line 244, in select_server
+    return random.choice(self.select_servers(selector,
+  File "/usr/local/lib/python3.9/site-packages/pymongo/topology.py", line 202, in select_servers
+    server_descriptions = self._select_servers_loop(
+  File "/usr/local/lib/python3.9/site-packages/pymongo/topology.py", line 218, in _select_servers_loop
+    raise ServerSelectionTimeoutError(
+pymongo.errors.ServerSelectionTimeoutError: localhost:27017: [Errno 111] Connection refused, Timeout: 30s, Topology Description: <TopologyDescription id: 65b56c0a5727b245f1869ab5, topology_type: Single, servers: [<ServerDescription ('localhost', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('localhost:27017: [Errno 111] Connection refused')>]>
+2024-01-27 20:48:40 [scrapy.core.engine] INFO: Closing spider (finished)
+2024-01-27 20:48:40 [scrapy.statscollectors] INFO: Dumping Scrapy stats:
+{'downloader/exception_count': 2,
+ 'downloader/exception_type_count/twisted.internet.error.TimeoutError': 1,
+ 'downloader/exception_type_count/twisted.web._newclient.ResponseNeverReceived': 1,
+ 'downloader/request_bytes': 4460,
+ 'downloader/request_count': 14,
+ 'downloader/request_method_count/GET': 14,
+ 'downloader/response_bytes': 4333606,
+ 'downloader/response_count': 12,
+ 'downloader/response_status_count/200': 11,
+ 'downloader/response_status_count/403': 1,
+ 'elapsed_time_seconds': 348.659148,
+ 'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2024, 1, 27, 20, 48, 40, 835232, tzinfo=datetime.timezone.utc),
+ 'httpcompression/response_bytes': 30084880,
+ 'httpcompression/response_count': 11,
+ 'log_count/DEBUG': 53,
+ 'log_count/ERROR': 11,
+ 'log_count/INFO': 13,
+ 'memusage/max': 256688128,
+ 'memusage/startup': 72744960,
+ 'response_received_count': 12,
+ 'retry/count': 2,
+ 'retry/reason_count/twisted.internet.error.TimeoutError': 1,
+ 'retry/reason_count/twisted.web._newclient.ResponseNeverReceived': 1,
+ 'robotstxt/request_count': 1,
+ 'robotstxt/response_count': 1,
+ 'robotstxt/response_status_count/403': 1,
+ 'scheduler/dequeued': 13,
+ 'scheduler/dequeued/memory': 13,
+ 'scheduler/enqueued': 13,
+ 'scheduler/enqueued/memory': 13,
+ 'spider_exceptions/ServerSelectionTimeoutError': 11,
+ 'start_time': datetime.datetime(2024, 1, 27, 20, 42, 52, 176084, tzinfo=datetime.timezone.utc)}
+2024-01-27 20:48:40 [scrapy.core.engine] INFO: Spider closed (finished)
+2024-01-27 20:51:19 [scrapy.addons] INFO: Enabled addons:
+[]
+2024-01-27 20:51:19 [asyncio] DEBUG: Using selector: EpollSelector
+2024-01-27 20:51:19 [scrapy.utils.log] DEBUG: Using reactor: twisted.internet.asyncioreactor.AsyncioSelectorReactor
+2024-01-27 20:51:19 [scrapy.utils.log] DEBUG: Using asyncio event loop: asyncio.unix_events._UnixSelectorEventLoop
+2024-01-27 20:51:19 [scrapy.extensions.telnet] INFO: Telnet Password: 233362f60eb21930
+2024-01-27 20:51:19 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.memusage.MemoryUsage',
+ 'scrapy.extensions.logstats.LogStats']
+2024-01-27 20:51:19 [scrapy.crawler] INFO: Overridden settings:
+{'BOT_NAME': 'crawler',
+ 'FEED_EXPORT_ENCODING': 'utf-8',
+ 'LOG_FILE': 'spider_logs.txt',
+ 'NEWSPIDER_MODULE': 'crawler.spiders',
+ 'REQUEST_FINGERPRINTER_IMPLEMENTATION': '2.7',
+ 'ROBOTSTXT_OBEY': True,
+ 'SPIDER_MODULES': ['crawler.spiders'],
+ 'TWISTED_REACTOR': 'twisted.internet.asyncioreactor.AsyncioSelectorReactor'}
+2024-01-27 20:51:19 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.robotstxt.RobotsTxtMiddleware',
+ 'scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2024-01-27 20:51:19 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2024-01-27 20:51:19 [scrapy.middleware] INFO: Enabled item pipelines:
+[]
+2024-01-27 20:51:19 [scrapy.core.engine] INFO: Spider opened
+2024-01-27 20:51:19 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2024-01-27 20:51:19 [scrapy.extensions.telnet] INFO: Telnet console listening on 127.0.0.1:6023
+2024-01-27 20:51:19 [urllib3.connectionpool] DEBUG: Starting new HTTPS connection (1): www.op.gg:443
+2024-01-27 20:51:20 [urllib3.connectionpool] DEBUG: https://www.op.gg:443 "GET /summoners/euw/NPC%20Kerina-Coach HTTP/1.1" 200 None
+2024-01-27 20:51:20 [urllib3.connectionpool] DEBUG: Starting new HTTPS connection (1): www.op.gg:443
+2024-01-27 20:51:21 [urllib3.connectionpool] DEBUG: https://www.op.gg:443 "GET /summoners/euw/NPC%20Honthagr-01530 HTTP/1.1" 200 None
+2024-01-27 20:51:21 [urllib3.connectionpool] DEBUG: Starting new HTTPS connection (1): www.op.gg:443
+2024-01-27 20:51:22 [urllib3.connectionpool] DEBUG: https://www.op.gg:443 "GET /summoners/euw/NPC%20FoxSilver-NPC HTTP/1.1" 200 None
+2024-01-27 20:51:22 [urllib3.connectionpool] DEBUG: Starting new HTTPS connection (1): www.op.gg:443
+2024-01-27 20:51:23 [urllib3.connectionpool] DEBUG: https://www.op.gg:443 "GET /summoners/euw/NPC%20Reintack-EUW HTTP/1.1" 200 None
+2024-01-27 20:51:23 [urllib3.connectionpool] DEBUG: Starting new HTTPS connection (1): www.op.gg:443
+2024-01-27 20:51:24 [urllib3.connectionpool] DEBUG: https://www.op.gg:443 "GET /summoners/euw/NPC%20bebe-NPC HTTP/1.1" 200 None
+2024-01-27 20:51:24 [urllib3.connectionpool] DEBUG: Starting new HTTPS connection (1): www.op.gg:443
+2024-01-27 20:51:25 [urllib3.connectionpool] DEBUG: https://www.op.gg:443 "GET /summoners/euw/NPC%20Azaba-EUW HTTP/1.1" 200 None
+2024-01-27 20:51:25 [urllib3.connectionpool] DEBUG: Starting new HTTPS connection (1): www.op.gg:443
+2024-01-27 20:51:26 [urllib3.connectionpool] DEBUG: https://www.op.gg:443 "GET /summoners/euw/NPC%20Kog%20Mawtiv%C3%A9-EUW HTTP/1.1" 200 None
+2024-01-27 20:51:26 [urllib3.connectionpool] DEBUG: Starting new HTTPS connection (1): www.op.gg:443
+2024-01-27 20:51:27 [urllib3.connectionpool] DEBUG: https://www.op.gg:443 "GET /summoners/euw/NPC%20Yato-EUW HTTP/1.1" 200 None
+2024-01-27 20:51:27 [urllib3.connectionpool] DEBUG: Starting new HTTPS connection (1): www.op.gg:443
+2024-01-27 20:51:28 [urllib3.connectionpool] DEBUG: https://www.op.gg:443 "GET /summoners/euw/Caps-45555 HTTP/1.1" 200 None
+2024-01-27 20:51:28 [scrapy.core.engine] DEBUG: Crawled (403) <GET https://www.op.gg/robots.txt> (referer: None)
+2024-01-27 20:51:28 [protego] DEBUG: Rule at line 1 without any user agent to enforce it on.
+2024-01-27 20:51:28 [protego] DEBUG: Rule at line 3 without any user agent to enforce it on.
+2024-01-27 20:51:28 [protego] DEBUG: Rule at line 16 without any user agent to enforce it on.
+2024-01-27 20:51:28 [urllib3.connectionpool] DEBUG: Starting new HTTPS connection (1): www.op.gg:443
+2024-01-27 20:51:29 [urllib3.connectionpool] DEBUG: https://www.op.gg:443 "GET /summoners/kr/Hide%20on%20bush-KR1 HTTP/1.1" 200 None
+2024-01-27 20:51:29 [urllib3.connectionpool] DEBUG: Starting new HTTPS connection (1): www.op.gg:443
+2024-01-27 20:51:30 [urllib3.connectionpool] DEBUG: https://www.op.gg:443 "GET /summoners/euw/GoldenRetriever-NPC HTTP/1.1" 200 None
+2024-01-27 20:51:30 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://www.op.gg/summoners/euw/NPC%20Kerina-Coach> (referer: None)
+2024-01-27 20:51:30 [opgg] DEBUG: parsing https://www.op.gg/summoners/euw/NPC%20Kerina-Coach)
+2024-01-27 20:52:00 [scrapy.core.scraper] ERROR: Spider error processing <GET https://www.op.gg/summoners/euw/NPC%20Kerina-Coach> (referer: None)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/twisted/internet/defer.py", line 892, in _runCallbacks
+    current.result = callback(  # type: ignore[misc]
+  File "/app/crawler/spiders/opgg_project.py", line 54, in parse
+    main(json_data)  # Passer json_data à la fonction main dans data_fct.py
+  File "/app/crawler/spiders/data_fct.py", line 196, in main
+    client, collects=connect_to_mongodb()
+  File "/app/crawler/spiders/data_fct.py", line 25, in connect_to_mongodb
+    regions_management(Regions)
+  File "/app/crawler/spiders/data_fct.py", line 6, in regions_management
+    if Regions.count_documents({}) == 0:
+  File "/usr/local/lib/python3.9/site-packages/pymongo/collection.py", line 1826, in count_documents
+    return self.__database.client._retryable_read(
+  File "/usr/local/lib/python3.9/site-packages/pymongo/mongo_client.py", line 1514, in _retryable_read
+    server = self._select_server(
+  File "/usr/local/lib/python3.9/site-packages/pymongo/mongo_client.py", line 1346, in _select_server
+    server = topology.select_server(server_selector)
+  File "/usr/local/lib/python3.9/site-packages/pymongo/topology.py", line 244, in select_server
+    return random.choice(self.select_servers(selector,
+  File "/usr/local/lib/python3.9/site-packages/pymongo/topology.py", line 202, in select_servers
+    server_descriptions = self._select_servers_loop(
+  File "/usr/local/lib/python3.9/site-packages/pymongo/topology.py", line 218, in _select_servers_loop
+    raise ServerSelectionTimeoutError(
+pymongo.errors.ServerSelectionTimeoutError: localhost:27017: [Errno 111] Connection refused, Timeout: 30s, Topology Description: <TopologyDescription id: 65b56cd28f130b9f192c405c, topology_type: Single, servers: [<ServerDescription ('localhost', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('localhost:27017: [Errno 111] Connection refused')>]>
+2024-01-27 20:52:00 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://www.op.gg/summoners/euw/Caps-45555> (referer: None)
+2024-01-27 20:52:00 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://www.op.gg/summoners/euw/NPC%20Azaba-EUW> (referer: None)
+2024-01-27 20:52:00 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://www.op.gg/summoners/euw/NPC%20Honthagr-01530> (referer: None)
+2024-01-27 20:52:00 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://www.op.gg/summoners/euw/NPC%20FoxSilver-NPC> (referer: None)
+2024-01-27 20:52:00 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://www.op.gg/summoners/euw/NPC%20Reintack-EUW> (referer: None)
+2024-01-27 20:52:00 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://www.op.gg/summoners/euw/NPC%20bebe-NPC> (referer: None)
+2024-01-27 20:52:00 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://www.op.gg/summoners/euw/NPC%20Yato-EUW> (referer: None)
+2024-01-27 20:52:00 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://www.op.gg/summoners/euw/NPC%20Kog%20Mawtiv%C3%A9-EUW> (referer: None)
+2024-01-27 20:52:00 [opgg] DEBUG: parsing https://www.op.gg/summoners/euw/Caps-45555)
+2024-01-27 20:52:30 [scrapy.core.scraper] ERROR: Spider error processing <GET https://www.op.gg/summoners/euw/Caps-45555> (referer: None)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/twisted/internet/defer.py", line 892, in _runCallbacks
+    current.result = callback(  # type: ignore[misc]
+  File "/app/crawler/spiders/opgg_project.py", line 54, in parse
+    main(json_data)  # Passer json_data à la fonction main dans data_fct.py
+  File "/app/crawler/spiders/data_fct.py", line 196, in main
+    client, collects=connect_to_mongodb()
+  File "/app/crawler/spiders/data_fct.py", line 25, in connect_to_mongodb
+    regions_management(Regions)
+  File "/app/crawler/spiders/data_fct.py", line 6, in regions_management
+    if Regions.count_documents({}) == 0:
+  File "/usr/local/lib/python3.9/site-packages/pymongo/collection.py", line 1826, in count_documents
+    return self.__database.client._retryable_read(
+  File "/usr/local/lib/python3.9/site-packages/pymongo/mongo_client.py", line 1514, in _retryable_read
+    server = self._select_server(
+  File "/usr/local/lib/python3.9/site-packages/pymongo/mongo_client.py", line 1346, in _select_server
+    server = topology.select_server(server_selector)
+  File "/usr/local/lib/python3.9/site-packages/pymongo/topology.py", line 244, in select_server
+    return random.choice(self.select_servers(selector,
+  File "/usr/local/lib/python3.9/site-packages/pymongo/topology.py", line 202, in select_servers
+    server_descriptions = self._select_servers_loop(
+  File "/usr/local/lib/python3.9/site-packages/pymongo/topology.py", line 218, in _select_servers_loop
+    raise ServerSelectionTimeoutError(
+pymongo.errors.ServerSelectionTimeoutError: localhost:27017: [Errno 111] Connection refused, Timeout: 30s, Topology Description: <TopologyDescription id: 65b56cf08f130b9f192c405d, topology_type: Single, servers: [<ServerDescription ('localhost', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('localhost:27017: [Errno 111] Connection refused')>]>
+2024-01-27 20:52:31 [opgg] DEBUG: parsing https://www.op.gg/summoners/euw/NPC%20Azaba-EUW)
+2024-01-27 20:53:01 [scrapy.core.scraper] ERROR: Spider error processing <GET https://www.op.gg/summoners/euw/NPC%20Azaba-EUW> (referer: None)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/twisted/internet/defer.py", line 892, in _runCallbacks
+    current.result = callback(  # type: ignore[misc]
+  File "/app/crawler/spiders/opgg_project.py", line 54, in parse
+    main(json_data)  # Passer json_data à la fonction main dans data_fct.py
+  File "/app/crawler/spiders/data_fct.py", line 196, in main
+    client, collects=connect_to_mongodb()
+  File "/app/crawler/spiders/data_fct.py", line 25, in connect_to_mongodb
+    regions_management(Regions)
+  File "/app/crawler/spiders/data_fct.py", line 6, in regions_management
+    if Regions.count_documents({}) == 0:
+  File "/usr/local/lib/python3.9/site-packages/pymongo/collection.py", line 1826, in count_documents
+    return self.__database.client._retryable_read(
+  File "/usr/local/lib/python3.9/site-packages/pymongo/mongo_client.py", line 1514, in _retryable_read
+    server = self._select_server(
+  File "/usr/local/lib/python3.9/site-packages/pymongo/mongo_client.py", line 1346, in _select_server
+    server = topology.select_server(server_selector)
+  File "/usr/local/lib/python3.9/site-packages/pymongo/topology.py", line 244, in select_server
+    return random.choice(self.select_servers(selector,
+  File "/usr/local/lib/python3.9/site-packages/pymongo/topology.py", line 202, in select_servers
+    server_descriptions = self._select_servers_loop(
+  File "/usr/local/lib/python3.9/site-packages/pymongo/topology.py", line 218, in _select_servers_loop
+    raise ServerSelectionTimeoutError(
+pymongo.errors.ServerSelectionTimeoutError: localhost:27017: [Errno 111] Connection refused, Timeout: 30s, Topology Description: <TopologyDescription id: 65b56d0f8f130b9f192c405e, topology_type: Single, servers: [<ServerDescription ('localhost', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('localhost:27017: [Errno 111] Connection refused')>]>
+2024-01-27 20:53:01 [opgg] DEBUG: parsing https://www.op.gg/summoners/euw/NPC%20Honthagr-01530)
+2024-01-27 20:53:21 [scrapy.crawler] INFO: Received SIGTERM, shutting down gracefully. Send again to force 
+2024-01-27 20:53:31 [scrapy.core.scraper] ERROR: Spider error processing <GET https://www.op.gg/summoners/euw/NPC%20Honthagr-01530> (referer: None)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/twisted/internet/defer.py", line 892, in _runCallbacks
+    current.result = callback(  # type: ignore[misc]
+  File "/app/crawler/spiders/opgg_project.py", line 54, in parse
+    main(json_data)  # Passer json_data à la fonction main dans data_fct.py
+  File "/app/crawler/spiders/data_fct.py", line 196, in main
+    client, collects=connect_to_mongodb()
+  File "/app/crawler/spiders/data_fct.py", line 25, in connect_to_mongodb
+    regions_management(Regions)
+  File "/app/crawler/spiders/data_fct.py", line 6, in regions_management
+    if Regions.count_documents({}) == 0:
+  File "/usr/local/lib/python3.9/site-packages/pymongo/collection.py", line 1826, in count_documents
+    return self.__database.client._retryable_read(
+  File "/usr/local/lib/python3.9/site-packages/pymongo/mongo_client.py", line 1514, in _retryable_read
+    server = self._select_server(
+  File "/usr/local/lib/python3.9/site-packages/pymongo/mongo_client.py", line 1346, in _select_server
+    server = topology.select_server(server_selector)
+  File "/usr/local/lib/python3.9/site-packages/pymongo/topology.py", line 244, in select_server
+    return random.choice(self.select_servers(selector,
+  File "/usr/local/lib/python3.9/site-packages/pymongo/topology.py", line 202, in select_servers
+    server_descriptions = self._select_servers_loop(
+  File "/usr/local/lib/python3.9/site-packages/pymongo/topology.py", line 218, in _select_servers_loop
+    raise ServerSelectionTimeoutError(
+pymongo.errors.ServerSelectionTimeoutError: localhost:27017: [Errno 111] Connection refused, Timeout: 30s, Topology Description: <TopologyDescription id: 65b56d2d8f130b9f192c405f, topology_type: Single, servers: [<ServerDescription ('localhost', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('localhost:27017: [Errno 111] Connection refused')>]>
+2024-01-27 20:53:31 [opgg] DEBUG: parsing https://www.op.gg/summoners/euw/NPC%20FoxSilver-NPC)
+2024-01-27 20:54:58 [scrapy.addons] INFO: Enabled addons:
+[]
+2024-01-27 20:54:58 [asyncio] DEBUG: Using selector: EpollSelector
+2024-01-27 20:54:58 [scrapy.utils.log] DEBUG: Using reactor: twisted.internet.asyncioreactor.AsyncioSelectorReactor
+2024-01-27 20:54:58 [scrapy.utils.log] DEBUG: Using asyncio event loop: asyncio.unix_events._UnixSelectorEventLoop
+2024-01-27 20:54:58 [scrapy.extensions.telnet] INFO: Telnet Password: cfe9746d7e94ecec
+2024-01-27 20:54:58 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.memusage.MemoryUsage',
+ 'scrapy.extensions.logstats.LogStats']
+2024-01-27 20:54:58 [scrapy.crawler] INFO: Overridden settings:
+{'BOT_NAME': 'crawler',
+ 'FEED_EXPORT_ENCODING': 'utf-8',
+ 'LOG_FILE': 'spider_logs.txt',
+ 'NEWSPIDER_MODULE': 'crawler.spiders',
+ 'REQUEST_FINGERPRINTER_IMPLEMENTATION': '2.7',
+ 'ROBOTSTXT_OBEY': True,
+ 'SPIDER_MODULES': ['crawler.spiders'],
+ 'TWISTED_REACTOR': 'twisted.internet.asyncioreactor.AsyncioSelectorReactor'}
+2024-01-27 20:54:59 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.robotstxt.RobotsTxtMiddleware',
+ 'scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2024-01-27 20:54:59 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2024-01-27 20:54:59 [scrapy.middleware] INFO: Enabled item pipelines:
+[]
+2024-01-27 20:54:59 [scrapy.core.engine] INFO: Spider opened
+2024-01-27 20:54:59 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2024-01-27 20:54:59 [scrapy.extensions.telnet] INFO: Telnet console listening on 127.0.0.1:6023
+2024-01-27 20:54:59 [urllib3.connectionpool] DEBUG: Starting new HTTPS connection (1): www.op.gg:443
+2024-01-27 20:55:00 [urllib3.connectionpool] DEBUG: https://www.op.gg:443 "GET /summoners/euw/NPC%20Kerina-Coach HTTP/1.1" 200 None
+2024-01-27 20:55:00 [urllib3.connectionpool] DEBUG: Starting new HTTPS connection (1): www.op.gg:443
+2024-01-27 20:55:01 [urllib3.connectionpool] DEBUG: https://www.op.gg:443 "GET /summoners/euw/NPC%20Honthagr-01530 HTTP/1.1" 200 None
+2024-01-27 20:55:01 [urllib3.connectionpool] DEBUG: Starting new HTTPS connection (1): www.op.gg:443
+2024-01-27 20:55:02 [urllib3.connectionpool] DEBUG: https://www.op.gg:443 "GET /summoners/euw/NPC%20FoxSilver-NPC HTTP/1.1" 200 None
+2024-01-27 20:55:02 [urllib3.connectionpool] DEBUG: Starting new HTTPS connection (1): www.op.gg:443
+2024-01-27 20:55:03 [urllib3.connectionpool] DEBUG: https://www.op.gg:443 "GET /summoners/euw/NPC%20Reintack-EUW HTTP/1.1" 200 None
+2024-01-27 20:55:04 [urllib3.connectionpool] DEBUG: Starting new HTTPS connection (1): www.op.gg:443
+2024-01-27 20:55:04 [urllib3.connectionpool] DEBUG: https://www.op.gg:443 "GET /summoners/euw/NPC%20bebe-NPC HTTP/1.1" 200 None
+2024-01-27 20:55:05 [urllib3.connectionpool] DEBUG: Starting new HTTPS connection (1): www.op.gg:443
+2024-01-27 20:55:05 [urllib3.connectionpool] DEBUG: https://www.op.gg:443 "GET /summoners/euw/NPC%20Azaba-EUW HTTP/1.1" 200 None
+2024-01-27 20:55:06 [urllib3.connectionpool] DEBUG: Starting new HTTPS connection (1): www.op.gg:443
+2024-01-27 20:55:06 [urllib3.connectionpool] DEBUG: https://www.op.gg:443 "GET /summoners/euw/NPC%20Kog%20Mawtiv%C3%A9-EUW HTTP/1.1" 200 None
+2024-01-27 20:55:07 [urllib3.connectionpool] DEBUG: Starting new HTTPS connection (1): www.op.gg:443
+2024-01-27 20:55:07 [urllib3.connectionpool] DEBUG: https://www.op.gg:443 "GET /summoners/euw/NPC%20Yato-EUW HTTP/1.1" 200 None
+2024-01-27 20:55:07 [urllib3.connectionpool] DEBUG: Starting new HTTPS connection (1): www.op.gg:443
+2024-01-27 20:55:08 [urllib3.connectionpool] DEBUG: https://www.op.gg:443 "GET /summoners/euw/Caps-45555 HTTP/1.1" 200 None
+2024-01-27 20:55:08 [scrapy.core.engine] DEBUG: Crawled (403) <GET https://www.op.gg/robots.txt> (referer: None)
+2024-01-27 20:55:08 [protego] DEBUG: Rule at line 1 without any user agent to enforce it on.
+2024-01-27 20:55:08 [protego] DEBUG: Rule at line 3 without any user agent to enforce it on.
+2024-01-27 20:55:08 [protego] DEBUG: Rule at line 16 without any user agent to enforce it on.
+2024-01-27 20:55:08 [urllib3.connectionpool] DEBUG: Starting new HTTPS connection (1): www.op.gg:443
+2024-01-27 20:55:09 [urllib3.connectionpool] DEBUG: https://www.op.gg:443 "GET /summoners/kr/Hide%20on%20bush-KR1 HTTP/1.1" 200 None
+2024-01-27 20:55:09 [urllib3.connectionpool] DEBUG: Starting new HTTPS connection (1): www.op.gg:443
+2024-01-27 20:55:10 [urllib3.connectionpool] DEBUG: https://www.op.gg:443 "GET /summoners/euw/GoldenRetriever-NPC HTTP/1.1" 200 None
+2024-01-27 20:55:10 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://www.op.gg/summoners/euw/NPC%20Kerina-Coach> (referer: None)
+2024-01-27 20:55:11 [opgg] DEBUG: parsing https://www.op.gg/summoners/euw/NPC%20Kerina-Coach)
+2024-01-27 20:55:41 [scrapy.core.scraper] ERROR: Spider error processing <GET https://www.op.gg/summoners/euw/NPC%20Kerina-Coach> (referer: None)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/twisted/internet/defer.py", line 892, in _runCallbacks
+    current.result = callback(  # type: ignore[misc]
+  File "/app/crawler/spiders/opgg_project.py", line 54, in parse
+    main(json_data)  # Passer json_data à la fonction main dans data_fct.py
+  File "/app/crawler/spiders/data_fct.py", line 196, in main
+    client, collects=connect_to_mongodb()
+  File "/app/crawler/spiders/data_fct.py", line 25, in connect_to_mongodb
+    regions_management(Regions)
+  File "/app/crawler/spiders/data_fct.py", line 6, in regions_management
+    if Regions.count_documents({}) == 0:
+  File "/usr/local/lib/python3.9/site-packages/pymongo/collection.py", line 1826, in count_documents
+    return self.__database.client._retryable_read(
+  File "/usr/local/lib/python3.9/site-packages/pymongo/mongo_client.py", line 1514, in _retryable_read
+    server = self._select_server(
+  File "/usr/local/lib/python3.9/site-packages/pymongo/mongo_client.py", line 1346, in _select_server
+    server = topology.select_server(server_selector)
+  File "/usr/local/lib/python3.9/site-packages/pymongo/topology.py", line 244, in select_server
+    return random.choice(self.select_servers(selector,
+  File "/usr/local/lib/python3.9/site-packages/pymongo/topology.py", line 202, in select_servers
+    server_descriptions = self._select_servers_loop(
+  File "/usr/local/lib/python3.9/site-packages/pymongo/topology.py", line 218, in _select_servers_loop
+    raise ServerSelectionTimeoutError(
+pymongo.errors.ServerSelectionTimeoutError: localhost:27017: [Errno 111] Connection refused, Timeout: 30s, Topology Description: <TopologyDescription id: 65b56daf2cc4b9e64ddb95e8, topology_type: Single, servers: [<ServerDescription ('localhost', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('localhost:27017: [Errno 111] Connection refused')>]>
+2024-01-27 20:55:41 [scrapy.downloadermiddlewares.retry] DEBUG: Retrying <GET https://www.op.gg/summoners/euw/NPC%20FoxSilver-NPC> (failed 1 times): [<twisted.python.failure.Failure twisted.internet.error.ConnectionDone: Connection was closed cleanly.>]
+2024-01-27 20:55:41 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://www.op.gg/summoners/euw/Caps-45555> (referer: None)
+2024-01-27 20:55:41 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://www.op.gg/summoners/euw/NPC%20bebe-NPC> (referer: None)
+2024-01-27 20:55:41 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://www.op.gg/summoners/euw/NPC%20Azaba-EUW> (referer: None)
+2024-01-27 20:55:41 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://www.op.gg/summoners/euw/NPC%20Reintack-EUW> (referer: None)
+2024-01-27 20:55:41 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://www.op.gg/summoners/euw/NPC%20Yato-EUW> (referer: None)
+2024-01-27 20:55:41 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://www.op.gg/summoners/euw/NPC%20Kog%20Mawtiv%C3%A9-EUW> (referer: None)
+2024-01-27 20:55:41 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://www.op.gg/summoners/euw/NPC%20Honthagr-01530> (referer: None)
+2024-01-27 20:55:41 [opgg] DEBUG: parsing https://www.op.gg/summoners/euw/Caps-45555)
+2024-01-27 20:56:11 [scrapy.core.scraper] ERROR: Spider error processing <GET https://www.op.gg/summoners/euw/Caps-45555> (referer: None)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/twisted/internet/defer.py", line 892, in _runCallbacks
+    current.result = callback(  # type: ignore[misc]
+  File "/app/crawler/spiders/opgg_project.py", line 54, in parse
+    main(json_data)  # Passer json_data à la fonction main dans data_fct.py
+  File "/app/crawler/spiders/data_fct.py", line 196, in main
+    client, collects=connect_to_mongodb()
+  File "/app/crawler/spiders/data_fct.py", line 25, in connect_to_mongodb
+    regions_management(Regions)
+  File "/app/crawler/spiders/data_fct.py", line 6, in regions_management
+    if Regions.count_documents({}) == 0:
+  File "/usr/local/lib/python3.9/site-packages/pymongo/collection.py", line 1826, in count_documents
+    return self.__database.client._retryable_read(
+  File "/usr/local/lib/python3.9/site-packages/pymongo/mongo_client.py", line 1514, in _retryable_read
+    server = self._select_server(
+  File "/usr/local/lib/python3.9/site-packages/pymongo/mongo_client.py", line 1346, in _select_server
+    server = topology.select_server(server_selector)
+  File "/usr/local/lib/python3.9/site-packages/pymongo/topology.py", line 244, in select_server
+    return random.choice(self.select_servers(selector,
+  File "/usr/local/lib/python3.9/site-packages/pymongo/topology.py", line 202, in select_servers
+    server_descriptions = self._select_servers_loop(
+  File "/usr/local/lib/python3.9/site-packages/pymongo/topology.py", line 218, in _select_servers_loop
+    raise ServerSelectionTimeoutError(
+pymongo.errors.ServerSelectionTimeoutError: localhost:27017: [Errno 111] Connection refused, Timeout: 30s, Topology Description: <TopologyDescription id: 65b56dcd2cc4b9e64ddb95e9, topology_type: Single, servers: [<ServerDescription ('localhost', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('localhost:27017: [Errno 111] Connection refused')>]>
+2024-01-27 20:56:11 [opgg] DEBUG: parsing https://www.op.gg/summoners/euw/NPC%20bebe-NPC)
+2024-01-27 20:56:41 [scrapy.core.scraper] ERROR: Spider error processing <GET https://www.op.gg/summoners/euw/NPC%20bebe-NPC> (referer: None)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/twisted/internet/defer.py", line 892, in _runCallbacks
+    current.result = callback(  # type: ignore[misc]
+  File "/app/crawler/spiders/opgg_project.py", line 54, in parse
+    main(json_data)  # Passer json_data à la fonction main dans data_fct.py
+  File "/app/crawler/spiders/data_fct.py", line 196, in main
+    client, collects=connect_to_mongodb()
+  File "/app/crawler/spiders/data_fct.py", line 25, in connect_to_mongodb
+    regions_management(Regions)
+  File "/app/crawler/spiders/data_fct.py", line 6, in regions_management
+    if Regions.count_documents({}) == 0:
+  File "/usr/local/lib/python3.9/site-packages/pymongo/collection.py", line 1826, in count_documents
+    return self.__database.client._retryable_read(
+  File "/usr/local/lib/python3.9/site-packages/pymongo/mongo_client.py", line 1514, in _retryable_read
+    server = self._select_server(
+  File "/usr/local/lib/python3.9/site-packages/pymongo/mongo_client.py", line 1346, in _select_server
+    server = topology.select_server(server_selector)
+  File "/usr/local/lib/python3.9/site-packages/pymongo/topology.py", line 244, in select_server
+    return random.choice(self.select_servers(selector,
+  File "/usr/local/lib/python3.9/site-packages/pymongo/topology.py", line 202, in select_servers
+    server_descriptions = self._select_servers_loop(
+  File "/usr/local/lib/python3.9/site-packages/pymongo/topology.py", line 218, in _select_servers_loop
+    raise ServerSelectionTimeoutError(
+pymongo.errors.ServerSelectionTimeoutError: localhost:27017: [Errno 111] Connection refused, Timeout: 30s, Topology Description: <TopologyDescription id: 65b56deb2cc4b9e64ddb95ea, topology_type: Single, servers: [<ServerDescription ('localhost', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('localhost:27017: [Errno 111] Connection refused')>]>
+2024-01-27 20:56:41 [opgg] DEBUG: parsing https://www.op.gg/summoners/euw/NPC%20Azaba-EUW)
+2024-01-27 20:57:12 [scrapy.core.scraper] ERROR: Spider error processing <GET https://www.op.gg/summoners/euw/NPC%20Azaba-EUW> (referer: None)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/twisted/internet/defer.py", line 892, in _runCallbacks
+    current.result = callback(  # type: ignore[misc]
+  File "/app/crawler/spiders/opgg_project.py", line 54, in parse
+    main(json_data)  # Passer json_data à la fonction main dans data_fct.py
+  File "/app/crawler/spiders/data_fct.py", line 196, in main
+    client, collects=connect_to_mongodb()
+  File "/app/crawler/spiders/data_fct.py", line 25, in connect_to_mongodb
+    regions_management(Regions)
+  File "/app/crawler/spiders/data_fct.py", line 6, in regions_management
+    if Regions.count_documents({}) == 0:
+  File "/usr/local/lib/python3.9/site-packages/pymongo/collection.py", line 1826, in count_documents
+    return self.__database.client._retryable_read(
+  File "/usr/local/lib/python3.9/site-packages/pymongo/mongo_client.py", line 1514, in _retryable_read
+    server = self._select_server(
+  File "/usr/local/lib/python3.9/site-packages/pymongo/mongo_client.py", line 1346, in _select_server
+    server = topology.select_server(server_selector)
+  File "/usr/local/lib/python3.9/site-packages/pymongo/topology.py", line 244, in select_server
+    return random.choice(self.select_servers(selector,
+  File "/usr/local/lib/python3.9/site-packages/pymongo/topology.py", line 202, in select_servers
+    server_descriptions = self._select_servers_loop(
+  File "/usr/local/lib/python3.9/site-packages/pymongo/topology.py", line 218, in _select_servers_loop
+    raise ServerSelectionTimeoutError(
+pymongo.errors.ServerSelectionTimeoutError: localhost:27017: [Errno 111] Connection refused, Timeout: 30s, Topology Description: <TopologyDescription id: 65b56e092cc4b9e64ddb95eb, topology_type: Single, servers: [<ServerDescription ('localhost', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('localhost:27017: [Errno 111] Connection refused')>]>
+2024-01-27 20:57:12 [opgg] DEBUG: parsing https://www.op.gg/summoners/euw/NPC%20Reintack-EUW)
+2024-01-27 20:57:42 [scrapy.core.scraper] ERROR: Spider error processing <GET https://www.op.gg/summoners/euw/NPC%20Reintack-EUW> (referer: None)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/twisted/internet/defer.py", line 892, in _runCallbacks
+    current.result = callback(  # type: ignore[misc]
+  File "/app/crawler/spiders/opgg_project.py", line 54, in parse
+    main(json_data)  # Passer json_data à la fonction main dans data_fct.py
+  File "/app/crawler/spiders/data_fct.py", line 196, in main
+    client, collects=connect_to_mongodb()
+  File "/app/crawler/spiders/data_fct.py", line 25, in connect_to_mongodb
+    regions_management(Regions)
+  File "/app/crawler/spiders/data_fct.py", line 6, in regions_management
+    if Regions.count_documents({}) == 0:
+  File "/usr/local/lib/python3.9/site-packages/pymongo/collection.py", line 1826, in count_documents
+    return self.__database.client._retryable_read(
+  File "/usr/local/lib/python3.9/site-packages/pymongo/mongo_client.py", line 1514, in _retryable_read
+    server = self._select_server(
+  File "/usr/local/lib/python3.9/site-packages/pymongo/mongo_client.py", line 1346, in _select_server
+    server = topology.select_server(server_selector)
+  File "/usr/local/lib/python3.9/site-packages/pymongo/topology.py", line 244, in select_server
+    return random.choice(self.select_servers(selector,
+  File "/usr/local/lib/python3.9/site-packages/pymongo/topology.py", line 202, in select_servers
+    server_descriptions = self._select_servers_loop(
+  File "/usr/local/lib/python3.9/site-packages/pymongo/topology.py", line 218, in _select_servers_loop
+    raise ServerSelectionTimeoutError(
+pymongo.errors.ServerSelectionTimeoutError: localhost:27017: [Errno 111] Connection refused, Timeout: 30s, Topology Description: <TopologyDescription id: 65b56e282cc4b9e64ddb95ec, topology_type: Single, servers: [<ServerDescription ('localhost', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('localhost:27017: [Errno 111] Connection refused')>]>
+2024-01-27 20:57:42 [opgg] DEBUG: parsing https://www.op.gg/summoners/euw/NPC%20Yato-EUW)
+2024-01-27 20:58:12 [scrapy.core.scraper] ERROR: Spider error processing <GET https://www.op.gg/summoners/euw/NPC%20Yato-EUW> (referer: None)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/twisted/internet/defer.py", line 892, in _runCallbacks
+    current.result = callback(  # type: ignore[misc]
+  File "/app/crawler/spiders/opgg_project.py", line 54, in parse
+    main(json_data)  # Passer json_data à la fonction main dans data_fct.py
+  File "/app/crawler/spiders/data_fct.py", line 196, in main
+    client, collects=connect_to_mongodb()
+  File "/app/crawler/spiders/data_fct.py", line 25, in connect_to_mongodb
+    regions_management(Regions)
+  File "/app/crawler/spiders/data_fct.py", line 6, in regions_management
+    if Regions.count_documents({}) == 0:
+  File "/usr/local/lib/python3.9/site-packages/pymongo/collection.py", line 1826, in count_documents
+    return self.__database.client._retryable_read(
+  File "/usr/local/lib/python3.9/site-packages/pymongo/mongo_client.py", line 1514, in _retryable_read
+    server = self._select_server(
+  File "/usr/local/lib/python3.9/site-packages/pymongo/mongo_client.py", line 1346, in _select_server
+    server = topology.select_server(server_selector)
+  File "/usr/local/lib/python3.9/site-packages/pymongo/topology.py", line 244, in select_server
+    return random.choice(self.select_servers(selector,
+  File "/usr/local/lib/python3.9/site-packages/pymongo/topology.py", line 202, in select_servers
+    server_descriptions = self._select_servers_loop(
+  File "/usr/local/lib/python3.9/site-packages/pymongo/topology.py", line 218, in _select_servers_loop
+    raise ServerSelectionTimeoutError(
+pymongo.errors.ServerSelectionTimeoutError: localhost:27017: [Errno 111] Connection refused, Timeout: 30s, Topology Description: <TopologyDescription id: 65b56e462cc4b9e64ddb95ed, topology_type: Single, servers: [<ServerDescription ('localhost', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('localhost:27017: [Errno 111] Connection refused')>]>
+2024-01-27 20:58:12 [opgg] DEBUG: parsing https://www.op.gg/summoners/euw/NPC%20Kog%20Mawtiv%C3%A9-EUW)
+2024-01-27 20:58:38 [scrapy.crawler] INFO: Received SIGTERM, shutting down gracefully. Send again to force 
+2024-01-27 20:58:42 [scrapy.core.scraper] ERROR: Spider error processing <GET https://www.op.gg/summoners/euw/NPC%20Kog%20Mawtiv%C3%A9-EUW> (referer: None)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/twisted/internet/defer.py", line 892, in _runCallbacks
+    current.result = callback(  # type: ignore[misc]
+  File "/app/crawler/spiders/opgg_project.py", line 54, in parse
+    main(json_data)  # Passer json_data à la fonction main dans data_fct.py
+  File "/app/crawler/spiders/data_fct.py", line 196, in main
+    client, collects=connect_to_mongodb()
+  File "/app/crawler/spiders/data_fct.py", line 25, in connect_to_mongodb
+    regions_management(Regions)
+  File "/app/crawler/spiders/data_fct.py", line 6, in regions_management
+    if Regions.count_documents({}) == 0:
+  File "/usr/local/lib/python3.9/site-packages/pymongo/collection.py", line 1826, in count_documents
+    return self.__database.client._retryable_read(
+  File "/usr/local/lib/python3.9/site-packages/pymongo/mongo_client.py", line 1514, in _retryable_read
+    server = self._select_server(
+  File "/usr/local/lib/python3.9/site-packages/pymongo/mongo_client.py", line 1346, in _select_server
+    server = topology.select_server(server_selector)
+  File "/usr/local/lib/python3.9/site-packages/pymongo/topology.py", line 244, in select_server
+    return random.choice(self.select_servers(selector,
+  File "/usr/local/lib/python3.9/site-packages/pymongo/topology.py", line 202, in select_servers
+    server_descriptions = self._select_servers_loop(
+  File "/usr/local/lib/python3.9/site-packages/pymongo/topology.py", line 218, in _select_servers_loop
+    raise ServerSelectionTimeoutError(
+pymongo.errors.ServerSelectionTimeoutError: localhost:27017: [Errno 111] Connection refused, Timeout: 30s, Topology Description: <TopologyDescription id: 65b56e642cc4b9e64ddb95ee, topology_type: Single, servers: [<ServerDescription ('localhost', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('localhost:27017: [Errno 111] Connection refused')>]>
+2024-01-27 20:58:42 [opgg] DEBUG: parsing https://www.op.gg/summoners/euw/NPC%20Honthagr-01530)
+2024-01-27 21:05:22 [scrapy.addons] INFO: Enabled addons:
+[]
+2024-01-27 21:05:22 [asyncio] DEBUG: Using selector: EpollSelector
+2024-01-27 21:05:22 [scrapy.utils.log] DEBUG: Using reactor: twisted.internet.asyncioreactor.AsyncioSelectorReactor
+2024-01-27 21:05:22 [scrapy.utils.log] DEBUG: Using asyncio event loop: asyncio.unix_events._UnixSelectorEventLoop
+2024-01-27 21:05:22 [scrapy.extensions.telnet] INFO: Telnet Password: 4d78e0ecf3c2b4f7
+2024-01-27 21:05:22 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.memusage.MemoryUsage',
+ 'scrapy.extensions.logstats.LogStats']
+2024-01-27 21:05:22 [scrapy.crawler] INFO: Overridden settings:
+{'BOT_NAME': 'crawler',
+ 'FEED_EXPORT_ENCODING': 'utf-8',
+ 'LOG_FILE': 'spider_logs.txt',
+ 'NEWSPIDER_MODULE': 'crawler.spiders',
+ 'REQUEST_FINGERPRINTER_IMPLEMENTATION': '2.7',
+ 'ROBOTSTXT_OBEY': True,
+ 'SPIDER_MODULES': ['crawler.spiders'],
+ 'TWISTED_REACTOR': 'twisted.internet.asyncioreactor.AsyncioSelectorReactor'}
+2024-01-27 21:05:22 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.robotstxt.RobotsTxtMiddleware',
+ 'scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2024-01-27 21:05:22 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2024-01-27 21:05:22 [scrapy.middleware] INFO: Enabled item pipelines:
+[]
+2024-01-27 21:05:22 [scrapy.core.engine] INFO: Spider opened
+2024-01-27 21:05:22 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2024-01-27 21:05:22 [scrapy.extensions.telnet] INFO: Telnet console listening on 127.0.0.1:6023
+2024-01-27 21:05:22 [urllib3.connectionpool] DEBUG: Starting new HTTPS connection (1): www.op.gg:443
+2024-01-27 21:05:23 [urllib3.connectionpool] DEBUG: https://www.op.gg:443 "GET /summoners/euw/NPC%20Kerina-Coach HTTP/1.1" 200 None
+2024-01-27 21:05:23 [urllib3.connectionpool] DEBUG: Starting new HTTPS connection (1): www.op.gg:443
+2024-01-27 21:05:24 [urllib3.connectionpool] DEBUG: https://www.op.gg:443 "GET /summoners/euw/NPC%20Honthagr-01530 HTTP/1.1" 200 None
+2024-01-27 21:05:24 [urllib3.connectionpool] DEBUG: Starting new HTTPS connection (1): www.op.gg:443
+2024-01-27 21:05:25 [urllib3.connectionpool] DEBUG: https://www.op.gg:443 "GET /summoners/euw/NPC%20FoxSilver-NPC HTTP/1.1" 200 None
+2024-01-27 21:05:25 [urllib3.connectionpool] DEBUG: Starting new HTTPS connection (1): www.op.gg:443
+2024-01-27 21:05:26 [urllib3.connectionpool] DEBUG: https://www.op.gg:443 "GET /summoners/euw/NPC%20Reintack-EUW HTTP/1.1" 200 None
+2024-01-27 21:05:26 [urllib3.connectionpool] DEBUG: Starting new HTTPS connection (1): www.op.gg:443
+2024-01-27 21:05:27 [urllib3.connectionpool] DEBUG: https://www.op.gg:443 "GET /summoners/euw/NPC%20bebe-NPC HTTP/1.1" 200 None
+2024-01-27 21:05:27 [urllib3.connectionpool] DEBUG: Starting new HTTPS connection (1): www.op.gg:443
+2024-01-27 21:05:28 [urllib3.connectionpool] DEBUG: https://www.op.gg:443 "GET /summoners/euw/NPC%20Azaba-EUW HTTP/1.1" 200 None
+2024-01-27 21:05:28 [urllib3.connectionpool] DEBUG: Starting new HTTPS connection (1): www.op.gg:443
+2024-01-27 21:05:29 [urllib3.connectionpool] DEBUG: https://www.op.gg:443 "GET /summoners/euw/NPC%20Kog%20Mawtiv%C3%A9-EUW HTTP/1.1" 200 None
+2024-01-27 21:05:29 [urllib3.connectionpool] DEBUG: Starting new HTTPS connection (1): www.op.gg:443
+2024-01-27 21:05:30 [urllib3.connectionpool] DEBUG: https://www.op.gg:443 "GET /summoners/euw/NPC%20Yato-EUW HTTP/1.1" 200 None
+2024-01-27 21:05:30 [urllib3.connectionpool] DEBUG: Starting new HTTPS connection (1): www.op.gg:443
+2024-01-27 21:05:31 [urllib3.connectionpool] DEBUG: https://www.op.gg:443 "GET /summoners/euw/Caps-45555 HTTP/1.1" 200 None
+2024-01-27 21:05:31 [scrapy.core.engine] DEBUG: Crawled (403) <GET https://www.op.gg/robots.txt> (referer: None)
+2024-01-27 21:05:31 [protego] DEBUG: Rule at line 1 without any user agent to enforce it on.
+2024-01-27 21:05:31 [protego] DEBUG: Rule at line 3 without any user agent to enforce it on.
+2024-01-27 21:05:31 [protego] DEBUG: Rule at line 16 without any user agent to enforce it on.
+2024-01-27 21:05:31 [urllib3.connectionpool] DEBUG: Starting new HTTPS connection (1): www.op.gg:443
+2024-01-27 21:05:32 [urllib3.connectionpool] DEBUG: https://www.op.gg:443 "GET /summoners/kr/Hide%20on%20bush-KR1 HTTP/1.1" 200 None
+2024-01-27 21:05:32 [urllib3.connectionpool] DEBUG: Starting new HTTPS connection (1): www.op.gg:443
+2024-01-27 21:05:33 [urllib3.connectionpool] DEBUG: https://www.op.gg:443 "GET /summoners/euw/GoldenRetriever-NPC HTTP/1.1" 200 None
+2024-01-27 21:05:33 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://www.op.gg/summoners/euw/NPC%20Kerina-Coach> (referer: None)
+2024-01-27 21:05:34 [opgg] DEBUG: parsing https://www.op.gg/summoners/euw/NPC%20Kerina-Coach)
+2024-01-27 21:05:55 [scrapy.crawler] INFO: Received SIGTERM, shutting down gracefully. Send again to force 
+2024-01-27 21:06:04 [scrapy.core.scraper] ERROR: Spider error processing <GET https://www.op.gg/summoners/euw/NPC%20Kerina-Coach> (referer: None)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/twisted/internet/defer.py", line 892, in _runCallbacks
+    current.result = callback(  # type: ignore[misc]
+  File "/app/crawler/spiders/opgg_project.py", line 54, in parse
+    main(json_data)  # Passer json_data à la fonction main dans data_fct.py
+  File "/app/crawler/spiders/data_fct.py", line 196, in main
+    client, collects=connect_to_mongodb()
+  File "/app/crawler/spiders/data_fct.py", line 25, in connect_to_mongodb
+    regions_management(Regions)
+  File "/app/crawler/spiders/data_fct.py", line 6, in regions_management
+    if Regions.count_documents({}) == 0:
+  File "/usr/local/lib/python3.9/site-packages/pymongo/collection.py", line 1826, in count_documents
+    return self.__database.client._retryable_read(
+  File "/usr/local/lib/python3.9/site-packages/pymongo/mongo_client.py", line 1514, in _retryable_read
+    server = self._select_server(
+  File "/usr/local/lib/python3.9/site-packages/pymongo/mongo_client.py", line 1346, in _select_server
+    server = topology.select_server(server_selector)
+  File "/usr/local/lib/python3.9/site-packages/pymongo/topology.py", line 244, in select_server
+    return random.choice(self.select_servers(selector,
+  File "/usr/local/lib/python3.9/site-packages/pymongo/topology.py", line 202, in select_servers
+    server_descriptions = self._select_servers_loop(
+  File "/usr/local/lib/python3.9/site-packages/pymongo/topology.py", line 218, in _select_servers_loop
+    raise ServerSelectionTimeoutError(
+pymongo.errors.ServerSelectionTimeoutError: localhost:27017: [Errno 111] Connection refused, Timeout: 30s, Topology Description: <TopologyDescription id: 65b5701efdc42a9810e9ff00, topology_type: Single, servers: [<ServerDescription ('localhost', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('localhost:27017: [Errno 111] Connection refused')>]>
+2024-01-27 21:06:04 [scrapy.core.engine] INFO: Closing spider (shutdown)
+2024-01-27 21:06:04 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://www.op.gg/summoners/euw/Caps-45555> (referer: None)
+2024-01-27 21:06:04 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://www.op.gg/summoners/euw/NPC%20Honthagr-01530> (referer: None)
+2024-01-27 21:06:04 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://www.op.gg/summoners/euw/NPC%20Azaba-EUW> (referer: None)
+2024-01-27 21:06:04 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://www.op.gg/summoners/euw/NPC%20Yato-EUW> (referer: None)
+2024-01-27 21:06:04 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://www.op.gg/summoners/euw/NPC%20Reintack-EUW> (referer: None)
+2024-01-27 21:06:04 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://www.op.gg/summoners/euw/NPC%20bebe-NPC> (referer: None)
+2024-01-27 21:06:04 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://www.op.gg/summoners/euw/NPC%20Kog%20Mawtiv%C3%A9-EUW> (referer: None)
+2024-01-27 21:06:05 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://www.op.gg/summoners/euw/NPC%20FoxSilver-NPC> (referer: None)
+2024-01-28 17:58:09 [scrapy.addons] INFO: Enabled addons:
+[]
+2024-01-28 17:58:09 [asyncio] DEBUG: Using selector: SelectSelector
+2024-01-28 17:58:09 [scrapy.utils.log] DEBUG: Using reactor: twisted.internet.asyncioreactor.AsyncioSelectorReactor
+2024-01-28 17:58:09 [scrapy.utils.log] DEBUG: Using asyncio event loop: asyncio.windows_events._WindowsSelectorEventLoop
+2024-01-28 17:58:10 [scrapy.extensions.telnet] INFO: Telnet Password: 7ed3c579d1094709
+2024-01-28 17:58:10 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.logstats.LogStats']
+2024-01-28 17:58:10 [scrapy.crawler] INFO: Overridden settings:
+{'BOT_NAME': 'crawler',
+ 'FEED_EXPORT_ENCODING': 'utf-8',
+ 'LOG_FILE': 'spider_logs.txt',
+ 'NEWSPIDER_MODULE': 'crawler.spiders',
+ 'REQUEST_FINGERPRINTER_IMPLEMENTATION': '2.7',
+ 'ROBOTSTXT_OBEY': True,
+ 'SPIDER_MODULES': ['crawler.spiders'],
+ 'TWISTED_REACTOR': 'twisted.internet.asyncioreactor.AsyncioSelectorReactor'}
+2024-01-28 17:58:10 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.robotstxt.RobotsTxtMiddleware',
+ 'scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2024-01-28 17:58:10 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2024-01-28 17:58:10 [scrapy.middleware] INFO: Enabled item pipelines:
+[]
+2024-01-28 17:58:10 [scrapy.core.engine] INFO: Spider opened
+2024-01-28 17:58:10 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2024-01-28 17:58:10 [scrapy.extensions.telnet] INFO: Telnet console listening on 127.0.0.1:6023
+2024-01-28 17:58:10 [urllib3.connectionpool] DEBUG: Starting new HTTPS connection (1): www.op.gg:443
+2024-01-28 17:58:11 [urllib3.connectionpool] DEBUG: https://www.op.gg:443 "GET /summoners/euw/NPC%20Kerina-Coach HTTP/1.1" 200 None
+2024-01-28 17:58:11 [urllib3.connectionpool] DEBUG: Starting new HTTPS connection (1): www.op.gg:443
+2024-01-28 17:58:12 [urllib3.connectionpool] DEBUG: https://www.op.gg:443 "GET /summoners/euw/NPC%20Honthagr-01530 HTTP/1.1" 200 None
+2024-01-28 17:58:12 [urllib3.connectionpool] DEBUG: Starting new HTTPS connection (1): www.op.gg:443
+2024-01-28 17:58:13 [urllib3.connectionpool] DEBUG: https://www.op.gg:443 "GET /summoners/euw/NPC%20FoxSilver-NPC HTTP/1.1" 200 None
+2024-01-28 17:58:13 [urllib3.connectionpool] DEBUG: Starting new HTTPS connection (1): www.op.gg:443
+2024-01-28 17:58:14 [urllib3.connectionpool] DEBUG: https://www.op.gg:443 "GET /summoners/euw/NPC%20Reintack-EUW HTTP/1.1" 200 None
+2024-01-28 17:58:14 [urllib3.connectionpool] DEBUG: Starting new HTTPS connection (1): www.op.gg:443
+2024-01-28 17:58:15 [urllib3.connectionpool] DEBUG: https://www.op.gg:443 "GET /summoners/euw/NPC%20bebe-NPC HTTP/1.1" 200 None
+2024-01-28 17:58:15 [urllib3.connectionpool] DEBUG: Starting new HTTPS connection (1): www.op.gg:443
+2024-01-28 17:58:16 [urllib3.connectionpool] DEBUG: https://www.op.gg:443 "GET /summoners/euw/NPC%20Azaba-EUW HTTP/1.1" 200 None
+2024-01-28 17:58:16 [urllib3.connectionpool] DEBUG: Starting new HTTPS connection (1): www.op.gg:443
+2024-01-28 17:58:17 [urllib3.connectionpool] DEBUG: https://www.op.gg:443 "GET /summoners/euw/NPC%20Kog%20Mawtiv%C3%A9-EUW HTTP/1.1" 200 None
+2024-01-28 17:58:17 [urllib3.connectionpool] DEBUG: Starting new HTTPS connection (1): www.op.gg:443
+2024-01-28 17:58:18 [urllib3.connectionpool] DEBUG: https://www.op.gg:443 "GET /summoners/euw/NPC%20Yato-EUW HTTP/1.1" 200 None
+2024-01-28 17:58:19 [urllib3.connectionpool] DEBUG: Starting new HTTPS connection (1): www.op.gg:443
+2024-01-28 17:58:20 [scrapy.crawler] INFO: Received SIGINT, shutting down gracefully. Send again to force 
+2024-01-28 17:58:20 [urllib3.connectionpool] DEBUG: https://www.op.gg:443 "GET /summoners/euw/Caps-45555 HTTP/1.1" 200 None
+2024-01-28 17:58:20 [scrapy.core.engine] DEBUG: Crawled (403) <GET https://www.op.gg/robots.txt> (referer: None)
+2024-01-28 17:58:20 [protego] DEBUG: Rule at line 1 without any user agent to enforce it on.
+2024-01-28 17:58:20 [protego] DEBUG: Rule at line 3 without any user agent to enforce it on.
+2024-01-28 17:58:20 [protego] DEBUG: Rule at line 16 without any user agent to enforce it on.
+2024-01-28 17:58:20 [urllib3.connectionpool] DEBUG: Starting new HTTPS connection (1): www.op.gg:443
+2024-01-28 17:58:21 [urllib3.connectionpool] DEBUG: https://www.op.gg:443 "GET /summoners/kr/Hide%20on%20bush-KR1 HTTP/1.1" 200 None
+2024-01-28 17:58:21 [scrapy.core.engine] INFO: Closing spider (shutdown)
+2024-01-28 17:58:21 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://www.op.gg/summoners/euw/NPC%20Reintack-EUW> (referer: None)
+2024-01-28 17:58:21 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://www.op.gg/summoners/euw/NPC%20Kog%20Mawtiv%C3%A9-EUW> (referer: None)
+2024-01-28 17:58:22 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://www.op.gg/summoners/euw/NPC%20Yato-EUW> (referer: None)
+2024-01-28 17:58:22 [opgg] DEBUG: parsing https://www.op.gg/summoners/euw/NPC%20Reintack-EUW)
+2024-01-28 17:58:22 [scrapy.core.scraper] ERROR: Spider error processing <GET https://www.op.gg/summoners/euw/NPC%20Reintack-EUW> (referer: None)
+Traceback (most recent call last):
+  File "C:\Users\keren\Documents\DSIA4101\DSIA_4101A\ProjetOPGG39\lib\site-packages\twisted\internet\defer.py", line 892, in _runCallbacks
+    current.result = callback(  # type: ignore[misc]
+  File "C:\Users\keren\Documents\ESIEE\E4\S1\P2\DSIA_4201C_DataEngineerTools\ProjetOPGG39\Scrapy\crawler\spiders\opgg_project.py", line 54, in parse
+    main(json_data)  # Passer json_data à la fonction main dans data_fct.py
+  File "C:\Users\keren\Documents\ESIEE\E4\S1\P2\DSIA_4201C_DataEngineerTools\ProjetOPGG39\Scrapy\crawler\spiders\data_fct.py", line 196, in main
+    client, collects=connect_to_mongodb()
+  File "C:\Users\keren\Documents\ESIEE\E4\S1\P2\DSIA_4201C_DataEngineerTools\ProjetOPGG39\Scrapy\crawler\spiders\data_fct.py", line 25, in connect_to_mongodb
+    regions_management(Regions)
+  File "C:\Users\keren\Documents\ESIEE\E4\S1\P2\DSIA_4201C_DataEngineerTools\ProjetOPGG39\Scrapy\crawler\spiders\data_fct.py", line 7, in regions_management
+    with open('regions.json', 'r', encoding='utf-8') as json_file:
+FileNotFoundError: [Errno 2] No such file or directory: 'regions.json'
+2024-01-28 17:58:22 [opgg] DEBUG: parsing https://www.op.gg/summoners/euw/NPC%20Kog%20Mawtiv%C3%A9-EUW)
+2024-01-28 17:58:22 [scrapy.core.scraper] ERROR: Spider error processing <GET https://www.op.gg/summoners/euw/NPC%20Kog%20Mawtiv%C3%A9-EUW> (referer: None)
+Traceback (most recent call last):
+  File "C:\Users\keren\Documents\DSIA4101\DSIA_4101A\ProjetOPGG39\lib\site-packages\twisted\internet\defer.py", line 892, in _runCallbacks
+    current.result = callback(  # type: ignore[misc]
+  File "C:\Users\keren\Documents\ESIEE\E4\S1\P2\DSIA_4201C_DataEngineerTools\ProjetOPGG39\Scrapy\crawler\spiders\opgg_project.py", line 54, in parse
+    main(json_data)  # Passer json_data à la fonction main dans data_fct.py
+  File "C:\Users\keren\Documents\ESIEE\E4\S1\P2\DSIA_4201C_DataEngineerTools\ProjetOPGG39\Scrapy\crawler\spiders\data_fct.py", line 196, in main
+    client, collects=connect_to_mongodb()
+  File "C:\Users\keren\Documents\ESIEE\E4\S1\P2\DSIA_4201C_DataEngineerTools\ProjetOPGG39\Scrapy\crawler\spiders\data_fct.py", line 25, in connect_to_mongodb
+    regions_management(Regions)
+  File "C:\Users\keren\Documents\ESIEE\E4\S1\P2\DSIA_4201C_DataEngineerTools\ProjetOPGG39\Scrapy\crawler\spiders\data_fct.py", line 7, in regions_management
+    with open('regions.json', 'r', encoding='utf-8') as json_file:
+FileNotFoundError: [Errno 2] No such file or directory: 'regions.json'
+2024-01-28 17:58:22 [scrapy.crawler] INFO: Received SIGINT twice, forcing unclean shutdown
+2024-01-28 17:58:22 [opgg] DEBUG: parsing https://www.op.gg/summoners/euw/NPC%20Yato-EUW)
+2024-01-28 17:58:22 [scrapy.core.scraper] ERROR: Spider error processing <GET https://www.op.gg/summoners/euw/NPC%20Yato-EUW> (referer: None)
+Traceback (most recent call last):
+  File "C:\Users\keren\Documents\DSIA4101\DSIA_4101A\ProjetOPGG39\lib\site-packages\twisted\internet\defer.py", line 892, in _runCallbacks
+    current.result = callback(  # type: ignore[misc]
+  File "C:\Users\keren\Documents\ESIEE\E4\S1\P2\DSIA_4201C_DataEngineerTools\ProjetOPGG39\Scrapy\crawler\spiders\opgg_project.py", line 54, in parse
+    main(json_data)  # Passer json_data à la fonction main dans data_fct.py
+  File "C:\Users\keren\Documents\ESIEE\E4\S1\P2\DSIA_4201C_DataEngineerTools\ProjetOPGG39\Scrapy\crawler\spiders\data_fct.py", line 196, in main
+    client, collects=connect_to_mongodb()
+  File "C:\Users\keren\Documents\ESIEE\E4\S1\P2\DSIA_4201C_DataEngineerTools\ProjetOPGG39\Scrapy\crawler\spiders\data_fct.py", line 25, in connect_to_mongodb
+    regions_management(Regions)
+  File "C:\Users\keren\Documents\ESIEE\E4\S1\P2\DSIA_4201C_DataEngineerTools\ProjetOPGG39\Scrapy\crawler\spiders\data_fct.py", line 7, in regions_management
+    with open('regions.json', 'r', encoding='utf-8') as json_file:
+FileNotFoundError: [Errno 2] No such file or directory: 'regions.json'
+2024-01-28 17:58:22 [scrapy.core.downloader.handlers.http11] WARNING: Got data loss in https://www.op.gg/summoners/euw/NPC%20Honthagr-01530. If you want to process broken responses set the setting DOWNLOAD_FAIL_ON_DATALOSS = False -- This message won't be shown in further requests
+2024-01-28 17:58:22 [scrapy.downloadermiddlewares.retry] DEBUG: Retrying <GET https://www.op.gg/summoners/euw/NPC%20Honthagr-01530> (failed 1 times): [<twisted.python.failure.Failure twisted.internet.error.ConnectionLost: Connection to the other side was lost in a non-clean fashion: Connection lost.>, <twisted.python.failure.Failure twisted.web.http._DataLoss: Chunked decoder in 'CHUNK_LENGTH' state, still expecting more data to get to 'FINISHED' state.>]
+2024-01-28 17:58:22 [scrapy.core.downloader.handlers.http11] WARNING: Got data loss in https://www.op.gg/summoners/euw/NPC%20FoxSilver-NPC. If you want to process broken responses set the setting DOWNLOAD_FAIL_ON_DATALOSS = False -- This message won't be shown in further requests
+2024-01-28 17:58:22 [scrapy.downloadermiddlewares.retry] DEBUG: Retrying <GET https://www.op.gg/summoners/euw/NPC%20FoxSilver-NPC> (failed 1 times): [<twisted.python.failure.Failure twisted.internet.error.ConnectionLost: Connection to the other side was lost in a non-clean fashion: Connection lost.>, <twisted.python.failure.Failure twisted.web.http._DataLoss: Chunked decoder in 'CHUNK_LENGTH' state, still expecting more data to get to 'FINISHED' state.>]
+2024-01-28 17:58:22 [scrapy.core.downloader.handlers.http11] WARNING: Got data loss in https://www.op.gg/summoners/euw/NPC%20bebe-NPC. If you want to process broken responses set the setting DOWNLOAD_FAIL_ON_DATALOSS = False -- This message won't be shown in further requests
+2024-01-28 17:58:22 [scrapy.downloadermiddlewares.retry] DEBUG: Retrying <GET https://www.op.gg/summoners/euw/NPC%20bebe-NPC> (failed 1 times): [<twisted.python.failure.Failure twisted.internet.error.ConnectionLost: Connection to the other side was lost in a non-clean fashion: Connection lost.>, <twisted.python.failure.Failure twisted.web.http._DataLoss: Chunked decoder in 'CHUNK_LENGTH' state, still expecting more data to get to 'FINISHED' state.>]
+2024-01-28 17:58:22 [scrapy.core.downloader.handlers.http11] WARNING: Got data loss in https://www.op.gg/summoners/euw/NPC%20Azaba-EUW. If you want to process broken responses set the setting DOWNLOAD_FAIL_ON_DATALOSS = False -- This message won't be shown in further requests
+2024-01-28 17:58:22 [scrapy.downloadermiddlewares.retry] DEBUG: Retrying <GET https://www.op.gg/summoners/euw/NPC%20Azaba-EUW> (failed 1 times): [<twisted.python.failure.Failure twisted.internet.error.ConnectionLost: Connection to the other side was lost in a non-clean fashion: Connection lost.>, <twisted.python.failure.Failure twisted.web.http._DataLoss: Chunked decoder in 'BODY' state, still expecting more data to get to 'FINISHED' state.>]
+2024-01-28 17:58:22 [scrapy.core.downloader.handlers.http11] WARNING: Got data loss in https://www.op.gg/summoners/euw/NPC%20Kerina-Coach. If you want to process broken responses set the setting DOWNLOAD_FAIL_ON_DATALOSS = False -- This message won't be shown in further requests
+2024-01-28 17:58:22 [scrapy.downloadermiddlewares.retry] DEBUG: Retrying <GET https://www.op.gg/summoners/euw/NPC%20Kerina-Coach> (failed 1 times): [<twisted.python.failure.Failure twisted.internet.error.ConnectionLost: Connection to the other side was lost in a non-clean fashion: Connection lost.>, <twisted.python.failure.Failure twisted.web.http._DataLoss: Chunked decoder in 'CHUNK_LENGTH' state, still expecting more data to get to 'FINISHED' state.>]

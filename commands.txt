@@ -1,1 +1,11 @@
-docker-compose up --build
+#docker-compose up --build
+
+docker build -t mongodb-opgg -f MongoDB/Dockerfile .
+docker build -t scrapy-opgg -f Scrapy/Dockerfile .
+docker build -t application-opgg -f Application/Dockerfile .
+
+docker network create opgg-network
+docker run -d --network opgg-network -p 27017:27017 -v ./mongodbdata:/data/db --name mongodb-opgg-conteneur mongodb-opgg
+docker run -d --network opgg-network --name scrapy-opgg-conteneur scrapy-opgg
+docker run -d --network opgg-network -p 8050:8050 --name application-opgg-conteneur application-opgg
+

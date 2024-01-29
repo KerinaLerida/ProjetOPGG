@@ -1,6 +1,5 @@
-import multiprocessing
+#import multiprocessing
 
-import dash_bootstrap_components as dbc
 from dash import html, dcc, Output, Input, dash, State
 import pandas as pd
 import plotly.express as px
@@ -9,12 +8,12 @@ from pymongo import MongoClient
 from scrapy.crawler import CrawlerProcess
 from scrapy.utils.project import get_project_settings
 
-from Scrapy.crawler.crawler.spiders.opgg_project import OpggSpider
-
+#from Scrapy.crawler.spiders.opgg_project import OpggSpider
+import requests
 
 last_click_time=0
 
-client = MongoClient('mongodb://localhost:27017/')
+client = MongoClient('mongodb://mongodb-opgg-conteneur:27017/')
 db = client['TestScraping']
 
 Joueurs = db["Joueurs"]
@@ -24,13 +23,18 @@ MostChampPlayed = db['MostChampPlayed']
 Teams = db["Teams"]
 Regions=db["Regions"]
 
-#spider=OpggSpider()
-#new_url = "https://www.op.gg/summoners/euw/Caps-45555"
-#request = spider.system_request(new_url)
 
 regions_data = Regions.find({}, {'_id': 1, 'name': 1})
 regions_options = [{'label': region['name'], 'value': region['_id']} for region in regions_data]
 
+# Ajoutez cette fonction pour déclencher le scraping avec une nouvelle URL
+def trigger_scraping(new_url):
+    api_url = "http://application:8000/scrape"  # Assurez-vous que "application" est le nom du service dans votre docker-compose
+    payload = {"url": new_url}
+    response = requests.post(api_url, json=payload)
+    return response.json()
+
+"""
 def run_crawler(new_url):
     # Configurer les paramètres du projet Scrapy
     settings = get_project_settings()
@@ -41,7 +45,7 @@ def run_crawler(new_url):
 
     # Démarrer le processus (bloquant jusqu'à ce que le Spider ait terminé)
     process.start()
-    process.stop()
+    process.stop()"""
 
 def get_all_champions():
     champions_data = Champions.find({})
@@ -72,7 +76,7 @@ def get_player_info(game_name, tagline):
             html.H4(f"Player: {player_info['game_name']} #{player_info['tagline']}", style={'color': '#1E90FF','margin-right': '10px'}),
             html.Img(src=player_info['profile_image_url'], style={'width': '50px', 'height': '50px', 'margin-bottom': '10px'}),
         ], style={'display': 'flex', 'align-items': 'flex-start', 'justify-content': 'flex-start', 'margin-bottom': '10px'}),
-        dbc.Table.from_dataframe(pd.DataFrame({
+        html.Table.from_dataframe(pd.DataFrame({
             'Level': [player_info['level']],
             'Ladder Rank (%)': [player_info['ladder_rank']],
             'Region': [player_info['region_id']],
@@ -87,7 +91,7 @@ def get_player_info(game_name, tagline):
                 html.H5(f"Team: {team_info['name']}", style={'color': '#32CD32', 'margin-right': '10px'}),
                 html.Img(src=team_info['image_url'], style={'width': '40px', 'height': '40px', 'margin-bottom': '10px'}),
             ], style={'display': 'flex', 'align-items': 'flex-start', 'justify-content': 'flex-start','margin-bottom': '10px'}),
-            dbc.Table.from_dataframe(pd.DataFrame({
+            html.Table.from_dataframe(pd.DataFrame({
                 'Authority': [player_info['authority']],
                 'Nickname': [player_info['nickname']],
             }), striped=True, bordered=True, hover=True),
@@ -168,7 +172,7 @@ def generate_esport_map():
 
 
 # Initialisation de l'application Dash
-app = dash.Dash(__name__, external_stylesheets=[dbc.themes.CYBORG],suppress_callback_exceptions=True)
+app = dash.Dash(__name__, external_stylesheets=[html.themes.CYBORG],suppress_callback_exceptions=True)
 
 first_page_content = html.Div(children=[
     html.H3(children='Project : OP.GG', style={'margin-bottom': '15px','textAlign': 'center'}),
@@ -176,10 +180,10 @@ first_page_content = html.Div(children=[
 
     html.Img(src=app.get_asset_url('logo.png'),style={'width': '80px', 'height': '100px', 'margin': 'auto', 'display': 'block', 'margin-bottom': '20px'}),
 
-    dbc.Row(
+    html.Row(
         [
-            dbc.Col([
-                dbc.FormGroup([
+            html.Col([
+                html.FormGroup([
                     #dbc.Label('Region'),
                     dcc.Dropdown(
                         id='dropdown-region',
@@ -189,14 +193,14 @@ first_page_content = html.Div(children=[
                     ),
                 ]),
             ], width=3),
-            dbc.Col([
-                dbc.FormGroup([
+            html.Col([
+                html.FormGroup([
                     dcc.Input(id='input-box', type='text', value='Game Name + #Tag'),
                 ]),
             ], width=2, style={'marginTop': '5px'}),
-            dbc.Col([
-                dbc.FormGroup([
-                    dbc.Button('.GG', id='button', n_clicks=0)
+            html.Col([
+                html.FormGroup([
+                    html.Button('.GG', id='button', n_clicks=0)
                 ]),
             ], width=1),
         ],
@@ -212,7 +216,7 @@ first_page_content = html.Div(children=[
     dcc.Graph(id='ladder-rank-histogram'),
 
     dcc.Graph(id='esport-map'),
-    dbc.Button('Update',id='esport-map-button',n_clicks=0),
+    html.Button('Update',id='esport-map-button',n_clicks=0),
     html.Div(id='update-info'),
 
     html.Footer(children=[
@@ -245,8 +249,8 @@ second_page_content = html.Div([
 
 app.layout = html.Div([
     dcc.Location(id='url', refresh=False),
-    dbc.Button("Dashboard", id='btn-dashboard', href='/dashboard/page1', style={'margin-right': '10px'}),
-    dbc.Button("Champions", id='btn-champions', href='/dashboard/page2'),
+    html.Button("Dashboard", id='btn-dashboard', href='/dashboard/page1', style={'margin-right': '10px'}),
+    html.Button("Champions", id='btn-champions', href='/dashboard/page2'),
     html.Div(id='content'),
     html.Div(id='output-container'),
     html.Div(id='player-info')
@@ -276,12 +280,10 @@ def update_output(n_clicks, value, region):
             output_text=f'Region selected: {region} | Gamename: {gamename} | Tag: {tag}'
             new_url = f"https://www.op.gg/summoners/{region}/{gamename.replace(' ', '-')}-{tag}"
 
-            #spider = OpggSpider()
-            #request=next(spider.start_requests_for_new_url(new_url))
-
-            process=multiprocessing.Process(target=run_crawler, args=(new_url,))
+            """process=multiprocessing.Process(target=run_crawler, args=(new_url,))
             process.start()
-            process.join()
+            process.join()"""
+            trigger_scraping(new_url)
 
             player_info_layout = get_player_info(gamename, tag)
             print(output_text, player_info_layout)

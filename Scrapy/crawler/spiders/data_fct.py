@@ -2,16 +2,103 @@ import json
 from pymongo import MongoClient,errors
 import pymongo
 
+import logging
+logging.basicConfig(level=logging.INFO)
+logger = logging.getLogger(__name__)
+
+data_regions=[
+    {
+        "_id": "na",
+        "name": "North America",
+        "countries": ["Canada", "United States of America"]
+    },
+    {
+        "_id": "euw",
+        "name": "Europe West",
+        "countries": ["France", "United Kingdom of Great Britain and Northern Ireland", "Ireland", "Spain", "Portugal", "Monaco", "Andorra", "Belgium", "Luxembourg", "Netherlands", "Switzerland", "Italy", "Saint Martin", "Vatican", "Malta", "Austria", "Germany"]
+    },
+    {
+        "_id": "eune",
+        "name": "Europe Nordic & East",
+        "countries": ["Norway", "Sweden", "Finland", "Estonia", "Latvia", "Lithuania", "Belarus", "Ukraine", "Crimea", "Moldova", "Romania", "Bulgaria", "Greece", "Albania", "Macedonia", "Kosovo", "Montenegro", "Serbia", "Bosnia and Herzegovina", "Croatia", "Hungary", "Slovakia", "Slovenia", "Czech Republic", "Poland"]
+    },
+    {
+        "_id": "oce",
+        "name": "Oceania",
+        "countries": ["Australia", "New Zealand"]
+    },
+    {
+        "_id": "kr",
+        "name": "Korea",
+        "countries": ["Korea"]
+    },
+    {
+        "_id": "jp",
+        "name": "Japan",
+        "countries": ["Japan"]
+    },
+    {
+        "_id": "br",
+        "name": "Brazil",
+        "countries": ["Brazil"]
+    },
+    {
+        "_id": "las",
+        "name": "Latin America South",
+        "countries": ["Bolivia", "Paraguay", "Argentina", "Uruguay", "Chile"]
+    },
+    {
+        "_id": "lan",
+        "name": "Latin America North",
+        "countries": ["Venezuela", "Colombia", "Ecuador", "Peru"]
+    },
+    {
+        "_id": "ru",
+        "name": "Russia",
+        "countries": ["Russia"]
+    },
+    {
+        "_id": "tr",
+        "name": "Türkiye",
+        "countries": ["Türkiye"]
+    },
+    {
+        "_id": "sg",
+        "name": "Singapore",
+        "countries": ["Singapore"]
+    },
+    {
+        "_id": "ph",
+        "name": "Philippines",
+        "countries": ["Philippines"]
+    },
+    {
+        "_id": "tw",
+        "name": "Taiwan",
+        "countries": ["Taiwan"]
+    },
+    {
+        "_id": "vn",
+        "name": "Vietnam",
+        "countries": ["Vietnam"]
+    },
+    {
+        "_id": "th",
+        "name": "Thailand",
+        "countries": ["Thailand"]
+    }
+]
+
 def regions_management(Regions):
     if Regions.count_documents({}) == 0:
-        with open('regions.json', 'r', encoding='utf-8') as json_file:
-            data = json.load(json_file)
-            Regions.bulk_write([pymongo.InsertOne(doc) for doc in data])
+        Regions.bulk_write([pymongo.InsertOne(doc) for doc in data_regions])
 
 def connect_to_mongodb():
+    logger.info("Connexion à la base de données MongoDB...")
     try:
+        logger.info("Tentative de connexion à la base de données MongoDB...")
         # Connexion à la base de données MongoDB
-        client = MongoClient('mongodb://localhost:27017/')
+        client = MongoClient('mongodb://mongodb-opgg-conteneur:27017/')
         db = client['TestScraping']
 
         # Initialisation des collections
@@ -27,6 +114,7 @@ def connect_to_mongodb():
         return client, [Joueurs, Teams, Ranked, MostChampPlayed, Champions]
     except errors.ConnectionFailure as e:
         print(f"Erreur de connexion à MongoDB : {e}")
+        logger.error(f"Erreur de connexion à MongoDB : {e}")
         raise
 
 def disconnect_from_mongodb(client):
@@ -203,9 +291,4 @@ def main(jspn_data):
 
     disconnect_from_mongodb(client)
 
-if __name__ == "__main__":
-    # Chargez le JSON depuis un fichier ou autre source
-    with open("output.json", 'r', encoding='utf-8') as json_file:
-        data = json.load(json_file)
-        # Appelez la fonction main avec les données JSON chargées
-        main(data)
+

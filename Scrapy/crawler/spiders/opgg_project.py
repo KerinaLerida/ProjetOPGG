@@ -1,7 +1,7 @@
 import scrapy
 import json
 import requests
-
+import time
 from .data_fct import main
 
 class OpggSpider(scrapy.Spider):
@@ -37,8 +37,13 @@ class OpggSpider(scrapy.Spider):
             return None
 
     def start_requests(self):
+        """
         for url in self.start_urls:
-            yield self.system_request(url)
+            yield self.system_request(url)"""
+        while True:
+            for url in self.start_urls:
+                yield self.system_request(url)
+            time.sleep(30)
 
     def start_requests_for_new_url(self, new_url):
         yield self.system_request(new_url)

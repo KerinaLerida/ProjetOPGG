@@ -5,10 +5,7 @@ services:
     build:
       context: ./MongoDB
     ports:
-      - "27017:27017"
-    volumes:
-      - ./mongodb_data:/data/db
-    command: ["mongod", "--bind_ip_all"]
+        - "27017:27017"
 
   scrapy:
     build:
@@ -20,7 +17,7 @@ services:
     build:
       context: ./Application
     ports:
-      - "8050:8050"
+        - "8050:8050"
     depends_on:
       - mongodb
       - scrapy
