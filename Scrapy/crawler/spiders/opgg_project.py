@@ -38,10 +38,21 @@ class OpggSpider(scrapy.Spider):
 
     def start_requests(self):
         for url in self.start_urls:
-            yield self.system_request(url)
+            request = self.system_request(url)
+            if request:
+                yield request
 
-    def start_requests_for_new_url(self, new_url):
-        yield self.system_request(new_url)
+    def continue_scraping(self):
+        api_url = "http://scrapy:8000/get_new_url"
+        response = requests.get(api_url)
+
+        if response.status_code == 200:
+            new_url = response.json().get("url")
+            if new_url:
+                request = self.system_request(new_url)
+                if request:
+                    self.log(f"Continuing scraping with new URL: {new_url}")
+                    self.crawler.engine.crawl(request, spider=self)
 
     def parse(self, response):
 
@@ -55,6 +66,7 @@ class OpggSpider(scrapy.Spider):
             except json.JSONDecodeError as e:
                 self.log(f"Failed to decode JSON: {e}")
 
+        self.continue_scraping()
 
 
 

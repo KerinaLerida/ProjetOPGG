@@ -1,5 +1,6 @@
 #import multiprocessing
-
+import flask
+import dash_bootstrap_components as dbc
 from dash import html, dcc, Output, Input, dash, State
 import pandas as pd
 import plotly.express as px
@@ -29,7 +30,7 @@ regions_options = [{'label': region['name'], 'value': region['_id']} for region 
 
 # Ajoutez cette fonction pour déclencher le scraping avec une nouvelle URL
 def trigger_scraping(new_url):
-    api_url = "http://application:8000/scrape"  # Assurez-vous que "application" est le nom du service dans votre docker-compose
+    api_url = "scrapy://scrapy-opgg-conteneur:8000/"  # Assurez-vous que "application" est le nom du service dans votre docker-compose
     payload = {"url": new_url}
     response = requests.post(api_url, json=payload)
     return response.json()
@@ -76,7 +77,7 @@ def get_player_info(game_name, tagline):
             html.H4(f"Player: {player_info['game_name']} #{player_info['tagline']}", style={'color': '#1E90FF','margin-right': '10px'}),
             html.Img(src=player_info['profile_image_url'], style={'width': '50px', 'height': '50px', 'margin-bottom': '10px'}),
         ], style={'display': 'flex', 'align-items': 'flex-start', 'justify-content': 'flex-start', 'margin-bottom': '10px'}),
-        html.Table.from_dataframe(pd.DataFrame({
+        dbc.Table.from_dataframe(pd.DataFrame({
             'Level': [player_info['level']],
             'Ladder Rank (%)': [player_info['ladder_rank']],
             'Region': [player_info['region_id']],
@@ -91,7 +92,7 @@ def get_player_info(game_name, tagline):
                 html.H5(f"Team: {team_info['name']}", style={'color': '#32CD32', 'margin-right': '10px'}),
                 html.Img(src=team_info['image_url'], style={'width': '40px', 'height': '40px', 'margin-bottom': '10px'}),
             ], style={'display': 'flex', 'align-items': 'flex-start', 'justify-content': 'flex-start','margin-bottom': '10px'}),
-            html.Table.from_dataframe(pd.DataFrame({
+            dbc.Table.from_dataframe(pd.DataFrame({
                 'Authority': [player_info['authority']],
                 'Nickname': [player_info['nickname']],
             }), striped=True, bordered=True, hover=True),
@@ -172,7 +173,8 @@ def generate_esport_map():
 
 
 # Initialisation de l'application Dash
-app = dash.Dash(__name__, external_stylesheets=[html.themes.CYBORG],suppress_callback_exceptions=True)
+server = flask.Flask(__name__)
+app = dash.Dash(__name__, external_stylesheets=[dbc.themes.CYBORG],suppress_callback_exceptions=True, server=server)
 
 first_page_content = html.Div(children=[
     html.H3(children='Project : OP.GG', style={'margin-bottom': '15px','textAlign': 'center'}),
@@ -180,11 +182,11 @@ first_page_content = html.Div(children=[
 
     html.Img(src=app.get_asset_url('logo.png'),style={'width': '80px', 'height': '100px', 'margin': 'auto', 'display': 'block', 'margin-bottom': '20px'}),
 
-    html.Row(
+    dbc.Row(
         [
-            html.Col([
-                html.FormGroup([
-                    #dbc.Label('Region'),
+            dbc.Col([
+                dbc.FormGroup([
+                    # dbc.Label('Region'),
                     dcc.Dropdown(
                         id='dropdown-region',
                         options=regions_options,
@@ -193,14 +195,14 @@ first_page_content = html.Div(children=[
                     ),
                 ]),
             ], width=3),
-            html.Col([
-                html.FormGroup([
+            dbc.Col([
+                dbc.FormGroup([
                     dcc.Input(id='input-box', type='text', value='Game Name + #Tag'),
                 ]),
             ], width=2, style={'marginTop': '5px'}),
-            html.Col([
-                html.FormGroup([
-                    html.Button('.GG', id='button', n_clicks=0)
+            dbc.Col([
+                dbc.FormGroup([
+                    dbc.Button('.GG', id='button', n_clicks=0)
                 ]),
             ], width=1),
         ],
@@ -216,7 +218,7 @@ first_page_content = html.Div(children=[
     dcc.Graph(id='ladder-rank-histogram'),
 
     dcc.Graph(id='esport-map'),
-    html.Button('Update',id='esport-map-button',n_clicks=0),
+    dbc.Button('Update',id='esport-map-button',n_clicks=0),
     html.Div(id='update-info'),
 
     html.Footer(children=[
@@ -249,8 +251,8 @@ second_page_content = html.Div([
 
 app.layout = html.Div([
     dcc.Location(id='url', refresh=False),
-    html.Button("Dashboard", id='btn-dashboard', href='/dashboard/page1', style={'margin-right': '10px'}),
-    html.Button("Champions", id='btn-champions', href='/dashboard/page2'),
+    dbc.Button("Dashboard", id='btn-dashboard', href='/dashboard/page1', style={'margin-right': '10px'}),
+    dbc.Button("Champions", id='btn-champions', href='/dashboard/page2'),
     html.Div(id='content'),
     html.Div(id='output-container'),
     html.Div(id='player-info')
@@ -283,7 +285,8 @@ def update_output(n_clicks, value, region):
             """process=multiprocessing.Process(target=run_crawler, args=(new_url,))
             process.start()
             process.join()"""
-            trigger_scraping(new_url)
+            #trigger_scraping(new_url)
+
 
             player_info_layout = get_player_info(gamename, tag)
             print(output_text, player_info_layout)
@@ -375,4 +378,4 @@ def update_esport_map(n_clicks, ts):
 
 
 if __name__ == '__main__':
-    app.run_server(debug=True)
+    app.run_server(host='0.0.0.0', port=8050, debug=True)

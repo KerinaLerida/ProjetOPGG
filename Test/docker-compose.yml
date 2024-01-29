@@ -3,19 +3,19 @@ version: '3'
 services:
   mongodb:
     build:
-      context: ./MongoDB
+      context: ../MongoDB
     ports:
         - "27017:27017"
 
   scrapy:
     build:
-      context: ./Scrapy
+      context: ../Scrapy
     depends_on:
       - mongodb
 
   application:
     build:
-      context: ./Application
+      context: ../Application
     ports:
         - "8050:8050"
     depends_on:
