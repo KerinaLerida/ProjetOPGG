@@ -342,7 +342,6 @@ first_page_content = html.Div(children=[
         dcc.Link('Players - Roster of all players in the Database', href='/dashboard/page3', style={'margin-bottom': '20px'}),
         html.P("© 2024 - All rights reserved. By Keren COUTON & Matthieu CONSTANTIN"),
     ])
-
 ])
 
 # Page 2
