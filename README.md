@@ -20,6 +20,28 @@ Le projet est organisé en trois dossiers principaux, ayant chacun son DockerFil
 
 Chaque dossier (MongoDB, Scrapy, Application) contient un fichier Dockerfile pour construire l'image respective. Et à la racine du projet, un fichier docker-compose.yml est présent pour déployer les conteneurs Docker pour nos 3 services MongoDB, Scrapy et Application.
 
+## Choix techniques
+
+1. Web Scraping : Scrapy
+
+Nous avons choisis puisque Scrapy est un framework Python open-source conçu pour extraire des données de sites web, qui offre une structure organisée pour la création de spiders et fournit des fonctionnalités puissantes pour le scraping. Utiliser Scrapy nous a paru logique puisque l'on devait extraire des données à partir de plusieurs pages web issues d'un même site web et que Scraping gère le scraping de manière efficace.
+
+3. Base de données : MongoDB
+
+Nous avons choisis MongoDB car c'est une base de données NoSQL orientée document, ce qui signifie qu'elle stocke les données sous forme de documents JSON. Et dans notre cas de scraping, le site web avait un sélecteur CSS, qui pointait sur un format JSON, ainsi l'utilisation de MongoDB fut évident par rapport à un base de données SQL. Puisqu'utiliser MongoDB revenait à simplifier le stockage et la manipulation des données extraites, car elles sont déjà dans un format similaire (JSON).
+
+De plus, la flexibilité de MongoDB est particulièrement utile lorsqu'on travaille avec des données semi-structurées, comme c'est souvent le cas dans le scraping web et dans notre cas par exemple.
+
+4. Application : Dash & Serveur Flask
+
+Au niveau de la création de notre application WEB, nous avons choisis Dash, qui est un framework Python conçu pour la création d'applications web interactives basées sur Plotly et qui permet de construire des tableaux de bord interactifs avec des composants réactifs en Python.
+
+Et nous avons aussi Dash avec un serveur Flask enfin de nous offrir une manière efficace de construire un tableau de bord interactif pour visualiser les données extraites. Dans notre cas, Flask sert de backend web pour Dash, et l'intégration entre les deux est relativement simple.
+
+5. Conclusion
+
+Nos choix ont été fait ainsi d'optimiser le processus d'extraction des données avec Scrapy, stocker ces données de manière flexible avec MongoDB, et fournir une interface utilisateur interactive pour explorer ces données à l'aide de Dash avec un backend Flask. Et nous avons choisis chacune de ces technologies en fonction de ses avantages spécifiques par rapport aux besoins du projet.
+
 ## Utilisation
 
 1. Clonez le dépôt sur votre machine locale :
