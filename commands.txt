@@ -9,3 +9,7 @@ docker run -d --network opgg-network -p 27017:27017 -v ./mongodbdata:/data/db --
 docker run -d --network opgg-network --name scrapy-opgg-conteneur scrapy-opgg
 docker run -d --network opgg-network -p 8050:8050 --name application-opgg-conteneur application-opgg
 
+# piste d'amélioration : mise en place du scraping dynamique pour ajouter des joueurs à la bdd et update les infos sur les joueurs déjà présents
+# EUNE est regroupé dans EUW en compétition
+
+accès appli : http://localhost:8050/

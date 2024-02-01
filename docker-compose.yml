@@ -1,35 +1,34 @@
-version: '3'
+version: '3'  # Version de docker-compose
 
-networks:
+networks:     # Création d'un réseau pour les conteneurs
     opgg-network:
         driver: bridge
 
-services:
-  mongodb-opgg-conteneur:
-    build:
+services:     # Création des conteneurs
+  mongodb-opgg-conteneur: # Conteneur MongoDB : Service de base de données
+    build:                      # Création de l'image du conteneur
       context: ./MongoDB
-    ports:
+    ports:                      # Ouverture du port 27017 pour accéder à la base de données
         - "27017:27017"
-    volumes:
+    volumes:                    # Création d'un volume pour stocker les données de la base de données
         - ./MongoDB/data:/data/db
-    networks:
+    networks:                   # Ajout du conteneur au réseau
       - opgg-network
 
-  scrapy-opgg-conteneur:
-    build:
+  scrapy-opgg-conteneur: # Conteneur Scrapy : Service de scraping
+    build:                      # Création de l'image du conteneur
       context: ./Scrapy
-    depends_on:
+    depends_on:                 # Dépendance au conteneur MongoDB : le conteneur Scrapy ne peut pas démarrer tant que le conteneur MongoDB n'est pas démarré
       - mongodb-opgg-conteneur
-    networks:
+    networks:                   # Ajout du conteneur au réseau
       - opgg-network
 
-  application-opgg-conteneur:
-    build:
+  application-opgg-conteneur: # Conteneur Application : Service de visualisation des données
+    build:                      # Création de l'image du conteneur
       context: ./Application
-    ports:
+    ports:                      # Ouverture du port 8050 pour accéder à l'application
         - "8050:8050"
-    depends_on:
+    depends_on:                 # Dépendance au conteneur Scrapy : le conteneur Application ne peut pas démarrer tant que le conteneur Scrapy n'est pas démarré
       - scrapy-opgg-conteneur
-    networks:
+    networks:                   # Ajout du conteneur au réseau
       - opgg-network
-    #command: [ "bash", "-c", "sleep 30 && python dashboard.py" ]
