@@ -70,7 +70,7 @@ class OpggSpider(scrapy.Spider): # Création de la classe OpggSpider qui hérite
         "https://www.op.gg/summoners/br/Aegis-BR1",
         "https://www.op.gg/summoners/br/AMANDINHA TI AMO-BR1"
     ]
-
+    
     def system_request(self, url): # Fonction effectuant une requête avec un User-Agent (en-tête spécifique)
 
         # Pour éviter le blocage du site, création d'un User-Agent spécifique
