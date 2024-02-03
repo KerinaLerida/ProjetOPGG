@@ -58,6 +58,17 @@ Nos choix ont été fait ainsi d'optimiser le processus d'extraction des donnée
    ```
 3. Ouvrez votre navigateur et accédez à l'adresse suivante donnant sur l'application : http://localhost:8050
 
+4. Arrêtez le projet avec la commande suivante :
+
+   ```bash
+   docker-compose down
+   ```
+5. Relancez le projet avec la commande suivante : 
+
+   ```bash
+   docker-compose up
+   ```
+   
 ## Auteurs
 
 - **Keren COUTON** - [KerinaLerida](https://github.com/KerinaLerida)
