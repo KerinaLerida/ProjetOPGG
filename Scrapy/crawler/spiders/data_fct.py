@@ -148,6 +148,7 @@ def maj_champions(collection, data_up, id_search): # Fonction pour mettre à jou
 def maj_data(collection, data_up, id_search): # Fonction pour mettre à jour les données de la collection donnée dans la base de données MongoDB
 
     existing_document = collection.find_one({id_search: data_up[id_search]}) # Récupère le document existant dans la collection (si il existe) lié à l'id de recherche
+    print(f"Data to be inserted in {collection.name}: {data_up}")
 
     if existing_document:                                                                       # Si le document existe déjà dans la collection
 
