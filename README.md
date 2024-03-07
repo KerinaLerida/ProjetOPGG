@@ -47,7 +47,7 @@ Nos choix ont été fait ainsi d'optimiser le processus d'extraction des donnée
 1. Clonez le dépôt sur votre machine locale :
 
    ```bash
-   git https://github.com/KerinaLerida/ProjetOPGG.git
+   git clone https://github.com/KerinaLerida/ProjetOPGG.git
    cd ProjetOPGG
     ```
    
